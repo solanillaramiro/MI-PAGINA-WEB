@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA Termodinámica Aplicada | Ingeniería y Servicios Técnicos</title>
+    
+    <link rel="icon" type="image/png" href="imagenes/logo-nova.png">
+
+    <style>
+        /* Paleta de colores NOVA */
+        :root {
+            --azul-oscuro: #001b3d;
+            --azul-medio: #0a2d56;
+            --naranja: #ff6a00;
+            --amarillo: #f1b80e;
+            --gris-claro: #f4f7f9;
+            --blanco: #ffffff;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            color: #333; 
+            line-height: 1.6;
+            background-color: var(--gris-claro);
+            /* Marca de agua general en el cuerpo de la página */
+            background-image: url('imagenes/Fondo.png');
+            background-repeat: no-repeat;
+            background-position: calc(100% + 250px) 450px;
+            background-size: 750px;
+            background-attachment: fixed;
+        }
+
+        /* Encabezado limpio y proporcionado */
+        header { 
+            background: var(--azul-oscuro); 
+            color: var(--blanco); 
+            padding: 15px 40px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 4px solid var(--naranja);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Contenedor del logo alineado verticalmente */
+        .logo-contenedor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Optimizada para la nueva imagen recortada de Canva */
+        .logo-img {
+            height: 90px; 
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-texto {
+            font-size: 1.8em; 
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+        .logo-texto span { color: var(--naranja); }
+
+        /* Menú de navegación tradicional y limpio */
+        nav a { 
+            color: var(--blanco); 
+            margin-left: 20px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 1.05em;
+            transition: 0.3s;
+            padding: 8px 14px;
+            border-radius: 4px;
+        }
+        nav a:hover { color: var(--azul-oscuro); background-color: var(--blanco); }
+
+        /* Sección de Presentación (Hero) con la Nova GIGANTE */
+        .hero { 
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+            padding: 110px 20px; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Destello NOVA en el fondo azul */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -25%; 
+            right: -10%;
+            width: 650px; 
+            height: 650px;
+            background-image: url('imagenes/Fondo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.35; 
+            pointer-events: none;
+            transform: rotate(15deg); 
+        }
+
+        .hero h2 { font-size: 3em; margin-bottom: 10px; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero h3 { color: var(--amarillo); font-weight: 400; margin-top: 0; letter-spacing: 1px; position: relative; z-index: 2; font-size: 1.4em; }
+        .hero p { max-width: 700px; margin: 20px auto; font-size: 1.25em; color: #cbd5e1; position: relative; z-index: 2; }
+
+        .btn-whatsapp { 
+            background: var(--naranja); 
+            color: var(--blanco); 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+            transition: 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 106, 0, 0.6); }
+
+        /* Tarjeta de Identidad y Calidad Certificada (El Origen de NOVA) */
+        .badge-garantia {
+            background: var(--blanco);
+            border-left: 5px solid var(--naranja);
+            padding: 30px;
+            max-width: 1000px;
+            margin: -40px auto 40px auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Secciones Generales */
+        .seccion { padding: 60px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 2; }
+        .seccion h2 { text-align: center; color: var(--azul-oscuro); margin-bottom: 40px; position: relative; }
+        .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--naranja); margin: 10px auto 0 auto; }
+
+        /* Grilla de Servicios */
+        .servicios-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+        .tarjeta { 
+            background: rgba(255, 255, 255, 0.93); 
+            backdrop-filter: blur(2px);
+            border-radius: 8px; 
+            padding: 30px; 
+            width: 45%; 
+            min-width: 280px; 
+            box-sizing: border-box; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--azul-medio);
+            transition: 0.3s;
+        }
+        .tarjeta:hover { transform: translateY(-5px); border-top-color: var(--naranja); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .tarjeta h4 { color: var(--azul-oscuro); font-size: 1.3em; margin-top: 0; }
+
+        /* Sección de Marcas de Respaldo Técnico */
+        .sponsors { background: var(--azul-oscuro); color: var(--blanco); text-align: center; padding: 50px 20px; }
+        .sponsors h3 { margin-bottom: 10px; color: var(--amarillo); font-size: 1.5em; }
+        .sponsors p { color: #94a3b8; font-size: 0.95em; margin-bottom: 25px; }
+        .sponsors-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; opacity: 0.85; }
+        .marca-item { font-size: 1.4em; font-weight: 800; letter-spacing: 2px; color: rgba(255,255,255,0.4); border: 2px dashed rgba(255,255,255,0.15); padding: 10px 25px; border-radius: 4px; }
+        .marca-item span { color: var(--naranja); }
+
+        /* Footer Seguro y Profesional */
+        footer { background: #001126; color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.95em; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 10; }
+        .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: var(--blanco); }
+        .info-contacto span { display: flex; align-items: center; gap: 8px; }
+
+            /* =======================================================
+           DISEÑO RESPONSIVO: OPTIMIZACIÓN PARA CELULARES
+           ======================================================= */
+        @media (max-width: 768px) {
+            /* 1. Reordena el encabezado en formato vertical y centrado */
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 15px;
+                gap: 15px;
+            }
+
+            .logo-contenedor {
+                flex-direction: column; /* Pone el texto abajo del logo circular */
+                gap: 10px;
+            }
+
+            .logo-img {
+                height: 110px; /* Le da un tamaño más protagónico al logo en celulares */
+                margin: 0 auto;
+            }
+
+            .logo-texto {
+                font-size: 1.5em;
+            }
+
+            /* 2. Centra y espacia los botones del menú de navegación */
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            }
+
+            nav a {
+                margin: 0;
+                padding: 6px 12px;
+                font-size: 0.95em;
+                background: rgba(255, 255, 255, 0.05); /* Crea un sutil recuadro para cada opción */
+                border-radius: 4px;
+            }
+
+            /* 3. Ajustes de legibilidad para la sección principal (Hero) */
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero h3 {
+                font-size: 1.2em;
+            }
+
+            .hero p {
+                font-size: 1.05em;
+            }
+
+            /* 4. Corrige el comportamiento del fondo en pantallas chicas */
+            body {
+                background-position: center bottom;
+                background-size: 100%;
+            }
+
+            /* 5. Ajusta la grilla de especialidades a una sola columna */
+            .tarjeta {
+                width: 100%;
+            }
+        }
+
+/* =======================================================
+        SECCIÓN SOBRE MÍ (PERFIL PROFESIONAL)
+        ======================================================= */
+        .perfil-contenedor {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--azul-oscuro);
+        }
+
+        .perfil-avatar {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        /* Círculo con tus iniciales "RS" */
+        .avatar-placeholder {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+            color: var(--amarillo);
+            font-size: 3em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            border: 4px solid var(--naranja);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .perfil-texto {
+            flex: 3;
+        }
+
+        .perfil-texto h3 {
+            margin-top: 0;
+            color: var(--azul-oscuro);
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+
+        .perfil-titulo {
+            color: var(--naranja);
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .perfil-bio {
+            color: #4a5568;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        .perfil-enlaces {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-perfil {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-email {
+            background-color: var(--azul-medio);
+            color: var(--blanco);
+        }
+        .btn-email:hover { background-color: var(--azul-oscuro); }
+
+        .btn-whatsapp-perfil {
+            background-color: #25d366; /* Verde WhatsApp */
+            color: var(--blanco);
+        }
+        .btn-whatsapp-perfil:hover { background-color: #128c7e; }
+
+        /* Ajuste para celulares */
+        @media (max-width: 768px) {
+            .perfil-contenedor {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            .perfil-bio { text-align: center; }
+            .perfil-enlaces { justify-content: center; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-contenedor">
+            <img src="imagenes/logo-nova.png" alt="Logo NOVA Termodinámica Aplicada" class="logo-img">
+            <h1 class="logo-texto">NOVA <span>Termodinámica Aplicada</span></h1>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Especialidades</a>
+            <a href="#aliados">Aliados</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Ramiro Solanilla</h2>
+        <h3>Técnico Electrónico Universitario</h3>
+        <p>Ingeniería en Climatización, Electricidad y Energía Solar. Soluciones de alta eficiencia energética DOMICILIARIA e INDUSTRIAL en Mendoza.</p>
+        <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20vi%20tu%20web%20y%20quería%20hacerte%20una%20consulta" class="btn-whatsapp" target="_blank">📲 Contactar por WhatsApp</a>
+    </section>
+
+    <div class="badge-garantia">
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+            <div style="flex: 1.2; min-width: 280px; padding-right: 15px; border-right: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 10px 0; color: var(--azul-oscuro); font-size: 1.15em; letter-spacing: 0.5px;">
+                    ✨ NOVA: El Futuro de la Termodinámica Aplicada
+                </h4>
+                <p style="margin: 0; font-size: 0.92em; color: #4a5568; text-align: justify; line-height: 1.5;">
+                    En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identidad. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
+                </p>
+            </div>
+            
+            <div style="flex: 1; min-width: 280px;">
+                <h4 style="margin: 0 0 10px 0; color: var(--naranja); font-size: 1.1em; display: flex; align-items: center; gap: 8px;">
+                    📋 Calidad Certificada en cada Intervención
+                </h4>
+                <p style="margin: 0; font-size: 0.93em; color: #334155; line-height: 1.6;">
+                    Llevamos la rigurosidad de las leyes físicas a tu hogar o industria. Cada intervención incluye la entrega de un <strong>Informe Técnico y Certificado de Garantía Profesional</strong>, respaldado por mediciones termodinámicas de precisión, análisis de estabilidad eléctrica bajo normas de ingeniería y acciones correctivas diseñadas para optimizar tus recursos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section id="servicios" class="seccion">
+        <h2>Áreas de Especialización</h2>
+        <div class="servicios-grid">
+            <div class="tarjeta">
+                <h4>❄️ Refrigeración y Climatización</h4>
+                <p>Instalación, service integral y mantenimiento preventivo de sistemas de aire acondicionado, equipos inverter y cámaras frigoríficas con ajuste estricto de parámetros de fábrica.</p>
+            </div>
+            <div class="tarjeta">
+                <h4>⚡ Electricidad Domiciliaria e Industrial</h4>
+                <p>Montaje de tableros eléctricos, análisis de estabilidad de red, medición de corriente (amperaje), continuidad y puestas a tierra para garantizar la máxima seguridad edilicia.</p>
+            </div>
+            <div class="tarjeta">
+                <h4>🔬 Electrónica Aplicada</h4>
+                <p>Diagnóstico avanzado y reparación de placas de control electrónico, automatización de procesos y optimización de activos y maquinaria sensible.</p>
+            </div>
+            <div class="tarjeta">
+                <h4>☀️ Energías Renovables</h4>
+                <p>Estudios de consumo energético y diseño e instalación de paneles solares fotovoltaicos para una transición sustentable y un ahorro real en tu factura eléctrica.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- SECCIÓN SOBRE MÍ / PERFIL PROFESIONAL -->
+    <section id="sobre-mi" class="seccion">
+        <h2>Perfil Profesional</h2>
+        
+        <div class="perfil-contenedor">
+            <!-- Columna del Avatar temporal -->
+            <div class="perfil-avatar">
+                <div class="avatar-placeholder">RS</div>
+                <small style="color: #718096;">Mendoza, Argentina</small>
+            </div>
+            
+            <!-- Columna del Texto -->
+            <div class="perfil-texto">
+                <h3>Ramiro Solanilla</h3>
+                <div class="perfil-titulo">Técnico Electrónico Universitario | Especialista en Termodinámica</div>
+                
+                <p class="perfil-bio">
+                    Apasionado por la optimización energética y la rigurosidad técnica. Mi enfoque combina la precisión de la electrónica universitaria con la aplicación práctica de las leyes térmicas para ofrecer soluciones de climatización, estabilidad eléctrica y energías renovables de máxima eficiencia. Mi compromiso es garantizar la seguridad, el rendimiento óptimo y un respaldo certificado bajo normas de ingeniería en cada intervención, tanto en entornos residenciales como industriales.
+                </p>
+                
+                <!-- Botones prácticos y directos -->
+                <div class="perfil-enlaces">
+                    <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20necesito%20una%20consulta%20técnica" class="btn-perfil btn-whatsapp-perfil" target="_blank">💬 WhatsApp Técnico</a>
+                    <a href="mailto:solanillaramiro@gmail.com" class="btn-perfil btn-email">📧 Enviar Correo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aliados" class="sponsors">
+        <h3>Aliados Tecnológicos</h3>
+        <p>Instalación, diagnóstico y mantenimiento de sistemas bajo lineamientos de fabricantes líderes:</p>
+        <div class="sponsors-grid">
+            <div class="marca-item">SCHNEIDER<span>.E</span></div>
+            <div class="marca-item">BGH<span>.INVERTER</span></div>
+            <div class="marca-item">SIKA<span>.ENG</span></div>
+            <div class="marca-item">LONGVIE<span>.SOLAR</span></div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="info-contacto">
+            <span>📍 Cobertura en Mendoza, Argentina</span>
+            <span>📞 +54 261 545-1550</span>
+            <span>✉️ solanillaramiro@gmail.com</span>
+        </div>
+        <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales de Ingeniería Técnico.</p>
+    </footer>
+
+</body>
+</html>
