@@ -427,105 +427,67 @@
 }
 
 /* =======================================================
-   MODO OSCURO (INTERRUPTOR DE COLORES - CORRECCIÓN TOTAL)
+   MODO OSCURO - CORRECCIÓN DE CONTRASTE FORZADA
    ======================================================= */
 
-/* Transición suave para cambiar sin que sople la vista */
-body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia, h2, h3, p, span {
+/* Transición suave global */
+body, header, section, div, h2, h3, p, span, a {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Colores generales para el Modo Oscuro */
+/* Fondo general de la página */
 body.dark-mode {
-    background-color: #0f172a; /* Azul noche oscuro */
-    color: #f1f5f9;
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
 }
 
-/* 1. TÍTULOS PRINCIPALES DE SECCIONES (Blancos) */
-body.dark-mode h2, 
-body.dark-mode .seccion h2,
-body.dark-mode .seccion-galeria h2,
-body.dark-mode #servicios h2,
-body.dark-mode #aliados h2,
-body.dark-mode #perfil h2 {
+/* 1. FORZAR TODOS LOS PÁRRAFOS Y TEXTOS LARGOS A BLANCO/GRIS CLARO */
+/* Esto va a arreglar el párrafo del cosmos, el de leyes físicas y el de las especialidades */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode .bloque-texto p,
+body.dark-mode .tarjeta-servicio p,
+body.dark-mode section p {
+    color: #e2e8f0 !important; /* Blanco hueso de alta visibilidad */
+}
+
+/* 2. FORZAR LOS TÍTULOS DE LAS ESPECIALIDADES Y REBELDES A NARANJA */
+/* Esto va a pintar "NOVA: El Futuro...", "Refrigeración y Climatización", etc. */
+body.dark-mode h3,
+body.dark-mode .bloque-texto h3,
+body.dark-mode .tarjeta-servicio h3,
+body.dark-mode section h3 {
+    color: #ff6b00 !important; /* El naranja encendido de tu segunda imagen */
+}
+
+/* 3. TÍTULOS PRINCIPALES DE LAS SECCIONES A BLANCO ENÉRGICO */
+body.dark-mode h2,
+body.dark-mode section h2,
+body.dark-mode .seccion h2 {
     color: #ffffff !important;
 }
 
-/* 2. TÍTULOS DE ESPECIALIDADES Y TARJETAS (Naranja NOVA) */
-body.dark-mode h3,
-body.dark-mode .tarjeta h3,
-body.dark-mode .tarjeta-foto h3,
-body.dark-mode .info-foto h3,
-body.dark-mode .tarjeta-servicio h3,
-body.dark-mode .perfil-info h3,
-body.dark-mode .bloque-texto h3 {
-    color: #ff6b00 !important; /* Resalta tus 4 especialidades y el título de NOVA */
-}
-
-/* 3. PARRAFO DEL COSMOS Y LEYES FÍSICAS (Aclarados para lectura cómoda) */
-body.dark-mode .hero-seccion p,
-body.dark-mode .bloque-texto p,
-body.dark-mode .intro-seccion p,
-body.dark-mode .tarjeta-destacada p,
-body.dark-mode .seccion p {
-    color: #cbd5e1 !important; /* Gris claro nítido para los textos del cosmos y leyes */
-}
-
-/* 4. SUBTÍTULOS SUTILES */
-body.dark-mode .subtitulo-galeria,
-body.dark-mode .perfil-subtitulo,
-body.dark-mode .hero-contenido p,
-body.dark-mode .intro-texto {
-    color: #94a3b8 !important;
-}
-
-/* 5. ESTRUCTURA DE CABECERA Y SECCIONES */
+/* 4. FONDOS DE SECCIONES Y CONTENEDORES */
 body.dark-mode header {
-    background-color: #1e293b;
-    border-bottom: 1px solid #334155;
+    background-color: #1e293b !important;
+    border-bottom: 1px solid #334155 !important;
 }
 
-body.dark-mode .seccion, 
+body.dark-mode section,
+body.dark-mode .seccion,
 body.dark-mode .seccion-galeria,
-body.dark-mode #servicios,
-body.dark-mode #perfil {
-    background-color: #0f172a;
-}
-
-/* 6. TARJETAS Y CONTENEDORES (Fondo gris azulado para contraste) */
-body.dark-mode .tarjeta, 
-body.dark-mode .tarjeta-foto,
-body.dark-mode .perfil-contenedor,
+body.dark-mode .bloque-introduccion,
 body.dark-mode .tarjeta-servicio,
-body.dark-mode .bloque-introduccion {
-    background-color: #1e293b;
-    color: #f1f5f9;
-    border: 1px solid #334155;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+body.dark-mode .perfil-contenedor,
+body.dark-mode .tarjeta-foto {
+    background-color: #1e293b !important; /* Gris azulado para que contraste con el fondo de la página */
 }
 
-/* 7. TEXTOS DENTRO DE LAS TARJETAS */
-body.dark-mode .tarjeta p,
-body.dark-mode .info-foto p,
-body.dark-mode .tarjeta-servicio p,
-body.dark-mode .perfil-bio {
-    color: #cbd5e1 !important;
-}
-
-body.dark-mode .badge-garantia {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-}
-
-body.dark-mode .badge-garantia p {
-    color: #cbd5e1;
-}
-
-/* Botón flotante del menú */
+/* Botón del menú */
 .btn-modo-oscuro {
     background: #1e293b;
     color: #ffffff;
-    border: 2px solid var(--naranja, #ff6b00);
+    border: 2px solid #ff6b00;
     padding: 6px 12px;
     border-radius: 20px;
     cursor: pointer;
@@ -536,8 +498,8 @@ body.dark-mode .badge-garantia p {
 }
 
 body.dark-mode .btn-modo-oscuro {
-    background: var(--naranja, #ff6b00);
-    color: #0f172a;
+    background: #ff6b00 !important;
+    color: #0f172a !important;
 }
 
     </style>
