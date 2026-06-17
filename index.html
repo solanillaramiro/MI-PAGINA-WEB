@@ -16,45 +16,57 @@
             --amarillo: #f1b80e;
             --gris-claro: #f4f7f9;
             --blanco: #ffffff;
+            --texto-principal: #333333;
+            --texto-mutado: #4a5568;
+            --borde-tarjeta: #e2e8f0;
+            --fondo-tarjeta: #ffffff;
+        }
+
+        /* Variables para Modo Oscuro */
+        body.dark-mode {
+            --azul-oscuro: #ff6a00; /* Inversión técnica de títulos */
+            --gris-claro: #0f172a;
+            --texto-principal: #f1f5f9;
+            --texto-mutado: #cbd5e1;
+            --fondo-tarjeta: #0b1329;
+            --borde-tarjeta: #1e293b;
+            --blanco: #0b1329;
         }
 
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
-            color: #333; 
+            color: var(--texto-principal); 
             line-height: 1.6;
             background-color: var(--gris-claro);
-            /* Marca de agua general en el cuerpo de la página */
             background-image: url('imagenes/Fondo.png');
             background-repeat: no-repeat;
             background-position: calc(100% + 250px) 450px;
             background-size: 750px;
             background-attachment: fixed;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Encabezado limpio y proporcionado */
         header { 
-            background: var(--azul-oscuro); 
-            color: var(--blanco); 
+            background: #001b3d; /* Se mantiene oscuro fijo */
+            color: #ffffff; 
             padding: 15px 40px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            border-bottom: 4px solid var(--naranja);
+            border-bottom: 4px solid #ff6a00;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             position: relative;
             z-index: 100;
         }
 
-        /* Contenedor del logo alineado verticalmente */
         .logo-contenedor {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        /* Optimizada para la nueva imagen recortada de Canva */
         .logo-img {
             height: 90px; 
             width: auto;
@@ -68,12 +80,12 @@
             letter-spacing: 0.5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
             margin: 0;
+            color: #ffffff;
         }
-        .logo-texto span { color: var(--naranja); }
+        .logo-texto span { color: #ff6a00; }
 
-        /* Menú de navegación tradicional y limpio */
         nav a { 
-            color: var(--blanco); 
+            color: #ffffff; 
             margin-left: 20px; 
             text-decoration: none; 
             font-weight: 600; 
@@ -82,19 +94,17 @@
             padding: 8px 14px;
             border-radius: 4px;
         }
-        nav a:hover { color: var(--azul-oscuro); background-color: var(--blanco); }
+        nav a:hover { color: #001b3d; background-color: #ffffff; }
 
-        /* Sección de Presentación (Hero) con la Nova GIGANTE */
         .hero { 
-            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
-            color: var(--blanco);
+            background: linear-gradient(135deg, #001b3d 0%, #0a2d56 100%);
+            color: #ffffff;
             padding: 110px 20px; 
             text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        /* Destello NOVA en el fondo azul */
         .hero::after {
             content: '';
             position: absolute;
@@ -111,12 +121,12 @@
         }
 
         .hero h2 { font-size: 3em; margin-bottom: 10px; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .hero h3 { color: var(--amarillo); font-weight: 400; margin-top: 0; letter-spacing: 1px; position: relative; z-index: 2; font-size: 1.4em; }
+        .hero h3 { color: #f1b80e; font-weight: 400; margin-top: 0; letter-spacing: 1px; position: relative; z-index: 2; font-size: 1.4em; }
         .hero p { max-width: 700px; margin: 20px auto; font-size: 1.25em; color: #cbd5e1; position: relative; z-index: 2; }
 
         .btn-whatsapp { 
-            background: var(--naranja); 
-            color: var(--blanco); 
+            background: #ff6a00; 
+            color: #ffffff; 
             padding: 14px 28px; 
             text-decoration: none; 
             border-radius: 5px; 
@@ -130,10 +140,9 @@
         }
         .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 106, 0, 0.6); }
 
-        /* Tarjeta de Identidad y Calidad Certificada (El Origen de NOVA) */
         .badge-garantia {
-            background: var(--blanco);
-            border-left: 5px solid var(--naranja);
+            background: var(--fondo-tarjeta);
+            border-left: 5px solid #ff6a00;
             padding: 30px;
             max-width: 1000px;
             margin: -40px auto 40px auto;
@@ -141,141 +150,74 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             position: relative;
             z-index: 10;
+            transition: background-color 0.3s;
         }
 
-        /* Secciones Generales */
         .seccion { padding: 60px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 2; }
-        .seccion h2 { text-align: center; color: var(--azul-oscuro); margin-bottom: 40px; position: relative; }
-        .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--naranja); margin: 10px auto 0 auto; }
+        .seccion h2 { text-align: center; color: var(--texto-principal); margin-bottom: 40px; position: relative; }
+        .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: #ff6a00; margin: 10px auto 0 auto; }
 
-        /* Grilla de Servicios */
         .servicios-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
         .tarjeta { 
-            background: rgba(255, 255, 255, 0.93); 
-            backdrop-filter: blur(2px);
+            background: var(--fondo-tarjeta);
             border-radius: 8px; 
             padding: 30px; 
             width: 45%; 
             min-width: 280px; 
             box-sizing: border-box; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--azul-medio);
+            border-top: 4px solid #0a2d56;
             transition: 0.3s;
         }
-        .tarjeta:hover { transform: translateY(-5px); border-top-color: var(--naranja); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-        .tarjeta h4 { color: var(--azul-oscuro); font-size: 1.3em; margin-top: 0; }
+        body.dark-mode .tarjeta { border-top-color: #ff6a00; }
+        .tarjeta:hover { transform: translateY(-5px); border-top-color: #ff6a00; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .tarjeta h4 { color: var(--texto-principal); font-size: 1.3em; margin-top: 0; }
 
-        /* Sección de Marcas de Respaldo Técnico */
-        .sponsors { background: var(--azul-oscuro); color: var(--blanco); text-align: center; padding: 50px 20px; }
-        .sponsors h3 { margin-bottom: 10px; color: var(--amarillo); font-size: 1.5em; }
+        .sponsors { background: #001b3d; color: #ffffff; text-align: center; padding: 50px 20px; }
+        .sponsors h3 { margin-bottom: 10px; color: #f1b80e; font-size: 1.5em; }
         .sponsors p { color: #94a3b8; font-size: 0.95em; margin-bottom: 25px; }
         .sponsors-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; opacity: 0.85; }
         .marca-item { font-size: 1.4em; font-weight: 800; letter-spacing: 2px; color: rgba(255,255,255,0.4); border: 2px dashed rgba(255,255,255,0.15); padding: 10px 25px; border-radius: 4px; }
-        .marca-item span { color: var(--naranja); }
+        .marca-item span { color: #ff6a00; }
 
-        /* Footer Seguro y Profesional */
         footer { background: #001126; color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.95em; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 10; }
-        .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: var(--blanco); }
+        .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: #ffffff; }
         .info-contacto span { display: flex; align-items: center; gap: 8px; }
 
-            /* =======================================================
-           DISEÑO RESPONSIVO: OPTIMIZACIÓN PARA CELULARES
-           ======================================================= */
         @media (max-width: 768px) {
-            /* 1. Reordena el encabezado en formato vertical y centrado */
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px 15px;
-                gap: 15px;
-            }
-
-            .logo-contenedor {
-                flex-direction: column; /* Pone el texto abajo del logo circular */
-                gap: 10px;
-            }
-
-            .logo-img {
-                height: 110px; /* Le da un tamaño más protagónico al logo en celulares */
-                margin: 0 auto;
-            }
-
-            .logo-texto {
-                font-size: 1.5em;
-            }
-
-            /* 2. Centra y espacia los botones del menú de navegación */
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-
-            nav a {
-                margin: 0;
-                padding: 6px 12px;
-                font-size: 0.95em;
-                background: rgba(255, 255, 255, 0.05); /* Crea un sutil recuadro para cada opción */
-                border-radius: 4px;
-            }
-
-            /* 3. Ajustes de legibilidad para la sección principal (Hero) */
-            .hero {
-                padding: 60px 15px;
-            }
-
-            .hero h2 {
-                font-size: 2.2em;
-            }
-
-            .hero h3 {
-                font-size: 1.2em;
-            }
-
-            .hero p {
-                font-size: 1.05em;
-            }
-
-            /* 4. Corrige el comportamiento del fondo en pantallas chicas */
-            body {
-                background-position: center bottom;
-                background-size: 100%;
-            }
-
-            /* 5. Ajusta la grilla de especialidades a una sola columna */
-            .tarjeta {
-                width: 100%;
-            }
+            header { flex-direction: column; text-align: center; padding: 20px 15px; gap: 15px; }
+            .logo-contenedor { flex-direction: column; gap: 10px; }
+            .logo-img { height: 110px; margin: 0 auto; }
+            .logo-texto { font-size: 1.5em; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            nav a { margin: 0; padding: 6px 12px; font-size: 0.95em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+            .hero { padding: 60px 15px; }
+            .hero h2 { font-size: 2.2em; }
+            .hero h3 { font-size: 1.2em; }
+            .hero p { font-size: 1.05em; }
+            body { background-position: center bottom; background-size: 100%; }
+            .tarjeta { width: 100%; }
         }
 
-/* =======================================================
-        SECCIÓN SOBRE MÍ (PERFIL PROFESIONAL)
-        ======================================================= */
         .perfil-contenedor {
             display: flex;
             align-items: center;
             gap: 40px;
-            background: var(--blanco);
+            background: var(--fondo-tarjeta);
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--azul-oscuro);
+            border-left: 5px solid #001b3d;
+            transition: background-color 0.3s;
         }
+        body.dark-mode .perfil-contenedor { border-left-color: #ff6a00; }
 
-        .perfil-avatar {
-            flex: 1;
-            text-align: center;
-            min-width: 200px;
-        }
-
-        /* Círculo con tus iniciales "RS" */
+        .perfil-avatar { flex: 1; text-align: center; min-width: 200px; }
         .avatar-placeholder {
             width: 150px;
             height: 150px;
-            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
-            color: var(--amarillo);
+            background: linear-gradient(135deg, #001b3d, #0a2d56);
+            color: #f1b80e;
             font-size: 3em;
             font-weight: bold;
             display: flex;
@@ -283,320 +225,77 @@
             justify-content: center;
             border-radius: 50%;
             margin: 0 auto 15px auto;
-            border: 4px solid var(--naranja);
+            border: 4px solid #ff6a00;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
-        .perfil-texto {
-            flex: 3;
-        }
+        .perfil-texto { flex: 3; }
+        .perfil-texto h3 { margin-top: 0; color: var(--texto-principal); font-size: 1.6em; margin-bottom: 5px; }
+        .perfil-titulo { color: #ff6a00; font-weight: 600; font-size: 1.1em; margin-bottom: 15px; }
+        .perfil-bio { color: var(--texto-mutated); text-align: justify; margin-bottom: 25px; }
+        .perfil-enlaces { display: flex; gap: 15px; flex-wrap: wrap; }
 
-        .perfil-texto h3 {
-            margin-top: 0;
-            color: var(--azul-oscuro);
-            font-size: 1.6em;
-            margin-bottom: 5px;
-        }
-
-        .perfil-titulo {
-            color: var(--naranja);
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-
-        .perfil-bio {
-            color: #4a5568;
-            text-align: justify;
-            margin-bottom: 25px;
-        }
-
-        .perfil-enlaces {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-perfil {
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-email {
-            background-color: var(--azul-medio);
-            color: var(--blanco);
-        }
-        .btn-email:hover { background-color: var(--azul-oscuro); }
-
-        .btn-whatsapp-perfil {
-            background-color: #25d366; /* Verde WhatsApp */
-            color: var(--blanco);
-        }
+        .btn-perfil { padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95em; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-email { background-color: #0a2d56; color: #ffffff; }
+        .btn-email:hover { background-color: #001b3d; }
+        .btn-whatsapp-perfil { background-color: #25d366; color: #ffffff; }
         .btn-whatsapp-perfil:hover { background-color: #128c7e; }
 
-        /* Ajuste para celulares */
         @media (max-width: 768px) {
-            .perfil-contenedor {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px 20px;
-            }
+            .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 20px; }
             .perfil-bio { text-align: center; }
             .perfil-enlaces { justify-content: center; }
         }
 
-/* =================================================== */
-/* PASO 2: ESTILOS DE LA GALERÍA EN CUADRÍCULA (GRID)  */
-/* =================================================== */
-.seccion-galeria {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f4f7f6; /* Un fondo gris/celeste muy sutil para separar secciones */
-}
+        .seccion-galeria { padding: 60px 20px; text-align: center; background-color: var(--gris-claro); transition: background-color 0.3s; }
+        .seccion-galeria h2 { color: var(--texto-principal); font-size: 1.8rem; margin-bottom: 8px; font-weight: bold; }
+        .subtitulo-galeria { color: var(--texto-mutado); font-size: 1rem; margin-bottom: 40px; }
 
-.seccion-galeria h2 {
-    color: #002855; /* Tu azul corporativo */
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
+        .contenedor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .tarjeta-foto { background: var(--fondo-tarjeta); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tarjeta-foto:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
+        .tarjeta-foto img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .info-foto { padding: 20px; text-align: left; }
+        .info-foto h3 { color: var(--texto-principal); font-size: 1.2rem; margin-bottom: 6px; font-weight: bold; }
+        .info-foto p { color: var(--texto-mutado); font-size: 0.95rem; line-height: 1.4; }
 
-.subtitulo-galeria {
-    color: #555555;
-    font-size: 1rem;
-    margin-bottom: 40px;
-}
+        .contacto-contenedor { max-width: 650px; margin: 0 auto; background: var(--fondo-tarjeta); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #001b3d; transition: background-color 0.3s; }
+        body.dark-mode .contacto-contenedor { border-top-color: #ff6a00; }
+        .formulario-contacto { display: flex; flex-direction: column; gap: 20px; }
+        .grupo-input { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+        .grupo-input label { font-weight: 600; color: var(--texto-principal); font-size: 0.95em; }
 
-/* El Contenedor Grid (La Magia del Diseño Adaptable) */
-.contenedor-grid {
-    display: grid;
-    /* Divide en columnas automáticamente: mínimo 280px por foto, si no entra, se acomoda sola abajo */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* El espacio exacto de separación entre las tarjetas */
-    max-width: 1100px;
-    margin: 0 auto; /* Centra todo el bloque en la pantalla */
-}
+        .grupo-input input, .grupo-input textarea { 
+            padding: 12px; 
+            border: 1px solid var(--borde-tarjeta); 
+            background-color: var(--fondo-tarjeta);
+            color: var(--texto-principal);
+            border-radius: 4px; 
+            font-family: inherit; 
+            font-size: 1em; 
+            transition: 0.3s; 
+        }
+        .grupo-input input:focus, .grupo-input textarea:focus { outline: none; border-color: #ff6a00; box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15); }
 
-/* Las Tarjetas de los Trabajos */
-.tarjeta-foto {
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden; /* Corta las esquinas de la foto para que sigan el radio del borde */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Sombra suave para dar relieve */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .btn-enviar { background-color: #001b3d; color: #ffffff; border: none; padding: 14px; font-size: 1.1em; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,27,61,0.2); }
+        body.dark-mode .btn-enviar { background-color: #ff6a00; color: #0f172a; }
+        .btn-enviar:hover { background-color: #0a2d56; transform: translateY(-1px); }
 
-/* Efecto visual cuando pasás el mouse por arriba de una foto */
-.tarjeta-foto:hover {
-    transform: translateY(-6px); /* Eleva la tarjeta sutilmente */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Aumenta la sombra */
-}
-
-/* Control de las imágenes de prueba */
-.tarjeta-foto img {
-    width: 100%;
-    height: 220px; /* Esto obliga a la foto a no medir más de 220px de alto */
-    object-fit: cover; /* Recorta la foto como un cuadro para que no se estire */
-    display: block;
-}
-
-/* Textos informativos debajo de cada foto */
-.info-foto {
-    padding: 20px;
-    text-align: left; /* Texto alineado a la izquierda para mejor lectura */
-}
-
-.info-foto h3 {
-    color: #002855;
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.info-foto p {
-    color: #666666;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-/* Estilos Formulario de Contacto (General/Modo Claro) */
-.contacto-contenedor {
-    max-width: 650px;
-    margin: 0 auto;
-    background: var(--blanco);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--azul-oscuro);
-}
-
-.formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.grupo-input {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-align: left;
-}
-
-.grupo-input label {
-    font-weight: 600;
-    color: var(--azul-oscuro);
-    font-size: 0.95em;
-}
-
-.grupo-input input,
-.grupo-input textarea {
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1em;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.grupo-input input:focus,
-.grupo-input textarea:focus {
-    outline: none;
-    border-color: var(--naranja);
-    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15);
-}
-
-.btn-enviar {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    border: none;
-    padding: 14px;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0,27,61,0.2);
-}
-
-.btn-enviar:hover {
-    background-color: var(--azul-medio);
-    transform: translateY(-1px);
-}
-
-/* =======================================================
-   MODO OSCURO - CORRECCIÓN REAL DE CONTRASTE OSCURO
-   ======================================================= */
-
-/* 1. EL FONDO GLOBAL Y SECCIONES REBELDES */
-body.dark-mode,
-body.dark-mode .seccion-galeria {
-    background-color: #0f172a !important;
-    color: #f1f5f9 !important;
-}
-
-/* 2. OSCURECER LAS TARJETAS BLANCAS Y EL FORMULARIO
-   (Acá sumamos .contacto-contenedor al final) */
-body.dark-mode .badge-garantia,
-body.dark-mode .tarjeta,
-body.dark-mode .perfil-contenedor,
-body.dark-mode .tarjeta-foto,
-body.dark-mode .contacto-contenedor {
-    background-color: #0b1329 !important; /* Azul noche profundo */
-    border-color: #1e293b !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* 3. TÍTULOS EN NARANJA NOVA 
-   (Mantenemos tus títulos y si querés podés sumar las etiquetas del formulario) */
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode .hero h3,
-body.dark-mode .tarjeta h4,
-body.dark-mode .info-foto h3,
-body.dark-mode .perfil-texto h3 {
-    color: #ff6a00 !important;
-}
-
-/* 4. TEXTOS LARGOS EN BLANCO/GRIS CLARO
-   (Acá sumamos .subtitulo-contacto al final) */
-body.dark-mode p,
-body.dark-mode .hero p,
-body.dark-mode .badge-garantia p,
-body.dark-mode .tarjeta p,
-body.dark-mode .perfil-bio,
-body.dark-mode .subtitulo-galeria,
-body.dark-mode .info-foto p,
-body.dark-mode .subtitulo-contacto {
-    color: #cbd5e1 !important;
-}
-
-/* 5. TÍTULOS PRINCIPALES EN BLANCO ABSOLUTO */
-body.dark-mode h2,
-body.dark-mode .seccion h2,
-body.dark-mode .seccion-galeria h2,
-body.dark-mode .hero h2 {
-    color: #ffffff !important;
-}
-
-/* 6. EL BOTÓN FLOTANTE DEL MENÚ */
-.btn-modo-oscuro {
-    background: #1e293b;
-    color: #ffffff;
-    border: 2px solid #ff6a00;
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.85em;
-    margin-left: 15px;
-    transition: all 0.3s ease;
-}
-body.dark-mode .btn-modo-oscuro {
-    background: #ff6a00 !important;
-    color: #0f172a !important;
-}
-
-/* Estilos específicos para los campos del formulario en Modo Oscuro */
-body.dark-mode .grupo-input label {
-    color: #ff6a00 !important; /* Etiquetas en naranja técnico */
-}
-
-body.dark-mode .grupo-input input,
-body.dark-mode .grupo-input textarea {
-    background-color: #1e293b !important; /* Fondo gris/azul oscuro */
-    border-color: #334155 !important;       /* Borde sutil */
-    color: #ffffff !important;              /* Texto en blanco */
-}
-
-body.dark-mode .grupo-input input::placeholder,
-body.dark-mode .grupo-input textarea::placeholder {
-    color: #64748b !important;              /* Texto de ejemplo sutil */
-}
-
-body.dark-mode .btn-enviar {
-    background-color: #ff6a00 !important;   /* Botón naranja */
-    color: #0f172a !important;              /* Texto oscuro para contraste */
-    box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3) !important;
-}
-
+        .btn-modo-oscuro {
+            background: #1e293b;
+            color: #ffffff;
+            border: 2px solid #ff6a00;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .btn-modo-oscuro { background: #ff6a00; color: #0f172a; }
     </style>
 </head>
-
-
-
-
-
-
-
-
 <body>
 
     <header>
@@ -622,20 +321,20 @@ body.dark-mode .btn-enviar {
 
     <div class="badge-garantia">
         <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
-            <div style="flex: 1.2; min-width: 280px; padding-right: 15px; border-right: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 10px 0; color: var(--azul-oscuro); font-size: 1.15em; letter-spacing: 0.5px;">
+            <div style="flex: 1.2; min-width: 280px; padding-right: 15px; border-right: 1px solid var(--borde-tarjeta);">
+                <h4 style="margin: 0 0 10px 0; color: var(--texto-principal); font-size: 1.15em; letter-spacing: 0.5px;">
                     ✨ NOVA: El Futuro de la Termodinámica Aplicada
                 </h4>
-                <p style="margin: 0; font-size: 0.92em; color: #4a5568; text-align: justify; line-height: 1.5;">
+                <p style="margin: 0; font-size: 0.92em; color: var(--texto-mutado); text-align: justify; line-height: 1.5;">
                     En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identidad. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
                 </p>
             </div>
             
             <div style="flex: 1; min-width: 280px;">
-                <h4 style="margin: 0 0 10px 0; color: var(--naranja); font-size: 1.1em; display: flex; align-items: center; gap: 8px;">
+                <h4 style="margin: 0 0 10px 0; color: #ff6a00; font-size: 1.1em; display: flex; align-items: center; gap: 8px;">
                     📋 Calidad Certificada en cada Intervención
                 </h4>
-                <p style="margin: 0; font-size: 0.93em; color: #334155; line-height: 1.6;">
+                <p style="margin: 0; font-size: 0.93em; color: var(--texto-mutado); line-height: 1.6;">
                     Llevamos la rigurosidad de las leyes físicas a tu hogar o industria. Cada intervención incluye la entrega de un <strong>Informe Técnico y Certificado de Garantía Profesional</strong>, respaldado por mediciones termodinámicas de precisión, análisis de estabilidad eléctrica bajo normas de ingeniería y acciones correctivas diseñadas para optimizar tus recursos.
                 </p>
             </div>
@@ -666,21 +365,17 @@ body.dark-mode .btn-enviar {
 
     <section id="sobre-mi" class="seccion">
         <h2>Perfil Profesional</h2>
-        
         <div class="perfil-contenedor">
             <div class="perfil-avatar">
                 <div class="avatar-placeholder">RS</div>
-                <small style="color: #718096;">Mendoza, Argentina</small>
+                <small style="color: var(--texto-mutado);">Mendoza, Argentina</small>
             </div>
-            
             <div class="perfil-texto">
                 <h3>Ramiro Solanilla</h3>
                 <div class="perfil-titulo">Técnico Electrónico Universitario | Especialista en Termodinámica</div>
-                
                 <p class="perfil-bio">
                     Apasionado por la optimización energética y la rigurosidad técnica. Mi enfoque combina la precisión de la electrónica universitaria con la aplicación práctica de las leyes térmicas para ofrecer soluciones de climatización, estabilidad eléctrica y energías renovables de máxima eficiencia. Mi compromiso es garantizar la seguridad, el rendimiento óptimo y un respaldo certificado bajo normas de ingeniería en cada intervención, tanto en entornos residenciales como industriales.
                 </p>
-                
                 <div class="perfil-enlaces">
                     <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20necesito%20una%20consulta%20técnica" class="btn-perfil btn-whatsapp-perfil" target="_blank">💬 WhatsApp Técnico</a>
                     <a href="mailto:solanillaramiro@gmail.com" class="btn-perfil btn-email">📧 Enviar Correo</a>
@@ -705,73 +400,59 @@ body.dark-mode .btn-enviar {
         <p class="subtitulo-galeria">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
 
         <div class="contenedor-grid">
-    
-    <div class="tarjeta-foto">
-        <img src="imagenes/mantenimiento.png" alt="Mantenimiento de Sistemas">
-        <div class="info-foto">
-            <h3>Mantenimiento de Sistemas</h3>
-            <p>Diagnóstico de presión y optimización energética.</p>
+            <div class="tarjeta-foto">
+                <img src="imagenes/mantenimiento.png" alt="Mantenimiento de Sistemas">
+                <div class="info-foto">
+                    <h3>Mantenimiento de Sistemas</h3>
+                    <p>Diagnóstico de presión y optimización energética.</p>
+                </div>
+            </div>
+            <div class="tarjeta-foto">
+                <img src="imagenes/tablero.png" alt="Estabilidad Eléctrica">
+                <div class="info-foto">
+                    <h3>Estabilidad Eléctrica</h3>
+                    <p>Tableros de comando y control automatizado.</p>
+                </div>
+            </div>
+            <div class="tarjeta-foto">
+                <img src="imagenes/termo.png" alt="Termodinámica Aplicada">
+                <div class="info-foto">
+                    <h3>Termodinámica Aplicada</h3>
+                    <p>Intervención y service de equipos de alta eficiencia.</p>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section id="contacto" class="seccion">
+        <h2>Contactanos</h2>
+        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
+        
+        <div class="contacto-contenedor">
+            <form action="https://formsubmit.co/solanillaramiro@gmail.com" method="POST" class="formulario-contacto">
+                <input type="hidden" name="_next" value="gracias.html"> 
+                <input type="hidden" name="_captcha" value="false"> 
+
+                <div class="grupo-input">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                </div>
+                <div class="grupo-input">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="grupo-input">
+                    <label for="telefono">Teléfono / WhatsApp</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2615555555">
+                </div>
+                <div class="grupo-input">
+                    <label for="mensaje">Detalle de la Consulta Técnica</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí acá los detalles del servicio o diagnóstico que requerís..." required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
         </div>
-    </div>
-
-    <div class="tarjeta-foto">
-        <img src="imagenes/tablero.png" alt="Estabilidad Eléctrica">
-        <div class="info-foto">
-            <h3>Estabilidad Eléctrica</h3>
-            <p>Tableros de comando y control automatizado.</p>
-        </div>
-    </div>
-
-    <div class="tarjeta-foto">
-        <img src="imagenes/termo.png" alt="Termodinámica Aplicada">
-        <div class="info-foto">
-            <h3>Termodinámica Aplicada</h3>
-            <p>Intervención y service de equipos de alta eficiencia.</p>
-        </div>
-    </div>
-
-
-        </div> </section>
-
-<!-- =======================================================
-     PASO 4: SECCIÓN DE CONTACTO / MENSAJES
-     ======================================================= -->
-<section id="contacto" class="seccion">
-    <h2>Contactanos</h2>
-    <p style="text-align: center; color: #555555;" class="subtitulo-contacto">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
-    
-    <div class="contacto-contenedor">
-        <!-- Reemplazá 'tu-email@gmail.com' por tu correo real de NOVA -->
-        <form action="https://formsubmit.co/solanillaramiro@gmail.com" method="POST" class="formulario-contacto">
-            
-            <!-- Configuraciones extras de FormSubmit (Opcionales pero profesionales) -->
-            <input type="hidden" name="_next" value="gracias.html"> <!-- Página de agradecimiento -->
-            <input type="hidden" name="_captcha" value="false"> <!-- Desactiva el captcha molesto si querés -->
-
-            <div class="grupo-input">
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-            </div>
-
-            <div class="grupo-input">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-            </div>
-
-            <div class="grupo-input">
-                <label for="telefono">Teléfono / WhatsApp</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2615555555">
-            </div>
-
-            <div class="grupo-input">
-                <label for="mensaje">Detalle de la Consulta Técnica</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí acá los detalles del servicio o diagnóstico que requerís..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-        </form>
-    </div>
-</section>
+    </section>
 
     <footer>
         <div class="info-contacto">
@@ -782,14 +463,10 @@ body.dark-mode .btn-enviar {
         <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales de Ingeniería Técnico.</p>
     </footer>
 
-<script>
+    <script>
         const boton = document.getElementById('btn-color');
-
         boton.addEventListener('click', () => {
-            // Activa o desactiva la clase dark-mode en el body
             document.body.classList.toggle('dark-mode');
-            
-            // Cambia el texto del botón según el modo
             if (document.body.classList.contains('dark-mode')) {
                 boton.innerHTML = "☀️ Modo Claro";
             } else {
@@ -797,6 +474,5 @@ body.dark-mode .btn-enviar {
             }
         });
     </script>
-
 </body>
 </html>
