@@ -426,29 +426,96 @@
     line-height: 1.4;
 }
 
+/* Estilos Formulario de Contacto (General/Modo Claro) */
+.contacto-contenedor {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--azul-oscuro);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.grupo-input label {
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    font-size: 0.95em;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15);
+}
+
+.btn-enviar {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 14px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,27,61,0.2);
+}
+
+.btn-enviar:hover {
+    background-color: var(--azul-medio);
+    transform: translateY(-1px);
+}
+
 /* =======================================================
    MODO OSCURO - CORRECCIÓN REAL DE CONTRASTE OSCURO
    ======================================================= */
 
-/* 1. EL FONDO GLOBAL Y SECCIONES REBELDES 
-   Agregamos .seccion-galeria acá para oscurecer ese fondo iluminado */
+/* 1. EL FONDO GLOBAL Y SECCIONES REBELDES */
 body.dark-mode,
 body.dark-mode .seccion-galeria {
     background-color: #0f172a !important;
     color: #f1f5f9 !important;
 }
 
-/* 2. OSCURECER LAS TARJETAS BLANCAS */
+/* 2. OSCURECER LAS TARJETAS BLANCAS Y EL FORMULARIO
+   (Acá sumamos .contacto-contenedor al final) */
 body.dark-mode .badge-garantia,
 body.dark-mode .tarjeta,
 body.dark-mode .perfil-contenedor,
-body.dark-mode .tarjeta-foto {
+body.dark-mode .tarjeta-foto,
+body.dark-mode .contacto-contenedor {
     background-color: #0b1329 !important; /* Azul noche profundo */
     border-color: #1e293b !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* 3. TÍTULOS EN NARANJA NOVA */
+/* 3. TÍTULOS EN NARANJA NOVA 
+   (Mantenemos tus títulos y si querés podés sumar las etiquetas del formulario) */
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode .hero h3,
@@ -458,14 +525,16 @@ body.dark-mode .perfil-texto h3 {
     color: #ff6a00 !important;
 }
 
-/* 4. TEXTOS LARGOS EN BLANCO/GRIS CLARO */
+/* 4. TEXTOS LARGOS EN BLANCO/GRIS CLARO
+   (Acá sumamos .subtitulo-contacto al final) */
 body.dark-mode p,
 body.dark-mode .hero p,
 body.dark-mode .badge-garantia p,
 body.dark-mode .tarjeta p,
 body.dark-mode .perfil-bio,
 body.dark-mode .subtitulo-galeria,
-body.dark-mode .info-foto p {
+body.dark-mode .info-foto p,
+body.dark-mode .subtitulo-contacto {
     color: #cbd5e1 !important;
 }
 
@@ -493,6 +562,29 @@ body.dark-mode .hero h2 {
 body.dark-mode .btn-modo-oscuro {
     background: #ff6a00 !important;
     color: #0f172a !important;
+}
+
+/* Estilos específicos para los campos del formulario en Modo Oscuro */
+body.dark-mode .grupo-input label {
+    color: #ff6a00 !important; /* Etiquetas en naranja técnico */
+}
+
+body.dark-mode .grupo-input input,
+body.dark-mode .grupo-input textarea {
+    background-color: #1e293b !important; /* Fondo gris/azul oscuro */
+    border-color: #334155 !important;       /* Borde sutil */
+    color: #ffffff !important;              /* Texto en blanco */
+}
+
+body.dark-mode .grupo-input input::placeholder,
+body.dark-mode .grupo-input textarea::placeholder {
+    color: #64748b !important;              /* Texto de ejemplo sutil */
+}
+
+body.dark-mode .btn-enviar {
+    background-color: #ff6a00 !important;   /* Botón naranja */
+    color: #0f172a !important;              /* Texto oscuro para contraste */
+    box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3) !important;
 }
 
     </style>
@@ -641,7 +733,47 @@ body.dark-mode .btn-modo-oscuro {
 
         </div> </section>
 
-    <footer id="contacto">
+<!-- =======================================================
+     PASO 4: SECCIÓN DE CONTACTO / MENSAJES
+     ======================================================= -->
+<section id="contacto" class="seccion">
+    <h2>Contactanos</h2>
+    <p style="text-align: center; color: #555555;" class="subtitulo-contacto">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
+    
+    <div class="contacto-contenedor">
+        <!-- Reemplazá 'tu-email@gmail.com' por tu correo real de NOVA -->
+        <form action="https://formsubmit.co/tu-email@gmail.com" method="POST" class="formulario-contacto">
+            
+            <!-- Configuraciones extras de FormSubmit (Opcionales pero profesionales) -->
+            <input type="hidden" name="_next" value="https://tu-web-nova.com/gracias.html"> <!-- Página de agradecimiento -->
+            <input type="hidden" name="_captcha" value="false"> <!-- Desactiva el captcha molesto si querés -->
+
+            <div class="grupo-input">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2615555555">
+            </div>
+
+            <div class="grupo-input">
+                <label for="mensaje">Detalle de la Consulta Técnica</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí acá los detalles del servicio o diagnóstico que requerís..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+
+    <footer>
         <div class="info-contacto">
             <span>📍 Cobertura en Mendoza, Argentina</span>
             <span>📞 +54 261 545-1550</span>
