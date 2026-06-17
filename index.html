@@ -427,7 +427,7 @@
 }
 
 /* =======================================================
-   MODO OSCURO (INTERRUPTOR DE COLORES - REVISIÓN TOTAL)
+   MODO OSCURO (INTERRUPTOR DE COLORES - CORRECCIÓN TOTAL)
    ======================================================= */
 
 /* Transición suave para cambiar sin que sople la vista */
@@ -441,7 +441,7 @@ body.dark-mode {
     color: #f1f5f9;
 }
 
-/* 1. SOLUCIÓN A LOS TÍTULOS DE SECCIÓN (H2) */
+/* 1. TÍTULOS PRINCIPALES DE SECCIONES (Blancos) */
 body.dark-mode h2, 
 body.dark-mode .seccion h2,
 body.dark-mode .seccion-galeria h2,
@@ -451,21 +451,35 @@ body.dark-mode #perfil h2 {
     color: #ffffff !important;
 }
 
-/* 2. SOLUCIÓN A LOS SUBTÍTULOS Y TEXTOS INICIALES */
+/* 2. TÍTULOS DE ESPECIALIDADES Y TARJETAS (Naranja NOVA) */
+body.dark-mode h3,
+body.dark-mode .tarjeta h3,
+body.dark-mode .tarjeta-foto h3,
+body.dark-mode .info-foto h3,
+body.dark-mode .tarjeta-servicio h3,
+body.dark-mode .perfil-info h3,
+body.dark-mode .bloque-texto h3 {
+    color: #ff6b00 !important; /* Resalta tus 4 especialidades y el título de NOVA */
+}
+
+/* 3. PARRAFO DEL COSMOS Y LEYES FÍSICAS (Aclarados para lectura cómoda) */
+body.dark-mode .hero-seccion p,
+body.dark-mode .bloque-texto p,
+body.dark-mode .intro-seccion p,
+body.dark-mode .tarjeta-destacada p,
+body.dark-mode .seccion p {
+    color: #cbd5e1 !important; /* Gris claro nítido para los textos del cosmos y leyes */
+}
+
+/* 4. SUBTÍTULOS SUTILES */
 body.dark-mode .subtitulo-galeria,
 body.dark-mode .perfil-subtitulo,
 body.dark-mode .hero-contenido p,
 body.dark-mode .intro-texto {
-    color: #94a3b8 !important; /* Gris claro nítido */
+    color: #94a3b8 !important;
 }
 
-/* 3. SOLUCIÓN AL TEXTO LARGO DEL BLOQUE PRINCIPAL (HERO / INTRO) */
-body.dark-mode .hero-seccion p,
-body.dark-mode .bloque-texto p,
-body.dark-mode .seccion p {
-    color: #cbd5e1; /* Color gris claro de alta lectura */
-}
-
+/* 5. ESTRUCTURA DE CABECERA Y SECCIONES */
 body.dark-mode header {
     background-color: #1e293b;
     border-bottom: 1px solid #334155;
@@ -478,28 +492,19 @@ body.dark-mode #perfil {
     background-color: #0f172a;
 }
 
-/* 4. TARJETAS DE ESPECIALIDADES Y PERFIL */
+/* 6. TARJETAS Y CONTENEDORES (Fondo gris azulado para contraste) */
 body.dark-mode .tarjeta, 
 body.dark-mode .tarjeta-foto,
 body.dark-mode .perfil-contenedor,
-body.dark-mode .tarjeta-servicio {
+body.dark-mode .tarjeta-servicio,
+body.dark-mode .bloque-introduccion {
     background-color: #1e293b;
     color: #f1f5f9;
     border: 1px solid #334155;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
-/* 5. TÍTULOS DENTRO DE TARJETAS (H3) - Resaltan en Naranja NOVA */
-body.dark-mode h3,
-body.dark-mode .tarjeta h3,
-body.dark-mode .tarjeta-foto h3,
-body.dark-mode .info-foto h3,
-body.dark-mode .tarjeta-servicio h3,
-body.dark-mode .perfil-info h3 {
-    color: #ff6b00 !important;
-}
-
-/* 6. PÁRRAFOS DENTRO DE LAS TARJETAS Y BIO */
+/* 7. TEXTOS DENTRO DE LAS TARJETAS */
 body.dark-mode .tarjeta p,
 body.dark-mode .info-foto p,
 body.dark-mode .tarjeta-servicio p,
@@ -514,25 +519,6 @@ body.dark-mode .badge-garantia {
 
 body.dark-mode .badge-garantia p {
     color: #cbd5e1;
-}
-
-/* Botón flotante del menú */
-.btn-modo-oscuro {
-    background: #1e293b;
-    color: #ffffff;
-    border: 2px solid var(--naranja, #ff6b00);
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.85em;
-    margin-left: 15px;
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .btn-modo-oscuro {
-    background: var(--naranja, #ff6b00);
-    color: #0f172a;
 }
 
 /* Botón flotante del menú */
