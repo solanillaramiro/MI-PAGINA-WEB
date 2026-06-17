@@ -430,14 +430,15 @@
    MODO OSCURO - CORRECCIÓN REAL DE CONTRASTE OSCURO
    ======================================================= */
 
-/* 1. EL FONDO GLOBAL */
-body.dark-mode {
+/* 1. EL FONDO GLOBAL Y SECCIONES REBELDES 
+   Agregamos .seccion-galeria acá para oscurecer ese fondo iluminado */
+body.dark-mode,
+body.dark-mode .seccion-galeria {
     background-color: #0f172a !important;
     color: #f1f5f9 !important;
 }
 
-/* 2. OSCURECER LAS TARJETA BLANCAS (Calidad Certificada, Especialidades y Fotos)
-   Acá estaba el error. Ahora pasan a un azul noche muy oscuro en vez de gris claro */
+/* 2. OSCURECER LAS TARJETAS BLANCAS */
 body.dark-mode .badge-garantia,
 body.dark-mode .tarjeta,
 body.dark-mode .perfil-contenedor,
@@ -447,8 +448,7 @@ body.dark-mode .tarjeta-foto {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* 3. TÍTULOS EN NARANJA NOVA (Alta visibilidad sobre fondo oscuro)
-   "NOVA: El Futuro...", tus 4 especialidades (H4) y títulos de la galería */
+/* 3. TÍTULOS EN NARANJA NOVA */
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode .hero h3,
@@ -458,8 +458,7 @@ body.dark-mode .perfil-texto h3 {
     color: #ff6a00 !important;
 }
 
-/* 4. TEXTOS LARGOS EN BLANCO/GRIS CLARO (Para que se lean perfecto en la oscuridad)
-   Acá entran el párrafo del cosmos, el de leyes físicas, descripciones y bio */
+/* 4. TEXTOS LARGOS EN BLANCO/GRIS CLARO */
 body.dark-mode p,
 body.dark-mode .hero p,
 body.dark-mode .badge-garantia p,
