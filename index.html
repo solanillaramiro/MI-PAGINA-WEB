@@ -401,10 +401,10 @@
 
 /* Control de las imágenes de prueba */
 .tarjeta-foto img {
-    width: 100% !important;
-    height: 220px !important; /* Fuerza el freno de mano */
-    object-fit: cover !important; /* Fuerza el encuadre tipo cuadro */
-    display: block !important;
+    width: 100%;
+    height: 220px; /* Esto obliga a la foto a no medir más de 220px de alto */
+    object-fit: cover; /* Recorta la foto como un cuadro para que no se estire */
+    display: block;
 }
 
 /* Textos informativos debajo de cada foto */
@@ -494,18 +494,15 @@
         </div>
     </section>
 
-<!-- SECCIÓN SOBRE MÍ / PERFIL PROFESIONAL -->
     <section id="sobre-mi" class="seccion">
         <h2>Perfil Profesional</h2>
         
         <div class="perfil-contenedor">
-            <!-- Columna del Avatar temporal -->
             <div class="perfil-avatar">
                 <div class="avatar-placeholder">RS</div>
                 <small style="color: #718096;">Mendoza, Argentina</small>
             </div>
             
-            <!-- Columna del Texto -->
             <div class="perfil-texto">
                 <h3>Ramiro Solanilla</h3>
                 <div class="perfil-titulo">Técnico Electrónico Universitario | Especialista en Termodinámica</div>
@@ -514,7 +511,6 @@
                     Apasionado por la optimización energética y la rigurosidad técnica. Mi enfoque combina la precisión de la electrónica universitaria con la aplicación práctica de las leyes térmicas para ofrecer soluciones de climatización, estabilidad eléctrica y energías renovables de máxima eficiencia. Mi compromiso es garantizar la seguridad, el rendimiento óptimo y un respaldo certificado bajo normas de ingeniería en cada intervención, tanto en entornos residenciales como industriales.
                 </p>
                 
-                <!-- Botones prácticos y directos -->
                 <div class="perfil-enlaces">
                     <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20necesito%20una%20consulta%20técnica" class="btn-perfil btn-whatsapp-perfil" target="_blank">💬 WhatsApp Técnico</a>
                     <a href="mailto:solanillaramiro@gmail.com" class="btn-perfil btn-email">📧 Enviar Correo</a>
@@ -534,39 +530,37 @@
         </div>
     </section>
 
-<section id="galeria" class="seccion-galeria">
-    <h2>Mis Trabajos e Instalaciones</h2>
-    <p class="subtitulo-galeria">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
+    <section id="galeria" class="seccion-galeria">
+        <h2>Mis Trabajos e Instalaciones</h2>
+        <p class="subtitulo-galeria">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
 
-<!-- Tarjeta de Foto 1 -->
-    <!-- Tarjeta de Foto 1 -->
-<div class="tarjeta-foto">
-    <img src="https://i.postimg.cc/9F4g9f93/mantenimiento.jpg" alt="Mantenimiento de Sistemas">
-    <div class="info-foto">
-        <h3>Mantenimiento de Sistemas</h3>
-        <p>Diagnóstico de presión y optimización energética.</p>
-    </div>
-</div>
+        <div class="contenedor-grid">
+            
+            <div class="tarjeta-foto">
+                <img src="https://i.postimg.cc/9F4g9f93/mantenimiento.jpg" alt="Mantenimiento de Sistemas">
+                <div class="info-foto">
+                    <h3>Mantenimiento de Sistemas</h3>
+                    <p>Diagnóstico de presión y optimización energética.</p>
+                </div>
+            </div>
 
-<!-- Tarjeta de Foto 2 -->
-<div class="tarjeta-foto">
-    <img src="https://i.postimg.cc/zX3V7X6b/tablero.jpg" alt="Estabilidad Eléctrica">
-    <div class="info-foto">
-        <h3>Estabilidad Eléctrica</h3>
-        <p>Tableros de comando y control automatizado.</p>
-    </div>
-</div>
+            <div class="tarjeta-foto">
+                <img src="https://i.postimg.cc/zX3V7X6b/tablero.jpg" alt="Estabilidad Eléctrica">
+                <div class="info-foto">
+                    <h3>Estabilidad Eléctrica</h3>
+                    <p>Tableros de comando y control automatizado.</p>
+                </div>
+            </div>
 
-<!-- Tarjeta de Foto 3 -->
-<div class="tarjeta-foto">
-    <img src="https://i.postimg.cc/fRFp8vB6/termo.jpg" alt="Termodinámica Aplicada">
-    <div class="info-foto">
-        <h3>Termodinámica Aplicada</h3>
-        <p>Intervención y service de equipos de alta eficiencia.</p>
-    </div>
-</div>
-    </div>
-</section>
+            <div class="tarjeta-foto">
+                <img src="https://i.postimg.cc/fRFp8vB6/termo.jpg" alt="Termodinámica Aplicada">
+                <div class="info-foto">
+                    <h3>Termodinámica Aplicada</h3>
+                    <p>Intervención y service de equipos de alta eficiencia.</p>
+                </div>
+            </div>
+
+        </div> </section>
 
     <footer id="contacto">
         <div class="info-contacto">
