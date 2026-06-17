@@ -427,11 +427,11 @@
 }
 
 /* =======================================================
-   MODO OSCURO (INTERRUPTOR DE COLORES - CONTRASTE MEJORADO)
+   MODO OSCURO (INTERRUPTOR DE COLORES - REVISIÓN TOTAL)
    ======================================================= */
 
 /* Transición suave para cambiar sin que sople la vista */
-body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia, h2, h3 {
+body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia, h2, h3, p, span {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -441,17 +441,29 @@ body.dark-mode {
     color: #f1f5f9;
 }
 
-/* SOLUCIÓN AL TEXTO OSCURO: Aclaramos los títulos principales */
+/* 1. SOLUCIÓN A LOS TÍTULOS DE SECCIÓN (H2) */
 body.dark-mode h2, 
 body.dark-mode .seccion h2,
-body.dark-mode .seccion-galeria h2 {
+body.dark-mode .seccion-galeria h2,
+body.dark-mode #servicios h2,
+body.dark-mode #aliados h2,
+body.dark-mode #perfil h2 {
     color: #ffffff !important;
 }
 
-/* Aclaramos los subtítulos de las secciones */
+/* 2. SOLUCIÓN A LOS SUBTÍTULOS Y TEXTOS INICIALES */
 body.dark-mode .subtitulo-galeria,
-body.dark-mode .perfil-subtitulo {
-    color: #94a3b8; /* Gris claro sutil */
+body.dark-mode .perfil-subtitulo,
+body.dark-mode .hero-contenido p,
+body.dark-mode .intro-texto {
+    color: #94a3b8 !important; /* Gris claro nítido */
+}
+
+/* 3. SOLUCIÓN AL TEXTO LARGO DEL BLOQUE PRINCIPAL (HERO / INTRO) */
+body.dark-mode .hero-seccion p,
+body.dark-mode .bloque-texto p,
+body.dark-mode .seccion p {
+    color: #cbd5e1; /* Color gris claro de alta lectura */
 }
 
 body.dark-mode header {
@@ -460,31 +472,39 @@ body.dark-mode header {
 }
 
 body.dark-mode .seccion, 
-body.dark-mode .seccion-galeria {
+body.dark-mode .seccion-galeria,
+body.dark-mode #servicios,
+body.dark-mode #perfil {
     background-color: #0f172a;
 }
 
-/* Tarjetas con sus textos corregidos */
+/* 4. TARJETAS DE ESPECIALIDADES Y PERFIL */
 body.dark-mode .tarjeta, 
 body.dark-mode .tarjeta-foto,
-body.dark-mode .perfil-contenedor {
+body.dark-mode .perfil-contenedor,
+body.dark-mode .tarjeta-servicio {
     background-color: #1e293b;
     color: #f1f5f9;
     border: 1px solid #334155;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
-/* Forzamos a que los títulos dentro de las tarjetas se lean perfectos */
+/* 5. TÍTULOS DENTRO DE TARJETAS (H3) - Resaltan en Naranja NOVA */
+body.dark-mode h3,
 body.dark-mode .tarjeta h3,
 body.dark-mode .tarjeta-foto h3,
-body.dark-mode .info-foto h3 {
-    color: #ff6b00 !important; /* Resaltan en el naranja de NOVA */
+body.dark-mode .info-foto h3,
+body.dark-mode .tarjeta-servicio h3,
+body.dark-mode .perfil-info h3 {
+    color: #ff6b00 !important;
 }
 
+/* 6. PÁRRAFOS DENTRO DE LAS TARJETAS Y BIO */
 body.dark-mode .tarjeta p,
 body.dark-mode .info-foto p,
+body.dark-mode .tarjeta-servicio p,
 body.dark-mode .perfil-bio {
-    color: #cbd5e1; /* Gris claro para lectura cómoda */
+    color: #cbd5e1 !important;
 }
 
 body.dark-mode .badge-garantia {
@@ -494,6 +514,25 @@ body.dark-mode .badge-garantia {
 
 body.dark-mode .badge-garantia p {
     color: #cbd5e1;
+}
+
+/* Botón flotante del menú */
+.btn-modo-oscuro {
+    background: #1e293b;
+    color: #ffffff;
+    border: 2px solid var(--naranja, #ff6b00);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .btn-modo-oscuro {
+    background: var(--naranja, #ff6b00);
+    color: #0f172a;
 }
 
 /* Botón flotante del menú */
