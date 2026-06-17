@@ -402,8 +402,8 @@
 /* Control de las imágenes de prueba */
 .tarjeta-foto img {
     width: 100%;
-    height: 220px;
-    object-fit: cover; /* Clave: recorta y acomoda la foto para que nunca se estire ni se deforme */
+    height: 220px; /* Esto obliga a la foto a no medir más de 220px de alto */
+    object-fit: cover; /* Recorta la foto como un cuadro para que no se estire */
     display: block;
 }
 
