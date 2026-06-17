@@ -352,6 +352,80 @@
             .perfil-enlaces { justify-content: center; }
         }
 
+/* =================================================== */
+/* PASO 2: ESTILOS DE LA GALERÍA EN CUADRÍCULA (GRID)  */
+/* =================================================== */
+.seccion-galeria {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f7f6; /* Un fondo gris/celeste muy sutil para separar secciones */
+}
+
+.seccion-galeria h2 {
+    color: #002855; /* Tu azul corporativo */
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.subtitulo-galeria {
+    color: #555555;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* El Contenedor Grid (La Magia del Diseño Adaptable) */
+.contenedor-grid {
+    display: grid;
+    /* Divide en columnas automáticamente: mínimo 280px por foto, si no entra, se acomoda sola abajo */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* El espacio exacto de separación entre las tarjetas */
+    max-width: 1100px;
+    margin: 0 auto; /* Centra todo el bloque en la pantalla */
+}
+
+/* Las Tarjetas de los Trabajos */
+.tarjeta-foto {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Corta las esquinas de la foto para que sigan el radio del borde */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Sombra suave para dar relieve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto visual cuando pasás el mouse por arriba de una foto */
+.tarjeta-foto:hover {
+    transform: translateY(-6px); /* Eleva la tarjeta sutilmente */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Aumenta la sombra */
+}
+
+/* Control de las imágenes de prueba */
+.tarjeta-foto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Clave: recorta y acomoda la foto para que nunca se estire ni se deforme */
+    display: block;
+}
+
+/* Textos informativos debajo de cada foto */
+.info-foto {
+    padding: 20px;
+    text-align: left; /* Texto alineado a la izquierda para mejor lectura */
+}
+
+.info-foto h3 {
+    color: #002855;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.info-foto p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
     </style>
 </head>
 <body>
@@ -459,6 +533,37 @@
             <div class="marca-item">LONGVIE<span>.SOLAR</span></div>
         </div>
     </section>
+
+<section id="galeria" class="seccion-galeria">
+    <h2>Mis Trabajos e Instalaciones</h2>
+    <p class="subtitulo-galeria">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
+
+    <div class="contenedor-grid">
+        <div class="tarjeta-foto">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500" alt="Instalación de climatización">
+            <div class="info-foto">
+                <h3>Mantenimiento de Sistemas</h3>
+                <p>Diagnóstico de presión y optimización energética.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta-foto">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500" alt="Tablero eléctrico industrial">
+            <div class="info-foto">
+                <h3>Estabilidad Eléctrica</h3>
+                <p>Tableros de comando y control automatizado.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta-foto">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500" alt="Análisis termodinámico">
+            <div class="info-foto">
+                <h3>Termodinámica Aplicada</h3>
+                <p>Intervención y service de equipos de alta eficiencia.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <footer id="contacto">
         <div class="info-contacto">
