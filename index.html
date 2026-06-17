@@ -426,8 +426,84 @@
     line-height: 1.4;
 }
 
+/* =======================================================
+   MODO OSCURO (INTERRUPTOR DE COLORES)
+   ======================================================= */
+
+/* Transición suave para cambiar sin que sople la vista */
+body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Colores para el Modo Oscuro */
+body.dark-mode {
+    background-color: #0f172a; /* Azul noche oscuro */
+    color: #f1f5f9;
+}
+
+body.dark-mode header {
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+body.dark-mode .seccion, 
+body.dark-mode .seccion-galeria {
+    background-color: #0f172a;
+}
+
+body.dark-mode .tarjeta, 
+body.dark-mode .tarjeta-foto,
+body.dark-mode .perfil-contenedor {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .tarjeta p,
+body.dark-mode .info-foto p,
+body.dark-mode .perfil-bio {
+    color: #cbd5e1;
+}
+
+body.dark-mode .badge-garantia {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+body.dark-mode .badge-garantia p {
+    color: #cbd5e1;
+}
+
+/* Botón flotante del menú */
+.btn-modo-oscuro {
+    background: #1e293b;
+    color: #ffffff;
+    border: 2px solid var(--naranja, #ff6b00);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .btn-modo-oscuro {
+    background: var(--naranja, #ff6b00);
+    color: #0f172a;
+}
+
     </style>
 </head>
+
+
+
+
+
+
+
+
 <body>
 
     <header>
@@ -440,6 +516,7 @@
             <a href="#servicios">Especialidades</a>
             <a href="#aliados">Aliados</a>
             <a href="#contacto">Contacto</a>
+            <button id="btn-color" class="btn-modo-oscuro">🌙 Modo Oscuro</button>
         </nav>
     </header>
 
@@ -571,6 +648,22 @@
         </div>
         <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales de Ingeniería Técnico.</p>
     </footer>
+
+<script>
+        const boton = document.getElementById('btn-color');
+
+        boton.addEventListener('click', () => {
+            // Activa o desactiva la clase dark-mode en el body
+            document.body.classList.toggle('dark-mode');
+            
+            // Cambia el texto del botón según el modo
+            if (document.body.classList.contains('dark-mode')) {
+                boton.innerHTML = "☀️ Modo Claro";
+            } else {
+                boton.innerHTML = "🌙 Modo Oscuro";
+            }
+        });
+    </script>
 
 </body>
 </html>
