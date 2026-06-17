@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu consulta! - NOVA</title>
+    <style>
+        :root {
+            --azul-oscuro: #001b3d;
+            --naranja: #ff6a00;
+            --blanco: #ffffff;
+            --gris-claro: #f4f7f6;
+            --texto: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gris-claro);
+            color: var(--texto);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .contenedor-gracias {
+            background: var(--blanco);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 500px;
+            width: 90%;
+            border-top: 5px solid var(--naranja);
+        }
+
+        h1 {
+            color: var(--azul-oscuro);
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #55657e;
+            margin-bottom: 30px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            text-decoration: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-volver:hover {
+            background-color: #002b5c;
+            transform: translateY(-1px);
+        }
+
+        /* Soporte nativo para modo oscuro si el usuario lo prefiere */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0f172a; color: #f1f5f9; }
+            .contenedor-gracias { background: #0b1329; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+            h1 { color: #ffffff; }
+            p { color: #cbd5e1; }
+            .btn-volver { background-color: var(--naranja); color: #0f172a; }
+            .btn-volver:hover { background-color: #e05e00; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-gracias">
+        <h1>¡Mensaje Enviado con Éxito!</h1>
+        <p>Gracias por comunicarte con <strong>NOVA Termodinámica Aplicada</strong>.<br>Hemos recibido tu consulta técnica correctamente y te responderemos a la brevedad.</p>
+        <a href="index.html" class="btn-volver">Volver al Sitio Principal</a>
+    </div>
+
+</body>
+</html>
