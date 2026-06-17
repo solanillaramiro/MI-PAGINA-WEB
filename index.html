@@ -427,39 +427,63 @@
 }
 
 /* =======================================================
-   MODO OSCURO - CORRECCIÓN QUIRÚRGICA DE LETRAS
+   MODO OSCURO - REVISIÓN TOTAL CON TU FONDO AZUL OSCURO
    ======================================================= */
 
-/* 1. Forzar los textos largos (Cosmos, Leyes Físicas y descripciones) a Blanco/Gris Claro */
-body.dark-mode p,
-body.dark-mode .bloque-texto p,
-body.dark-mode .info-foto p,
-body.dark-mode .tarjeta-servicio p,
-body.dark-mode section p {
-    color: #f1f5f9 !important; /* Blanco nítido */
+/* 1. EL FONDO GLOBAL (El azul oscuro que te gustaba) */
+body.dark-mode {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
 }
 
-/* 2. Forzar los títulos rebeldes (NOVA: El Futuro..., Especialidades, etc.) a Naranja */
+/* 2. LOS TÍTULOS REBELDES (Naranja NOVA) 
+   Esto va a pintar "NOVA: El Futuro...", tus 4 especialidades (H4) y los títulos de tus trabajos (H3) */
 body.dark-mode h3,
-body.dark-mode .bloque-texto h3,
+body.dark-mode h4,
+body.dark-mode .hero h3,
+body.dark-mode .tarjeta h4,
 body.dark-mode .info-foto h3,
-body.dark-mode .tarjeta-servicio h3,
-body.dark-mode section h3 {
-    color: #ff6b00 !important; /* El naranja NOVA idéntico al de tu modo claro */
+body.dark-mode .perfil-texto h3 {
+    color: #ff6a00 !important; /* El naranja exacto de tu paleta root */
 }
 
-/* 3. Forzar el nombre "Ramiro Solanilla" y títulos principales (H2) a Blanco */
+/* 3. LOS PÁRRAFOS Y TEXTOS LARGOS (Blanco Nítido / Gris Claro)
+   Esto incluye el párrafo del cosmos, el de leyes físicas, las descripciones y la bio */
+body.dark-mode p,
+body.dark-mode .hero p,
+body.dark-mode .badge-garantia p,
+body.dark-mode .tarjeta p,
+body.dark-mode .perfil-bio,
+body.dark-mode .subtitulo-galeria,
+body.dark-mode .info-foto p {
+    color: #cbd5e1 !important; /* Color gris claro de alta legibilidad nocturna */
+}
+
+/* 4. LOS TÍTULOS PRINCIPALES DE SECCIÓN (Blancos)
+   "Áreas de Especialización", "Perfil Profesional", "Mis Trabajos e Instalaciones" y tu nombre */
 body.dark-mode h2,
-body.dark-mode section h2,
-body.dark-mode #inicio h2 {
+body.dark-mode .seccion h2,
+body.dark-mode .seccion-galeria h2,
+body.dark-mode .hero h2 {
     color: #ffffff !important;
 }
 
-/* 4. El Botón flotante del menú */
+/* 5. AJUSTE DE CONTENEDORES PARA EL MODO OSCURO
+   Hacemos que las tarjetas de especialidades, la galería y el perfil tengan un fondo gris oscuro integrado */
+body.dark-mode .tarjeta,
+body.dark-mode .badge-garantia,
+body.dark-mode .perfil-contenedor,
+body.dark-mode .tarjeta-foto {
+    background-color: #1e293b !important; /* Gris azulado para generar contraste con el fondo azul de la página */
+    border-color: #334155 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 6. EL BOTÓN FLOTANTE DEL MENÚ */
 .btn-modo-oscuro {
     background: #1e293b;
     color: #ffffff;
-    border: 2px solid #ff6b00;
+    border: 2px solid #ff6a00;
     padding: 6px 12px;
     border-radius: 20px;
     cursor: pointer;
@@ -469,7 +493,7 @@ body.dark-mode #inicio h2 {
     transition: all 0.3s ease;
 }
 body.dark-mode .btn-modo-oscuro {
-    background: #ff6b00 !important;
+    background: #ff6a00 !important;
     color: #0f172a !important;
 }
 
