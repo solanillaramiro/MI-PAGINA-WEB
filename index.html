@@ -427,63 +427,35 @@
 }
 
 /* =======================================================
-   MODO OSCURO - CORRECCIÓN DE CONTRASTE FORZADA
+   MODO OSCURO - CORRECCIÓN QUIRÚRGICA DE LETRAS
    ======================================================= */
 
-/* Transición suave global */
-body, header, section, div, h2, h3, p, span, a {
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
-}
-
-/* Fondo general de la página */
-body.dark-mode {
-    background-color: #0f172a !important;
-    color: #f1f5f9 !important;
-}
-
-/* 1. FORZAR TODOS LOS PÁRRAFOS Y TEXTOS LARGOS A BLANCO/GRIS CLARO */
-/* Esto va a arreglar el párrafo del cosmos, el de leyes físicas y el de las especialidades */
+/* 1. Forzar los textos largos (Cosmos, Leyes Físicas y descripciones) a Blanco/Gris Claro */
 body.dark-mode p,
-body.dark-mode span,
 body.dark-mode .bloque-texto p,
+body.dark-mode .info-foto p,
 body.dark-mode .tarjeta-servicio p,
 body.dark-mode section p {
-    color: #e2e8f0 !important; /* Blanco hueso de alta visibilidad */
+    color: #f1f5f9 !important; /* Blanco nítido */
 }
 
-/* 2. FORZAR LOS TÍTULOS DE LAS ESPECIALIDADES Y REBELDES A NARANJA */
-/* Esto va a pintar "NOVA: El Futuro...", "Refrigeración y Climatización", etc. */
+/* 2. Forzar los títulos rebeldes (NOVA: El Futuro..., Especialidades, etc.) a Naranja */
 body.dark-mode h3,
 body.dark-mode .bloque-texto h3,
+body.dark-mode .info-foto h3,
 body.dark-mode .tarjeta-servicio h3,
 body.dark-mode section h3 {
-    color: #ff6b00 !important; /* El naranja encendido de tu segunda imagen */
+    color: #ff6b00 !important; /* El naranja NOVA idéntico al de tu modo claro */
 }
 
-/* 3. TÍTULOS PRINCIPALES DE LAS SECCIONES A BLANCO ENÉRGICO */
+/* 3. Forzar el nombre "Ramiro Solanilla" y títulos principales (H2) a Blanco */
 body.dark-mode h2,
 body.dark-mode section h2,
-body.dark-mode .seccion h2 {
+body.dark-mode #inicio h2 {
     color: #ffffff !important;
 }
 
-/* 4. FONDOS DE SECCIONES Y CONTENEDORES */
-body.dark-mode header {
-    background-color: #1e293b !important;
-    border-bottom: 1px solid #334155 !important;
-}
-
-body.dark-mode section,
-body.dark-mode .seccion,
-body.dark-mode .seccion-galeria,
-body.dark-mode .bloque-introduccion,
-body.dark-mode .tarjeta-servicio,
-body.dark-mode .perfil-contenedor,
-body.dark-mode .tarjeta-foto {
-    background-color: #1e293b !important; /* Gris azulado para que contraste con el fondo de la página */
-}
-
-/* Botón del menú */
+/* 4. El Botón flotante del menú */
 .btn-modo-oscuro {
     background: #1e293b;
     color: #ffffff;
@@ -496,7 +468,6 @@ body.dark-mode .tarjeta-foto {
     margin-left: 15px;
     transition: all 0.3s ease;
 }
-
 body.dark-mode .btn-modo-oscuro {
     background: #ff6b00 !important;
     color: #0f172a !important;
