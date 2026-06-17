@@ -427,18 +427,31 @@
 }
 
 /* =======================================================
-   MODO OSCURO (INTERRUPTOR DE COLORES)
+   MODO OSCURO (INTERRUPTOR DE COLORES - CONTRASTE MEJORADO)
    ======================================================= */
 
 /* Transición suave para cambiar sin que sople la vista */
-body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia {
+body, header, section, .tarjeta, .tarjeta-foto, footer, .badge-garantia, h2, h3 {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Colores para el Modo Oscuro */
+/* Colores generales para el Modo Oscuro */
 body.dark-mode {
     background-color: #0f172a; /* Azul noche oscuro */
     color: #f1f5f9;
+}
+
+/* SOLUCIÓN AL TEXTO OSCURO: Aclaramos los títulos principales */
+body.dark-mode h2, 
+body.dark-mode .seccion h2,
+body.dark-mode .seccion-galeria h2 {
+    color: #ffffff !important;
+}
+
+/* Aclaramos los subtítulos de las secciones */
+body.dark-mode .subtitulo-galeria,
+body.dark-mode .perfil-subtitulo {
+    color: #94a3b8; /* Gris claro sutil */
 }
 
 body.dark-mode header {
@@ -451,6 +464,7 @@ body.dark-mode .seccion-galeria {
     background-color: #0f172a;
 }
 
+/* Tarjetas con sus textos corregidos */
 body.dark-mode .tarjeta, 
 body.dark-mode .tarjeta-foto,
 body.dark-mode .perfil-contenedor {
@@ -460,10 +474,17 @@ body.dark-mode .perfil-contenedor {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
+/* Forzamos a que los títulos dentro de las tarjetas se lean perfectos */
+body.dark-mode .tarjeta h3,
+body.dark-mode .tarjeta-foto h3,
+body.dark-mode .info-foto h3 {
+    color: #ff6b00 !important; /* Resaltan en el naranja de NOVA */
+}
+
 body.dark-mode .tarjeta p,
 body.dark-mode .info-foto p,
 body.dark-mode .perfil-bio {
-    color: #cbd5e1;
+    color: #cbd5e1; /* Gris claro para lectura cómoda */
 }
 
 body.dark-mode .badge-garantia {
