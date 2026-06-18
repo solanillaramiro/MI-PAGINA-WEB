@@ -84,6 +84,11 @@
         }
         .logo-texto span { color: #ff6a00; }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a { 
             color: #ffffff; 
             margin-left: 20px; 
@@ -95,6 +100,41 @@
             border-radius: 4px;
         }
         nav a:hover { color: #001b3d; background-color: #ffffff; }
+
+        .btn-modo-oscuro {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            box-sizing: border-box;
+        }
+        
+        .btn-modo-oscuro:hover { 
+            border-color: #ff6a00; 
+            background: rgba(255, 106, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        body.dark-mode .btn-modo-oscuro { 
+            border-color: rgba(255, 255, 255, 0.25);
+            background: transparent;
+            color: #ffffff;
+        }
+        
+        body.dark-mode .btn-modo-oscuro:hover {
+            border-color: #ff6a00;
+            background: rgba(255, 106, 0, 0.1);
+        }
 
         .hero { 
             background: linear-gradient(135deg, #001b3d 0%, #0a2d56 100%);
@@ -184,21 +224,6 @@
         .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: #ffffff; }
         .info-contacto span { display: flex; align-items: center; gap: 8px; }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 20px 15px; gap: 15px; }
-            .logo-contenedor { flex-direction: column; gap: 10px; }
-            .logo-img { height: 110px; margin: 0 auto; }
-            .logo-texto { font-size: 1.5em; }
-            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
-            nav a { margin: 0; padding: 6px 12px; font-size: 0.95em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
-            .hero { padding: 60px 15px; }
-            .hero h2 { font-size: 2.2em; }
-            .hero h3 { font-size: 1.2em; }
-            .hero p { font-size: 1.05em; }
-            body { background-position: center bottom; background-size: 100%; }
-            .tarjeta { width: 100%; }
-        }
-
         .perfil-contenedor {
             display: flex;
             align-items: center;
@@ -241,12 +266,6 @@
         .btn-whatsapp-perfil { background-color: #25d366; color: #ffffff; }
         .btn-whatsapp-perfil:hover { background-color: #128c7e; }
 
-        @media (max-width: 768px) {
-            .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 20px; }
-            .perfil-bio { text-align: center; }
-            .perfil-enlaces { justify-content: center; }
-        }
-
         .seccion-galeria { padding: 60px 20px; text-align: center; background-color: var(--gris-claro); transition: background-color 0.3s; }
         .seccion-galeria h2 { color: var(--texto-principal); font-size: 1.8rem; margin-bottom: 8px; font-weight: bold; }
         .subtitulo-galeria { color: var(--texto-mutado); font-size: 1rem; margin-bottom: 40px; }
@@ -281,19 +300,24 @@
         body.dark-mode .btn-enviar { background-color: #ff6a00; color: #0f172a; }
         .btn-enviar:hover { background-color: #0a2d56; transform: translateY(-1px); }
 
-        .btn-modo-oscuro {
-            background: #1e293b;
-            color: #ffffff;
-            border: 2px solid #ff6a00;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 0.85em;
-            margin-left: 15px;
-            transition: all 0.3s ease;
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 20px 15px; gap: 15px; }
+            .logo-contenedor { flex-direction: column; gap: 10px; }
+            .logo-img { height: 110px; margin: 0 auto; }
+            .logo-texto { font-size: 1.5em; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            nav a { margin: 0; padding: 6px 12px; font-size: 0.95em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+            .btn-modo-oscuro { margin-left: 5px; width: 34px; height: 34px; font-size: 1em; }
+            .hero { padding: 60px 15px; }
+            .hero h2 { font-size: 2.2em; }
+            .hero h3 { font-size: 1.2em; }
+            .hero p { font-size: 1.05em; }
+            body { background-position: center bottom; background-size: 100%; }
+            .tarjeta { width: 100%; }
+            .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 20px; }
+            .perfil-bio { text-align: center; }
+            .perfil-enlaces { justify-content: center; }
         }
-        body.dark-mode .btn-modo-oscuro { background: #ff6a00; color: #0f172a; }
     </style>
 </head>
 <body>
@@ -308,7 +332,7 @@
             <a href="#servicios">Especialidades</a>
             <a href="#aliados">Aliados</a>
             <a href="#contacto">Contacto</a>
-            <button id="btn-color" class="btn-modo-oscuro">🌙 Modo Oscuro</button>
+            <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
         </nav>
     </header>
 
@@ -326,7 +350,7 @@
                     ✨ NOVA: El Futuro de la Termodinámica Aplicada
                 </h4>
                 <p style="margin: 0; font-size: 0.92em; color: var(--texto-mutado); text-align: justify; line-height: 1.5;">
-                    En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identidad. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
+                    En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identity. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
                 </p>
             </div>
             
@@ -468,9 +492,9 @@
         boton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             if (document.body.classList.contains('dark-mode')) {
-                boton.innerHTML = "☀️ Modo Claro";
+                boton.innerHTML = "☀️";
             } else {
-                boton.innerHTML = "🌙 Modo Oscuro";
+                boton.innerHTML = "🌙";
             }
         });
     </script>
