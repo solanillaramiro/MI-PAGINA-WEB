@@ -101,21 +101,25 @@
         }
         nav a:hover { color: #001b3d; background-color: #ffffff; }
 
+        /* Botón Modo Oscuro: Ubicación absoluta fija arriba a la derecha */
         .btn-modo-oscuro {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 110; /* Por encima de todo */
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #ffffff;
-            padding: 6px 10px;
+            padding: 0;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.1em;
-            margin-left: 20px;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             box-sizing: border-box;
         }
         
@@ -126,7 +130,7 @@
         }
 
         body.dark-mode .btn-modo-oscuro { 
-            border-color: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.2);
             background: transparent;
             color: #ffffff;
         }
@@ -301,13 +305,22 @@
         .btn-enviar:hover { background-color: #0a2d56; transform: translateY(-1px); }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 20px 15px; gap: 15px; }
+            header { flex-direction: column; text-align: center; padding: 35px 15px 20px 15px; gap: 15px; }
             .logo-contenedor { flex-direction: column; gap: 10px; }
             .logo-img { height: 110px; margin: 0 auto; }
             .logo-texto { font-size: 1.5em; }
             nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
             nav a { margin: 0; padding: 6px 12px; font-size: 0.95em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
-            .btn-modo-oscuro { margin-left: 5px; width: 34px; height: 34px; font-size: 1em; }
+            
+            /* Ajuste del botón fijo en móviles */
+            .btn-modo-oscuro { 
+                top: 10px; 
+                right: 15px; 
+                width: 32px; 
+                height: 32px; 
+                font-size: 0.95em; 
+            }
+            
             .hero { padding: 60px 15px; }
             .hero h2 { font-size: 2.2em; }
             .hero h3 { font-size: 1.2em; }
@@ -327,12 +340,12 @@
             <img src="imagenes/logo-nova.png" alt="Logo NOVA Termodinámica Aplicada" class="logo-img">
             <h1 class="logo-texto">NOVA <span>Termodinámica Aplicada</span></h1>
         </div>
+        <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Especialidades</a>
             <a href="#aliados">Aliados</a>
             <a href="#contacto">Contacto</a>
-            <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
         </nav>
     </header>
 
@@ -350,7 +363,7 @@
                     ✨ NOVA: El Futuro de la Termodinámica Aplicada
                 </h4>
                 <p style="margin: 0; font-size: 0.92em; color: var(--texto-mutado); text-align: justify; line-height: 1.5;">
-                    En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identity. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
+                    En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identidad. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
                 </p>
             </div>
             
