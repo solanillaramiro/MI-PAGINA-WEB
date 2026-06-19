@@ -7,6 +7,8 @@
     
     <link rel="icon" type="image/png" href="imagenes/logo-nova.png">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         /* Paleta de colores NOVA */
         :root {
@@ -45,6 +47,8 @@
             background-size: 750px;
             background-attachment: fixed;
             transition: background-color 0.3s, color 0.3s;
+            /* Evita desbordamientos visuales raros durante las animaciones laterales */
+            overflow-x: hidden; 
         }
 
         header { 
@@ -214,7 +218,7 @@
         .tarjeta:hover { transform: translateY(-5px); border-top-color: #ff6a00; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
         .tarjeta h4 { color: var(--texto-principal); font-size: 1.3em; margin-top: 0; }
 
-        .sponsors { background: #001b3d; color: #ffffff; text-align: center; padding: 50px 20px; }
+        .sponsors { background: #001b3d; color: #ffffff; text-align: center; padding: 50px 20px; overflow: hidden; }
         .sponsors h3 { margin-bottom: 10px; color: #f1b80e; font-size: 1.5em; }
         .sponsors p { color: #94a3b8; font-size: 0.95em; margin-bottom: 25px; }
         .sponsors-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; opacity: 0.85; }
@@ -258,7 +262,7 @@
         .perfil-texto { flex: 3; }
         .perfil-texto h3 { margin-top: 0; color: var(--texto-principal); font-size: 1.6em; margin-bottom: 5px; }
         .perfil-titulo { color: #ff6a00; font-weight: 600; font-size: 1.1em; margin-bottom: 15px; }
-        .perfil-bio { color: var(--texto-mutated); text-align: justify; margin-bottom: 25px; }
+        .perfil-bio { color: var(--texto-mutado); text-align: justify; margin-bottom: 25px; }
         .perfil-enlaces { display: flex; gap: 15px; flex-wrap: wrap; }
 
         .btn-perfil { padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95em; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
@@ -355,7 +359,7 @@
         <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20vi%20tu%20web%20y%20quería%20hacerte%20una%20consulta" class="btn-whatsapp" target="_blank">📲 Contactar por WhatsApp</a>
     </section>
 
-    <div class="badge-garantia">
+    <div class="badge-garantia" data-aos="fade-up">
         <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
             <div style="flex: 1.2; min-width: 280px; padding-right: 15px; border-right: 1px solid var(--borde-tarjeta);">
                 <h4 style="margin: 0 0 10px 0; color: var(--texto-principal); font-size: 1.15em; letter-spacing: 0.5px;">
@@ -378,21 +382,21 @@
     </div>
 
     <section id="servicios" class="seccion">
-        <h2>Áreas de Especialización</h2>
+        <h2 data-aos="fade-up">Áreas de Especialización</h2>
         <div class="servicios-grid">
-            <div class="tarjeta">
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="100">
                 <h4>❄️ Refrigeración y Climatización</h4>
                 <p>Instalación, service integral y mantenimiento preventivo de sistemas de aire acondicionado, equipos inverter y cámaras frigoríficas con ajuste estricto de parámetros de fábrica.</p>
             </div>
-            <div class="tarjeta">
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="200">
                 <h4>⚡ Electricidad Domiciliaria e Industrial</h4>
                 <p>Montaje de tableros eléctricos, análisis de estabilidad de red, medición de corriente (amperaje), continuidad y puestas a tierra para garantizar la máxima seguridad edilicia.</p>
             </div>
-            <div class="tarjeta">
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="300">
                 <h4>🔬 Electrónica Aplicada</h4>
                 <p>Diagnóstico avanzado y reparación de placas de control electrónico, automatización de procesos y optimización de activos y maquinaria sensible.</p>
             </div>
-            <div class="tarjeta">
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="400">
                 <h4>☀️ Energías Renovables</h4>
                 <p>Estudios de consumo energético y diseño e instalación de paneles solares fotovoltaicos para una transición sustentable y un ahorro real en tu factura eléctrica.</p>
             </div>
@@ -400,8 +404,8 @@
     </section>
 
     <section id="sobre-mi" class="seccion">
-        <h2>Perfil Profesional</h2>
-        <div class="perfil-contenedor">
+        <h2 data-aos="fade-up">Perfil Profesional</h2>
+        <div class="perfil-contenedor" data-aos="fade-right">
             <div class="perfil-avatar">
                 <div class="avatar-placeholder">RS</div>
                 <small style="color: var(--texto-mutado);">Mendoza, Argentina</small>
@@ -421,36 +425,36 @@
     </section>
 
     <section id="aliados" class="sponsors">
-        <h3>Aliados Tecnológicos</h3>
-        <p>Instalación, diagnóstico y mantenimiento de sistemas bajo lineamientos de fabricantes líderes:</p>
+        <h3 data-aos="fade-up">Aliados Tecnológicos</h3>
+        <p data-aos="fade-up" data-aos-delay="100">Instalación, diagnóstico y mantenimiento de sistemas bajo lineamientos de fabricantes líderes:</p>
         <div class="sponsors-grid">
-            <div class="marca-item">SCHNEIDER<span>.E</span></div>
-            <div class="marca-item">BGH<span>.INVERTER</span></div>
-            <div class="marca-item">SIKA<span>.ENG</span></div>
-            <div class="marca-item">LONGVIE<span>.SOLAR</span></div>
+            <div class="marca-item" data-aos="zoom-in" data-aos-delay="200">SCHNEIDER<span>.E</span></div>
+            <div class="marca-item" data-aos="zoom-in" data-aos-delay="300">BGH<span>.INVERTER</span></div>
+            <div class="marca-item" data-aos="zoom-in" data-aos-delay="400">SIKA<span>.ENG</span></div>
+            <div class="marca-item" data-aos="zoom-in" data-aos-delay="500">LONGVIE<span>.SOLAR</span></div>
         </div>
     </section>
 
     <section id="galeria" class="seccion-galeria">
-        <h2>Mis Trabajos e Instalaciones</h2>
-        <p class="subtitulo-galeria">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
+        <h2 data-aos="fade-up">Mis Trabajos e Instalaciones</h2>
+        <p class="subtitulo-galeria" data-aos="fade-up" data-aos-delay="100">Una muestra de los servicios y diagnósticos técnicos realizados.</p>
 
         <div class="contenedor-grid">
-            <div class="tarjeta-foto">
+            <div class="tarjeta-foto" data-aos="fade-up" data-aos-delay="100">
                 <img src="imagenes/mantenimiento.png" alt="Mantenimiento de Sistemas">
                 <div class="info-foto">
                     <h3>Mantenimiento de Sistemas</h3>
                     <p>Diagnóstico de presión y optimización energética.</p>
                 </div>
             </div>
-            <div class="tarjeta-foto">
+            <div class="tarjeta-foto" data-aos="fade-up" data-aos-delay="250">
                 <img src="imagenes/tablero.png" alt="Estabilidad Eléctrica">
                 <div class="info-foto">
                     <h3>Estabilidad Eléctrica</h3>
                     <p>Tableros de comando y control automatizado.</p>
                 </div>
             </div>
-            <div class="tarjeta-foto">
+            <div class="tarjeta-foto" data-aos="fade-up" data-aos-delay="400">
                 <img src="imagenes/termo.png" alt="Termodinámica Aplicada">
                 <div class="info-foto">
                     <h3>Termodinámica Aplicada</h3>
@@ -461,10 +465,10 @@
     </section>
 
     <section id="contacto" class="seccion">
-        <h2>Contactanos</h2>
-        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
+        <h2 data-aos="fade-up">Contactanos</h2>
+        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
         
-        <div class="contacto-contenedor">
+        <div class="contacto-contenedor" data-aos="fade-left">
             <form action="https://formsubmit.co/solanillaramiro@gmail.com" method="POST" class="formulario-contacto">
                 <input type="hidden" name="_next" value="https://mi-pagina-web-ktm6.vercel.app/gracias.html">
                 <input type="hidden" name="_captcha" value="false">
@@ -499,7 +503,16 @@
         <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales de Ingeniería Técnico.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+        // Inicialización de las animaciones AOS
+        AOS.init({
+            duration: 1000, // Duración de la animación (1 segundo)
+            once: true,     // La animación ocurre una sola vez al bajar (mejora el rendimiento)
+        });
+
+        // Script del Modo Oscuro (se mantiene intacto)
         const boton = document.getElementById('btn-color');
         boton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
