@@ -289,7 +289,7 @@
         .info-foto h3 { color: var(--texto-principal); font-size: 1.2rem; margin-bottom: 6px; font-weight: bold; }
         .info-foto p { color: var(--texto-mutado); font-size: 0.95rem; line-height: 1.4; }
 
-        /* NUEVO: Estilos de la Sección FAQ (Acordeón) */
+        /* Estilos de la Sección FAQ (Acordeón) */
         .seccion-faq {
             padding: 60px 20px;
             max-width: 850px;
@@ -347,7 +347,7 @@
             box-shadow: 0 4px 15px rgba(255,106,0,0.08);
         }
         .item-faq.activo .icono-faq {
-            transform: rotate(45deg); /* Gira el "+" convirtiéndolo en un "x" o asimilado */
+            transform: rotate(45deg); 
         }
         .item-faq.activo .respuesta-faq {
             padding: 20px 25px;
@@ -465,7 +465,8 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Especialidades</a>
-            <a href="#faq">Preguntas Frecuentes</a> <a href="#contacto">Contacto</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#contacto">Contacto</a>
         </nav>
         <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
     </header>
@@ -618,11 +619,11 @@
 
             <div class="item-faq">
                 <div class="pregunta-faq">
-                    ¿Realizan análisis de estabilidad eléctrica y tableros para industrias o comercios?
+                    ¿Realizan diagnósticos de fallas eléctricas y adecuación de tableros para comercios y hogares?
                     <span class="icono-faq">+</span>
                 </div>
                 <div class="respuesta-faq">
-                    Sí. Diseñamos, montamos y optimizamos tableros eléctricos de comando y control automatizado. Realizamos mediciones de puestas a tierra, continuidad y equilibrio de fases para evitar sobrecalentamientos en maquinarias sensibles y asegurar que tu instalación cumpla estrictamente con las normativas de seguridad edilicia vigentes.
+                    Sí. Realizamos la revisión, ordenamiento y mantenimiento preventivo de tableros eléctricos existentes, detección de fugas, cortocircuitos y equilibrio de cargas monofásicas o bifásicas. Nuestro objetivo es optimizar el consumo de tus equipos (evitando saltos térmicos imprevistos) y asegurar que tu instalación eléctrica responda de manera segura ante las exigencias de los sistemas de climatización modernos.
                 </div>
             </div>
 
@@ -719,7 +720,7 @@
             }
         });
 
-        // NUEVO: Script de la sección FAQ (Acordeón Interactivo)
+        // Script de la sección FAQ (Acordeón Interactivo)
         const preguntas = document.querySelectorAll('.pregunta-faq');
 
         preguntas.forEach(pregunta => {
@@ -727,7 +728,6 @@
                 const itemActual = pregunta.parentElement;
                 const respuestaActual = itemActual.querySelector('.respuesta-faq');
                 
-                // Opción estética: Cierra los otros acordeones abiertos al tocar uno nuevo
                 document.querySelectorAll('.item-faq').forEach(item => {
                     if (item !== itemActual && item.classList.contains('activo')) {
                         item.classList.remove('activo');
@@ -735,11 +735,9 @@
                     }
                 });
 
-                // Alterna el acordeón clickeado
                 itemActual.classList.toggle('activo');
 
                 if (itemActual.classList.contains('activo')) {
-                    // Calcula de manera dinámica la altura exacta que requiere el texto para desplegarse
                     respuestaActual.style.maxHeight = respuestaActual.scrollHeight + "px";
                 } else {
                     respuestaActual.style.maxHeight = null;
