@@ -26,7 +26,7 @@
 
         /* Variables para Modo Oscuro */
         body.dark-mode {
-            --azul-oscuro: #ff6a00; /* Inversión técnica de títulos */
+            --azul-oscuro: #ff6a00; 
             --gris-claro: #0f172a;
             --texto-principal: #f1f5f9;
             --texto-mutado: #cbd5e1;
@@ -275,7 +275,6 @@
 
         .contenedor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
         
-        /* CAMBIO: Se le agrega cursor pointer a la tarjeta para indicar que se puede hacer clic */
         .tarjeta-foto { 
             background: var(--fondo-tarjeta); 
             border-radius: 8px; 
@@ -289,6 +288,71 @@
         .info-foto { padding: 20px; text-align: left; }
         .info-foto h3 { color: var(--texto-principal); font-size: 1.2rem; margin-bottom: 6px; font-weight: bold; }
         .info-foto p { color: var(--texto-mutado); font-size: 0.95rem; line-height: 1.4; }
+
+        /* NUEVO: Estilos de la Sección FAQ (Acordeón) */
+        .seccion-faq {
+            padding: 60px 20px;
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+        .contenedor-acordeon {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .item-faq {
+            background: var(--fondo-tarjeta);
+            border: 1px solid var(--borde-tarjeta);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .pregunta-faq {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--texto-principal);
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        .pregunta-faq:hover {
+            background-color: rgba(255, 106, 0, 0.04);
+        }
+        .icono-faq {
+            font-size: 1.2rem;
+            color: #ff6a00;
+            transition: transform 0.3s ease;
+        }
+        .respuesta-faq {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            padding: 0 25px;
+            color: var(--texto-mutado);
+            font-size: 0.98rem;
+            border-top: 1px solid transparent;
+            text-align: justify;
+        }
+        /* Clases activas que maneja JavaScript */
+        .item-faq.activo {
+            border-color: #ff6a00;
+            box-shadow: 0 4px 15px rgba(255,106,0,0.08);
+        }
+        .item-faq.activo .icono-faq {
+            transform: rotate(45deg); /* Gira el "+" convirtiéndolo en un "x" o asimilado */
+        }
+        .item-faq.activo .respuesta-faq {
+            padding: 20px 25px;
+            border-top-color: var(--borde-tarjeta);
+        }
 
         .contacto-contenedor { max-width: 650px; margin: 0 auto; background: var(--fondo-tarjeta); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #001b3d; transition: background-color 0.3s; }
         body.dark-mode .contacto-contenedor { border-top-color: #ff6a00; }
@@ -312,7 +376,7 @@
         body.dark-mode .btn-enviar { background-color: #ff6a00; color: #0f172a; }
         .btn-enviar:hover { background-color: #0a2d56; transform: translateY(-1px); }
 
-        /* NUEVO: Estilos para el Lightbox (Pantalla Completa) */
+        /* Estilos para el Lightbox (Pantalla Completa) */
         .lightbox-modal {
             display: none; 
             position: fixed;
@@ -321,7 +385,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 17, 38, 0.92); /* Fondo oscuro NOVA */
+            background-color: rgba(0, 17, 38, 0.92); 
             align-items: center;
             justify-content: center;
             opacity: 0;
@@ -387,6 +451,7 @@
             .perfil-bio { text-align: center; }
             .perfil-enlaces { justify-content: center; }
             .lightbox-cerrar { top: 15px; right: 20px; font-size: 35px; }
+            .pregunta-faq { padding: 16px 20px; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -400,8 +465,7 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Especialidades</a>
-            <a href="#aliados">Aliados</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#faq">Preguntas Frecuentes</a> <a href="#contacto">Contacto</a>
         </nav>
         <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
     </header>
@@ -518,6 +582,53 @@
         </div> 
     </section>
 
+    <section id="faq" class="seccion-faq">
+        <h2 data-aos="fade-up">Preguntas Frecuentes</h2>
+        <div class="contenedor-acordeon" data-aos="fade-up" data-aos-delay="150">
+            
+            <div class="item-faq">
+                <div class="pregunta-faq">
+                    ¿Cada cuánto se recomienda realizar el mantenimiento de un sistema Inverter?
+                    <span class="icono-faq">+</span>
+                </div>
+                <div class="respuesta-faq">
+                    Para garantizar la máxima eficiencia energética y prolongar la vida útil de los componentes electrónicos, se recomienda un mantenimiento preventivo integral <strong>al menos una vez al año</strong> (idealmente antes del inicio de la temporada de verano o invierno). En entornos comerciales o industriales con alta exigencia, la revisión debe ser semestral. Esto incluye limpieza profunda de evaporadores, control de presión de refrigerante y verificación de consumos eléctricos.
+                </div>
+            </div>
+
+            <div class="item-faq">
+                <div class="pregunta-faq">
+                    ¿Cuánto es el ahorro real estimado al instalar paneles solares fotovoltaicos?
+                    <span class="icono-faq">+</span>
+                </div>
+                <div class="respuesta-faq">
+                    Mendoza cuenta con una de las mejores radiaciones solares del país. Dependiendo del tipo de instalación (On-Grid o híbrida) y de tus hábitos de consumo, podés reducir <strong>entre un 50% y un 80% el costo de tu factura eléctrica</strong>. Además, al optimizar la termodinámica general de la propiedad, el recupero de la inversión es altamente eficiente a mediano plazo.
+                </div>
+            </div>
+
+            <div class="item-faq">
+                <div class="pregunta-faq">
+                    ¿Las intervenciones técnicas incluyen un informe de parámetros o certificado de garantía?
+                    <span class="icono-faq">+</span>
+                </div>
+                <div class="respuesta-faq">
+                    <strong>Sí, absolutamente.</strong> Como pilar de rigurosidad de NOVA, cada servicio técnico, montaje de tablero o instalación finaliza con la entrega de un <strong>Informe Técnico Certificado</strong>. En él se detallan las mediciones de precisión realizadas (amperaje, aislamiento de puestas a tierra, presiones físicas), las acciones correctivas aplicadas y el período de garantía profesional que respalda el trabajo bajo normas de ingeniería.
+                </div>
+            </div>
+
+            <div class="item-faq">
+                <div class="pregunta-faq">
+                    ¿Realizan análisis de estabilidad eléctrica y tableros para industrias o comercios?
+                    <span class="icono-faq">+</span>
+                </div>
+                <div class="respuesta-faq">
+                    Sí. Diseñamos, montamos y optimizamos tableros eléctricos de comando y control automatizado. Realizamos mediciones de puestas a tierra, continuidad y equilibrio de fases para evitar sobrecalentamientos en maquinarias sensibles y asegurar que tu instalación cumpla estrictamente con las normativas de seguridad edilicia vigentes.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="contacto" class="seccion">
         <h2 data-aos="fade-up">Contactanos</h2>
         <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
@@ -582,33 +693,58 @@
             }
         });
 
-        // NUEVO: Script de la Galería Dinámica (Lightbox)
+        // Script de la Galería Dinámica (Lightbox)
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const botonCerrar = document.getElementById('lightbox-cerrar');
         const imagenesGaleria = document.querySelectorAll('.img-lightbox');
 
-        // Al hacer clic en cualquier imagen de la galería
         imagenesGaleria.forEach(imagen => {
             imagen.addEventListener('click', () => {
-                lightbox.classList.add('active'); // Muestra el fondo oscuro
-                lightboxImg.src = imagen.src;      // Copia la ruta de la foto clickeada
-                document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
+                lightbox.classList.add('active'); 
+                lightboxImg.src = imagen.src;      
+                document.body.style.overflow = 'hidden'; 
             });
         });
 
-        // Función para cerrar el Lightbox
         const cerrarLightbox = () => {
             lightbox.classList.remove('active');
-            document.body.style.overflow = ''; // Devuelve el scroll normal
+            document.body.style.overflow = ''; 
         };
 
-        // Eventos para cerrar (al tocar la X o al tocar el fondo oscuro)
         botonCerrar.addEventListener('click', cerrarLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 cerrarLightbox();
             }
+        });
+
+        // NUEVO: Script de la sección FAQ (Acordeón Interactivo)
+        const preguntas = document.querySelectorAll('.pregunta-faq');
+
+        preguntas.forEach(pregunta => {
+            pregunta.addEventListener('click', () => {
+                const itemActual = pregunta.parentElement;
+                const respuestaActual = itemActual.querySelector('.respuesta-faq');
+                
+                // Opción estética: Cierra los otros acordeones abiertos al tocar uno nuevo
+                document.querySelectorAll('.item-faq').forEach(item => {
+                    if (item !== itemActual && item.classList.contains('activo')) {
+                        item.classList.remove('activo');
+                        item.querySelector('.respuesta-faq').style.maxHeight = null;
+                    }
+                });
+
+                // Alterna el acordeón clickeado
+                itemActual.classList.toggle('activo');
+
+                if (itemActual.classList.contains('activo')) {
+                    // Calcula de manera dinámica la altura exacta que requiere el texto para desplegarse
+                    respuestaActual.style.maxHeight = respuestaActual.scrollHeight + "px";
+                } else {
+                    respuestaActual.style.maxHeight = null;
+                }
+            });
         });
     </script>
 </body>
