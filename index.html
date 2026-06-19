@@ -341,7 +341,6 @@
             border-top: 1px solid transparent;
             text-align: justify;
         }
-        /* Clases activas que maneja JavaScript */
         .item-faq.activo {
             border-color: #ff6a00;
             box-shadow: 0 4px 15px rgba(255,106,0,0.08);
@@ -352,6 +351,83 @@
         .item-faq.activo .respuesta-faq {
             padding: 20px 25px;
             border-top-color: var(--borde-tarjeta);
+        }
+
+        /* NUEVO: Estilos de la Sección de Testimonios Reales */
+        .seccion-testimonios {
+            padding: 60px 20px;
+            background: rgba(0, 27, 61, 0.03);
+            position: relative;
+            z-index: 2;
+            transition: background 0.3s;
+        }
+        body.dark-mode .seccion-testimonios {
+            background: rgba(15, 23, 42, 0.4);
+        }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+        }
+        .tarjeta-testimonio {
+            background: var(--fondo-tarjeta);
+            border: 1px solid var(--borde-tarjeta);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .tarjeta-testimonio:hover {
+            transform: translateY(-4px);
+        }
+        .estrellas {
+            color: #f1b80e;
+            font-size: 1.15em;
+            margin-bottom: 15px;
+        }
+        .texto-testimonio {
+            color: var(--texto-principal);
+            font-style: italic;
+            font-size: 0.98rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .autor-testimonio {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--borde-tarjeta);
+            padding-top: 15px;
+        }
+        .inicial-autor {
+            width: 40px;
+            height: 40px;
+            background: #0a2d56;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body.dark-mode .inicial-autor {
+            background: #ff6a00;
+            color: #0f172a;
+        }
+        .info-autor h5 {
+            margin: 0;
+            color: var(--texto-principal);
+            font-size: 0.95rem;
+        }
+        .info-autor span {
+            color: var(--texto-mutado);
+            font-size: 0.82rem;
         }
 
         .contacto-contenedor { max-width: 650px; margin: 0 auto; background: var(--fondo-tarjeta); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #001b3d; transition: background-color 0.3s; }
@@ -466,7 +542,7 @@
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Especialidades</a>
             <a href="#faq">Preguntas Frecuentes</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#testimonios">Opiniones</a> <a href="#contacto">Contacto</a>
         </nav>
         <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
     </header>
@@ -623,7 +699,66 @@
                     <span class="icono-faq">+</span>
                 </div>
                 <div class="respuesta-faq">
-                    Sí. Realizamos la revisión, ordenamiento y mantenimiento preventivo de tableros eléctricos existentes, detección de fugas, cortocircuitos y equilibrio de cargas monofásicas o bifásicas. Nuestro objetivo es optimizar el consumo de tus equipos (evitando saltos térmicos imprevistos) y asegurar que tu instalación eléctrica responda de manera segura ante las exigencias de los sistemas de climatización modernos.
+                    Sí. Realizamos la revisión, ordenamiento y mantenimiento preventivo de tableros eléctricos existentes, detección de fugas, cortoxicuitos y equilibrio de cargas monofásicas o bifásicas. Nuestro objetivo es optimizar el consumo de tus equipos (evitando saltos térmicos imprevistos) y asegurar que tu instalación eléctrica responda de manera segura ante las exigencias de los sistemas de climatización modernos.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="testimonios" class="seccion-testimonios">
+        <h2 data-aos="fade-up">Garantía y Experiencia en Mendoza</h2>
+        <p style="text-align: center; color: var(--texto-mutado);" data-aos="fade-up" data-aos-delay="100">
+            La confianza de quienes ya optimizaron la eficiencia energética de sus hogares y comercios.
+        </p>
+
+        <div class="testimonios-grid">
+            
+            <div class="tarjeta-testimonio" data-aos="fade-up" data-aos-delay="150">
+                <div>
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <p class="texto-testimonio">
+                        "Teníamos un problema crónico de saltos de térmica en el local cuando prendíamos los aires acondicionados grandes. Ramiro midió los consumos de línea con pinza amperométrica, reorganizó las cargas del tablero y nos dejó un informe detallado con todo solucionado. Un nivel de prolijidad técnica que no se ve en cualquiera."
+                    </p>
+                </div>
+                <div class="autor-testimonio">
+                    <div class="inicial-autor">C</div>
+                    <div class="info-autor">
+                        <h5>Carlos M.</h5>
+                        <span>Comercio en Godoy Cruz</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta-testimonio" data-aos="fade-up" data-aos-delay="250">
+                <div>
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <p class="texto-testimonio">
+                        "Excelente el service técnico del aire inverter. No solo lo limpió por completo, sino que usó instrumental digital para verificar presiones y consumo. Me dio el certificado de garantía del servicio impreso. Súper transparente y muy profesional."
+                    </p>
+                </div>
+                <div class="autor-testimonio">
+                    <div class="inicial-autor">E</div>
+                    <div class="info-autor">
+                        <h5>Elena R.</h5>
+                        <span>Particular en Las Heras</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta-testimonio" data-aos="fade-up" data-aos-delay="350">
+                <div>
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <p class="texto-testimonio">
+                        "Lo contacté para hacer un relevamiento del consumo de la casa para evaluar la colocación de paneles solares. Se nota el conocimiento universitario; el análisis fue súper riguroso, explicándome los plazos de recupero antes de vender por vender. Honestidad pura."
+                    </p>
+                </div>
+                <div class="autor-testimonio">
+                    <div class="inicial-autor">J</div>
+                    <div class="info-autor">
+                        <h5>Jorge B.</h5>
+                        <span>Domicilio en Maipú</span>
+                    </div>
                 </div>
             </div>
 
