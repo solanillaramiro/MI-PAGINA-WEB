@@ -26,7 +26,8 @@
 
         /* Variables para Modo Oscuro */
         body.dark-mode {
-            --azul-oscuro: #ff6a00; 
+            --azul-oscuro: #0b1329; 
+            --azul-medio: #1e293b;
             --gris-claro: #0f172a;
             --texto-principal: #f1f5f9;
             --texto-mutado: #cbd5e1;
@@ -43,15 +44,16 @@
             background-color: var(--gris-claro);
             background-image: url('imagenes/Fondo.png');
             background-repeat: no-repeat;
-            background-position: calc(100% + 250px) 450px;
-            background-size: 750px;
+            /* Posición base limpia para pantallas chicas y celulares */
+            background-position: right 30% bottom 10%;
+            background-size: 650px;
             background-attachment: fixed;
             transition: background-color 0.3s, color 0.3s;
             overflow-x: hidden; 
         }
 
         header { 
-            background: #001b3d; 
+            background: var(--azul-oscuro); 
             color: #ffffff; 
             padding: 15px 40px; 
             display: flex;
@@ -62,6 +64,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             position: relative;
             z-index: 100;
+            transition: background 0.3s;
         }
 
         .logo-contenedor {
@@ -102,7 +105,7 @@
             padding: 8px 14px;
             border-radius: 4px;
         }
-        nav a:hover { color: #001b3d; background-color: #ffffff; }
+        nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
 
         .btn-modo-oscuro {
             background: transparent;
@@ -353,7 +356,7 @@
             border-top-color: var(--borde-tarjeta);
         }
 
-        /* NUEVO: Estilos de la Sección de Testimonios Reales */
+        /* Estilos de la Sección de Testimonios Reales */
         .seccion-testimonios {
             padding: 60px 20px;
             background: rgba(0, 27, 61, 0.03);
@@ -528,6 +531,14 @@
             .perfil-enlaces { justify-content: center; }
             .lightbox-cerrar { top: 15px; right: 20px; font-size: 35px; }
             .pregunta-faq { padding: 16px 20px; font-size: 0.95rem; }
+        }
+
+        /* Ajuste de precisión exclusivo para pantallas de computadora */
+        @media (min-width: 1024px) {
+            body {
+                background-position: calc(100% + 180px) 20%;
+                background-size: 800px;
+            }
         }
     </style>
 </head>
