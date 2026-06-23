@@ -15,8 +15,8 @@
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--azul-oscuro);
-            /* Usamos Fondo.png como fondo de pantalla, ubicado abajo a la derecha como en la tarjeta */
-            background-image: url('Fondo.png');
+            /* CORREGIDO: Ruta apuntando a la carpeta imagenes */
+            background-image: url('imagenes/Fondo.png');
             background-repeat: no-repeat;
             background-position: bottom right;
             background-size: contain;
@@ -31,14 +31,14 @@
         }
 
         .contenedor-gracias {
-            background: rgba(255, 255, 255, 0.95); /* Blanco sutilmente traslúcido */
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border-top: 5px solid var(--naranja);
             max-width: 480px;
             text-align: center;
-            backdrop-filter: blur(5px); /* Efecto moderno de desenfoque de fondo */
+            backdrop-filter: blur(5px);
         }
 
         .logo-contenedor {
@@ -84,7 +84,6 @@
             box-shadow: 0 6px 15px rgba(255, 106, 0, 0.3);
         }
 
-        /* Ajuste para pantallas chicas para que no se pise el diseño con el fondo */
         @media (max-width: 600px) {
             body {
                 background-size: 60%;
@@ -98,9 +97,8 @@
 <body>
 
     <div class="contenedor-gracias">
-        <!-- Contenedor del Logo de NOVA -->
         <div class="logo-contenedor">
-            <img src="logo-nova.png" alt="NOVA Termodinámica Aplicada">
+            <img src="imagenes/logo-nova.png" alt="NOVA Termodinámica Aplicada">
         </div>
         
         <h1>¡Consulta Recibida!</h1>
