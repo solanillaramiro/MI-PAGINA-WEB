@@ -427,7 +427,7 @@
         .grupo-input { display: flex; flex-direction: column; gap: 8px; text-align: left; }
         .grupo-input label { font-weight: 600; color: var(--texto-principal); font-size: 0.95em; }
 
-        .grupo-input input, .grupo-input textarea { 
+        .grupo-input input, .grupo-input textarea, .grupo-input select {
             padding: 12px; 
             border: 1px solid var(--borde-tarjeta); 
             background-color: var(--fondo-tarjeta);

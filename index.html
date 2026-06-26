@@ -251,6 +251,19 @@
                     <label for="telefono">Teléfono / WhatsApp</label>
                     <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2615555555">
                 </div>
+
+                </div>
+                <div class="grupo-input">
+                    <label for="turno">Franja Horaria de Preferencia para el Servicio</label>
+                    <select id="turno" name="turno_preferido" required>
+                        <option value="" disabled selected>Seleccioná cuándo te queda mejor...</option>
+                        <option value="mañana_semana">Turno Mañana (08:00 a 12:00 hs) - Lun a Vie</option>
+                        <option value="tarde_semana">Turno Tarde (14:00 a 18:00 hs) - Lun a Vie</option>
+                        <option value="sabado_completo">Sábados (Disponibilidad Técnica Completa / Recomendado)</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+
                 <div class="grupo-input">
                     <label for="mensaje">Detalle de la Consulta Técnica</label>
                     <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí acá los detalles del servicio o diagnóstico que requerís..." required></textarea>
