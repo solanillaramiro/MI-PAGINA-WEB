@@ -167,4 +167,270 @@
 
         .hero h2 { font-size: 3em; margin-bottom: 10px; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero h3 { color: #f1b80e; font-weight: 400; margin-top: 0; letter-spacing: 1px; position: relative; z-index: 2; font-size: 1.4em; }
-        .hero p { max-width: 700px; margin
+        .hero p { max-width: 700px; margin: 20px auto; font-size: 1.25em; color: #cbd5e1; position: relative; z-index: 2; }
+
+        .btn-whatsapp { 
+            background: #ff6a00; 
+            color: #ffffff; 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+            transition: 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 106, 0, 0.6); }
+
+        .badge-garantia {
+            background: var(--fondo-tarjeta);
+            border-left: 5px solid #ff6a00;
+            padding: 30px;
+            max-width: 1000px;
+            margin: -40px auto 40px auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .seccion { padding: 60px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 2; }
+        .seccion h2 { text-align: center; color: var(--texto-principal); margin-bottom: 40px; position: relative; }
+        .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: #ff6a00; margin: 10px auto 0 auto; }
+
+        .servicios-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+        .tarjeta { 
+            background: var(--fondo-tarjeta);
+            border-radius: 8px; 
+            padding: 30px; 
+            width: 45%; 
+            min-width: 280px; 
+            box-sizing: border-box; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid #0a2d56;
+            transition: 0.3s;
+        }
+        body.dark-mode .tarjeta { border-top-color: #ff6a00; }
+        .tarjeta:hover { transform: translateY(-5px); border-top-color: #ff6a00; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .tarjeta h4 { color: var(--texto-principal); font-size: 1.3em; margin-top: 0; }
+
+        footer { background: #001126; color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.95em; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 10; }
+        .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: #ffffff; }
+        .info-contacto span { display: flex; align-items: center; gap: 8px; }
+
+        .perfil-contenedor {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--fondo-tarjeta);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #001b3d;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .perfil-contenedor { border-left-color: #ff6a00; }
+
+        .perfil-avatar { flex: 1; text-align: center; min-width: 200px; }
+        .avatar-placeholder {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #001b3d, #0a2d56);
+            color: #f1b80e;
+            font-size: 3em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            border: 4px solid #ff6a00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .perfil-texto { flex: 3; }
+        .perfil-texto h3 { margin-top: 0; color: var(--texto-principal); font-size: 1.6em; margin-bottom: 5px; }
+        .perfil-titulo { color: #ff6a00; font-weight: 600; font-size: 1.1em; margin-bottom: 15px; }
+        .perfil-bio { color: var(--texto-mutado); text-align: justify; margin-bottom: 25px; }
+        .perfil-enlaces { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn-perfil { padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95em; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-email { background-color: #0a2d56; color: #ffffff; }
+        .btn-email:hover { background-color: #001b3d; }
+        .btn-whatsapp-perfil { background-color: #25d366; color: #ffffff; }
+        .btn-whatsapp-perfil:hover { background-color: #128c7e; }
+
+        /* Estilos del Formulario de Contacto / Diagnóstico */
+        .seccion-contacto {
+            padding: 60px 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .formulario-contacto {
+            background: var(--fondo-tarjeta);
+            border: 1px solid var(--borde-tarjeta);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .grupo-campo {
+            margin-bottom: 20px;
+        }
+        .grupo-campo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+        .grupo-campo input, .grupo-campo select, .grupo-campo textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--borde-tarjeta);
+            border-radius: 4px;
+            background-color: var(--blanco);
+            color: var(--texto-principal);
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .grupo-campo input:focus, .grupo-campo select:focus, .grupo-campo textarea:focus {
+            outline: none;
+            border-color: #ff6a00;
+        }
+        .btn-enviar {
+            background-color: #001b3d;
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .btn-enviar:hover {
+            background-color: #ff6a00;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-contenedor">
+            <img src="imagenes/logo-nova.png" alt="Logo NOVA" class="logo-img">
+            <h1 class="logo-texto">NOVA <span>Termodinámica</span></h1>
+        </div>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#perfil">Sobre Mí</a>
+            <a href="#contacto">Contacto</a>
+            <button class="btn-modo-oscuro" id="toggle-dark" title="Cambiar Modo">🌙</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Ingeniería Térmica Avanzada</h2>
+        <h3>Soluciones Analíticas y Diagnóstico de Sistemas</h3>
+        <p>Especialistas en optimización termodinámica, mantenimiento electromecánico industrial y auditorías de eficiencia energética.</p>
+        <a href="https://wa.me/549261000000" class="btn-whatsapp" target="_blank">Consultar por WhatsApp</a>
+    </section>
+
+    <div class="badge-garantia" id="servicios">
+        <p style="margin:0; font-weight:600; color:var(--texto-principal);">🔬 Nota de Rigor Técnico: Todos nuestros diagnósticos se realizan bajo normativas internacionales y con instrumental calibrado de precisión analítica.</p>
+    </div>
+
+    <section class="seccion">
+        <h2>Nuestros Servicios Industriales</h2>
+        <div class="servicios-grid">
+            <div class="tarjeta" data-aos="fade-up">
+                <h4>1. Análisis y Simulación Termodinámica</h4>
+                <p>Evaluación de ciclos térmicos, pérdidas de calor en sistemas de vapor y optimización de intercambiadores analíticos.</p>
+            </div>
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="100">
+                <h4>2. Diagnóstico Electromecánico</h4>
+                <p>Mediciones de parámetros eléctricos en motores, tableros de potencia y mantenimiento preventivo sistemático.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion" id="perfil">
+        <h2>Dirección Técnico-Analítica</h2>
+        <div class="perfil-contenedor" data-aos="fade-right">
+            <div class="perfil-avatar">
+                <div class="avatar-placeholder">R</div>
+            </div>
+            <div class="perfil-texto">
+                <h3>Ing. Ramiro Sebastian Solanilla Mateu</h3>
+                <div class="perfil-titulo">Especialista en Sistemas Térmicos y Operaciones Industriales</div>
+                <p class="perfil-bio">
+                    Profesional enfocado en el diseño, control y optimización de procesos termodinámicos avanzados y mantenimiento técnico integral. Con amplia trayectoria en diagnósticos analíticos estructurados, garantizando altos estándares de eficiencia energética, seguridad operativa y resolución técnica en plantas de alta demanda.
+                </p>
+                <div class="perfil-enlaces">
+                    <a href="mailto:nova.termodinamica.aplicada@gmail.com" class="btn-perfil btn-email">📧 Contactar por Email</a>
+                    <a href="https://wa.me/549261000000" class="btn-perfil btn-whatsapp-perfil">💬 WhatsApp Directo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-contacto" id="contacto">
+        <h2>Formulario de Diagnóstico Técnico</h2>
+        <p style="text-align: center; color: var(--texto-mutado); margin-bottom: 30px;">Envianos los parámetros de tu solicitud y nuestro sistema analítico procesará tu caso de inmediato.</p>
+        
+        <form class="formulario-contacto" action="https://formsubmit.co/nova.termodinamica.aplicada@gmail.com" method="POST">
+            
+            <input type="hidden" name="_next" value="https://nova-soluciones.vercel.app/gracias.html">
+            
+            <div class="grupo-campo">
+                <label for="nombre">Nombre / Empresa:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Industrias Cuyo S.A.">
+            </div>
+            <div class="grupo-campo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="nombre@empresa.com">
+            </div>
+            <div class="grupo-campo">
+                <label for="servicio">Tipo de Requerimiento:</label>
+                <select id="servicio" name="servicio_requerido">
+                    <option value="auditoria_termica">Auditoría Termodinámica / Eficiencia</option>
+                    <option value="mantenimiento_electrico">Diagnóstico Electromecánico / Tableros</option>
+                    <option value="calibracion_instrumental">Calibración y Ensayos Analíticos</option>
+                    <option value="otro">Otras Consultas de Ingeniería</option>
+                </select>
+            </div>
+            <div class="grupo-campo">
+                <label for="mensaje">Especificaciones del Sistema / Parámetros:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Por favor detalla valores de operación (presión, temperatura, tensión, etc.) o la falla detectada..."></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar a Sistema Analítico</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="info-contacto">
+            <span>📍 Mendoza, Argentina</span>
+            <span>📧 nova.termodinamica.aplicada@gmail.com</span>
+        </div>
+        <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Lógica Modo Oscuro
+        const toggleBtn = document.getElementById('toggle-dark');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if(document.body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️';
+            } else {
+                toggleBtn.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
