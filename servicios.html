@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planes de Mantenimiento Inteligente - NOVA</title>
-    <!-- Mantenemos tus mismos estilos y librerías de animación -->
-    <link rel="stylesheet" href="css/estilos.css"> 
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-    <!-- 1. ENCABEZADO (Duplicamos tu menú para mantener consistencia) -->
     <header>
         <div class="logo-contenedor">
             <img src="imagenes/logo-nova.png" alt="Logo NOVA Termodinámica Aplicada" class="logo-img">
@@ -25,15 +23,13 @@
         </nav>
     </header>
 
-    <!-- 2. PROPUESTA DE VALOR DEL ABONO -->
-    <section class="seccion" style="padding-top: 120px;">
+    <section class="seccion" style="padding-top: 140px;">
         <h2 data-aos="fade-up">Programa de Mantenimiento Termodinámico Predictivo</h2>
-        <p style="text-align: center; color: var(--texto-mutado); max-width: 800px; margin: 0 auto 40px auto;" data-aos="fade-up" data-aos-delay="100">
+        <p style="text-align: center; color: var(--texto-mutado); max-width: 800px; margin: 0 auto 50px auto;" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">
             Rompemos la estacionalidad protegiendo tus equipos los 365 días del año. Un sistema diseñado para optimizar el consumo eléctrico, extender la vida útil de tus activos y garantizar disponibilidad técnica cuando más lo necesitás.
         </p>
 
-        <!-- Beneficios Clave del Modelo de Suscripción -->
-        <div class="servicios-contenedor" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+        <div class="servicios-contenedor">
             <div class="tarjeta" data-aos="zoom-in" data-aos-delay="200">
                 <h3>🔒 Tarifa Fija Asegurada</h3>
                 <p>Olvidate de los picos de precio en temporada alta. Tu abono mensual cubre las revisiones estacionales críticas de manera programada.</p>
@@ -49,21 +45,21 @@
         </div>
     </section>
 
-    <!-- 3. EL PROCESO AUTOMATIZADO -->
-    <section class="seccion" style="background-color: rgba(0,0,0,0.02);">
+    <section class="seccion">
         <h2 data-aos="fade-up">Cómo Funciona el Sistema NOVA</h2>
-        <div style="max-width: 900px; margin: 0 auto;" data-aos="fade-left">
-            <ol style="font-size: 1.1rem; line-height: 2; color: var(--texto-mutado);">
-                <li><strong>Suscripción Digital Automatizada:</strong> Vinculás tu tarjeta para el débito mensual. Sin transferencias manuales ni alertas de deuda.</li>
-                <li><strong>Asignación de Zona Geográfica:</strong> Agrupamos tu cuenta en un tablero optimizado por cercanía en Mendoza para reducir tiempos de respuesta.</li>
-                <li><strong>Reserva de Turno Inteligente:</strong> Cuando corresponda tu mes de revisión, el sistema te liberará los casilleros disponibles (Sábados recomendados) para coordinar la visita técnica.</li>
-                <li><strong>Alertas Predictivas:</strong> Notificaciones automáticas pre-temporada por mail/WhatsApp para verificar el rendimiento preventivo.</li>
-            </ol>
+        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up">Tecnología y logística aplicada para sacarte trabajo administrativo de encima.</p>
+        
+        <div class="contacto-contenedor" data-aos="fade-left" style="max-width: 800px; margin: 0 auto; padding: 30px;">
+            <ul style="list-style: none; padding: 0; margin: 0; color: var(--texto-principal); font-size: 1.1rem; line-height: 1.8;">
+                <li style="margin-bottom: 20px;"><strong>1. Suscripción Digital Automatizada:</strong> Vinculás tu tarjeta para el débito mensual de tu abono. Sin transferencias manuales ni alertas de deuda por WhatsApp.</li>
+                <li style="margin-bottom: 20px;"><strong>2. Asignación por Zonas:</strong> Agrupamos tu cuenta en nuestro tablero optimizado por cercanía geográfica en Mendoza para reducir tiempos de viaje y respuesta.</li>
+                <li style="margin-bottom: 20px;"><strong>3. Reserva de Turno Inteligente:</strong> Cuando corresponda tu mes de revisión, la web te liberará los casilleros disponibles (Sábados incluidos) para que elijas tu horario sin vueltas.</li>
+                <li style="margin-bottom: 20px;"><strong>4. Alertas Predictivas SMS/Mail:</strong> Notificaciones pre-temporada automatizadas para recordarte encender el sistema 15 minutos antes y verificar parámetros estacionales.</li>
+            </ul>
         </div>
     </section>
 
-    <!-- 4. FORMULARIO INTEGRADO CALIFICADO -->
-    <section id="formulario-avanzado" class="seccion">
+    <section id="contacto" class="seccion">
         <h2 data-aos="fade-up">Alta de Cliente / Solicitud de Abono</h2>
         <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up">Ingresá los detalles de tus activos térmicos para procesar tu plan a medida.</p>
         
@@ -72,7 +68,6 @@
                 <input type="hidden" name="_next" value="https://nova-soluciones.vercel.app/gracias.html">
                 <input type="hidden" name="_captcha" value="false">
 
-                <!-- Datos Identificatorios -->
                 <div class="grupo-input">
                     <label for="nombre">Nombre Completo / Razón Social</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez / Empresa S.A." required>
@@ -85,7 +80,7 @@
 
                 <div class="grupo-input">
                     <label for="zona">Zona / Localidad (Mendoza)</label>
-                    <select id="zona" name="zona_geografica" required>
+                    <select id="zona" name="zona_geografica" required style="width: 100%; padding: 12px; background: var(--bg-card); color: var(--texto-principal); border: 1px solid var(--border-color); border-radius: 6px;">
                         <option value="" disabled selected>Seleccioná tu ubicación...</option>
                         <option value="capital">Mendoza Capital</option>
                         <option value="godoy_cruz">Godoy Cruz</option>
@@ -96,10 +91,9 @@
                     </select>
                 </div>
 
-                <!-- Calificación de Equipos -->
                 <div class="grupo-input">
                     <label for="cantidad_equipos">Cantidad Total de Equipos bajo Abono</label>
-                    <select id="cantidad_equipos" name="cantidad_equipos" required>
+                    <select id="cantidad_equipos" name="cantidad_equipos" required style="width: 100%; padding: 12px; background: var(--bg-card); color: var(--texto-principal); border: 1px solid var(--border-color); border-radius: 6px;">
                         <option value="" disabled selected>Seleccioná cuántos equipos tenés...</option>
                         <option value="1">1 Equipo Hogar / Oficina</option>
                         <option value="2-3">2 a 3 Equipos</option>
@@ -110,7 +104,7 @@
 
                 <div class="grupo-input">
                     <label for="tipo_equipos">Categoría de los Activos</label>
-                    <select id="tipo_equipos" name="tipo_equipos" required>
+                    <select id="tipo_equipos" name="tipo_equipos" required style="width: 100%; padding: 12px; background: var(--bg-card); color: var(--texto-principal); border: 1px solid var(--border-color); border-radius: 6px;">
                         <option value="" disabled selected>¿Qué tecnología manejás?</option>
                         <option value="split_inverter">Aires Split / Inverter</option>
                         <option value="central_ducto">Sistemas Centrales por Conducto</option>
@@ -119,10 +113,9 @@
                     </select>
                 </div>
 
-                <!-- Bloque de Disponibilidad Operativa de Agenda -->
                 <div class="grupo-input">
                     <label for="turno_preferido">Franja Horaria Preferida para la Inspección Base</label>
-                    <select id="turno_preferido" name="turno_preferido" required>
+                    <select id="turno_preferido" name="turno_preferido" required style="width: 100%; padding: 12px; background: var(--bg-card); color: var(--texto-principal); border: 1px solid var(--border-color); border-radius: 6px;">
                         <option value="" disabled selected>Seleccioná el mejor momento...</option>
                         <option value="mañana_semana">Turno Mañana (08:00 a 12:00 hs) - Lun a Vie</option>
                         <option value="tarde_semana">Turno Tarde (14:00 a 18:00 hs) - Lun a Vie</option>
@@ -140,7 +133,6 @@
         </div>
     </section>
 
-    <!-- 5. PIE DE PÁGINA CONSISTENTE -->
     <footer>
         <div class="info-contacto">
             <span>📍 Cobertura en Mendoza, Argentina</span>
@@ -149,11 +141,3 @@
         </div>
         <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales</p>
     </footer>
-
-    <!-- LÓGICA DE ANIMACIÓN (Mismos scripts de la Home) -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-    </script>
-</body>
-</html>
