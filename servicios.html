@@ -7,19 +7,18 @@
     <link rel="icon" href="imagenes/logo-nova.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Ajuste para que el texto no toque los bordes en el celular */
-        @media (max-width: 600px) {
-            main { padding-left: 15px !important; padding-right: 15px !important; }
-        }
+        /* Animación para que los elementos aparezcan suavemente */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animar { animation: fadeIn 0.8s ease-out forwards; }
+
+        @media (max-width: 600px) { main { padding-left: 15px !important; padding-right: 15px !important; } }
         
-        /* Estilo corporativo para el recuadro de info */
-        .info-abono { 
-            background-color: #0b1e35; 
-            color: #ffffff; 
-            padding: 25px; 
-            border-radius: 10px; 
-            margin-bottom: 30px; 
-            text-align: left; 
+        .info-abono { background-color: #0b1e35; color: #ffffff; padding: 25px; border-radius: 10px; margin-bottom: 30px; text-align: left; }
+        
+        /* Panel inferior con contraste profesional */
+        .panel-detalle { 
+            margin-bottom: 30px; padding: 25px; border-left: 5px solid #ff6a00; 
+            background: #0b1e35; color: #ffffff; text-align: left; border-radius: 0 10px 10px 0;
         }
 
         .formulario-contacto { max-width: 600px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -27,6 +26,23 @@
         .grupo-input label { display: block; margin-bottom: 8px; font-weight: bold; }
         .grupo-input input, .grupo-input select, .grupo-input textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
         .btn-enviar { background: #ff6a00; color: white; border: none; padding: 15px 30px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; }
+        .titulo-estilo-nova {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: #0b1e35;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        /* ESTO ES LO QUE SOLUCIONA EL PROBLEMA EN EL CELULAR */
+        @media (max-width: 600px) {
+            .titulo-estilo-nova {
+                font-size: 2.2rem; /* Achicamos la letra para que entre bien */
+                letter-spacing: -1px; /* Ajustamos el espacio entre letras */
+            }
+        }
     </style>
 </head>
 <body>
@@ -42,33 +58,31 @@
     </header>
 
     <main style="padding-top: 150px; max-width: 800px; margin: 0 auto; text-align: center;">
-        <h2>Planes de Mantenimiento Inteligente</h2>
+        <h2 class="titulo-estilo-nova animar">Planes de Mantenimiento Inteligente</h2>
         
-        <section class="info-abono">
+        <section class="info-abono animar">
             <h3 style="color: #ff6a00; margin-top: 0;">¿Cómo funciona nuestro sistema de abonos?</h3>
             <p>En NOVA transformamos el gasto imprevisto en una cuota mensual predecible. Garantizás prioridad técnica y <strong>mantenimientos programados</strong> para evitar fallas críticas.</p>
             <ul style="margin: 15px 0;">
                 <li><strong>Aires Acondicionados:</strong> Desde $20.000/mes.</li>
                 <li><strong>Industrial / Eléctrico / Renovables:</strong> Presupuesto a medida.</li>
             </ul>
-            <a href="#que-es-mantenimiento" style="color: #ffffff; text-decoration: underline; font-weight: bold; font-size: 0.9em;">+ Ver qué incluye el mantenimiento programado</a>
         </section>
 
-        <section id="que-es-mantenimiento" style="margin-bottom: 30px; padding: 15px; border-left: 4px solid #ff6a00; background: #f9f9f9; text-align: left;">
-            <h4>¿En qué consiste el mantenimiento?</h4>
-            <p style="font-size: 0.9em;">Nuestro servicio integral incluye la visita técnica periódica donde realizamos: lavado profundo de equipos para eficiencia energética, control de presiones, revisión de sensores y ajuste de parámetros eléctricos. <strong>Tu tranquilidad es nuestra prioridad.</strong></p>
+        <!-- Panel mejorado con contraste -->
+        <section class="panel-detalle animar">
+            <h4 style="color: #ff6a00; margin-top: 0;">¿En qué consiste el mantenimiento?</h4>
+            <p style="font-size: 0.9em; margin: 0;">Nuestro servicio integral incluye la visita técnica periódica: lavado profundo de equipos, control de presiones, revisión de sensores y ajuste de parámetros eléctricos. <strong>Tu tranquilidad es nuestra prioridad.</strong></p>
         </section>
 
-        <section class="formulario-contacto">
+        <section class="formulario-contacto animar">
             <form action="https://formsubmit.co/nova.termodinamica.aplicada@gmail.com" method="POST">
                 <input type="hidden" name="_next" value="https://nova-soluciones.vercel.app/gracias.html">
                 <input type="hidden" name="_captcha" value="false">
-
                 <div class="grupo-input">
                     <label>Nombre Completo / Empresa</label>
                     <input type="text" name="nombre" required>
                 </div>
-
                 <div class="grupo-input">
                     <label>¿Qué servicio necesitás?</label>
                     <select name="especialidad" required>
@@ -78,12 +92,10 @@
                         <option value="energia">☀️ Energías Renovables</option>
                     </select>
                 </div>
-
                 <div class="grupo-input">
                     <label>Descripción de tus activos</label>
-                    <textarea name="descripcion" rows="3" placeholder="Ej: 3 Aires Split, Tablero eléctrico de planta, o Sistema de 10 paneles solares..." required></textarea>
+                    <textarea name="descripcion" rows="3" placeholder="Ej: 3 Aires Split, Tablero eléctrico, etc." required></textarea>
                 </div>
-
                 <button type="submit" class="btn-enviar">Solicitar Alta de Mantenimiento</button>
             </form>
         </section>

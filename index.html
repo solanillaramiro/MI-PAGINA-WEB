@@ -232,15 +232,14 @@
     </section>
 
     <section id="contacto" class="seccion">
-        <h2 data-aos="fade-up">Contactanos</h2>
-        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">Dejanos tu consulta técnica y te responderemos a la brevedad.</p>
+        <!-- Título agrandado con la clase titulo-seccion -->
+        <h2 data-aos="fade-up" class="titulo-seccion">Contactanos</h2>
         
-        <div style="text-align: center; margin-bottom: 35px;" data-aos="fade-up">
-            <a href="servicios.html" class="btn-enviar" style="text-decoration: none; display: inline-block; width: auto; padding: 14px 32px; background-color: #ff6a00; border-color: #ff6a00;">
-                ⚙️ ¿Buscás Mantenimiento Profesional? Solicitá tu Turno Acá
-            </a>
-        </div>
+        <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">
+            Dejanos tu consulta técnica y te responderemos a la brevedad.
+        </p>
         
+        <!-- Contenedor del formulario -->
         <div class="contacto-contenedor" data-aos="fade-left">
             <form action="https://formsubmit.co/nova.termodinamica.aplicada@gmail.com" method="POST" class="formulario-contacto">
                 <input type="hidden" name="_next" value="https://nova-soluciones.vercel.app/gracias.html">
@@ -268,6 +267,14 @@
 
                 <button type="submit" class="btn-enviar">Enviar Mensaje</button>
             </form>
+        </div>
+
+        <!-- El botón naranja movido al final del cuadro -->
+        <div style="text-align: center; margin-top: 35px;" data-aos="fade-up">
+            <p style="margin-bottom: 15px; color: var(--texto-mutado);">¿Necesitás cobertura recurrente?</p>
+            <a href="servicios.html" class="btn-enviar" style="text-decoration: none; display: inline-block; width: auto; padding: 14px 32px; background-color: #ff6a00; border-color: #ff6a00;">
+                ⚙️ ¿Buscás Mantenimiento Profesional? Solicitá tu Turno Acá
+            </a>
         </div>
     </section>
 
