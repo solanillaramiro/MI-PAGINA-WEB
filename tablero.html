@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - Panel de Control Administrativo</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Reutiliza tus estilos base -->
+    <style>
+        .admin-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header-tablero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ff6a00;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .header-tablero h1 { margin: 0; color: #333; }
+        .header-tablero span { color: #ff6a00; font-weight: bold; }
+        
+        /* Tarjetas de Métricas Financieras (Opción B/MRR) */
+        .metricas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card-metrica {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6a00;
+        }
+        .card-metrica.mora { border-left-color: #d9534f; }
+        .card-metrica h3 { margin: 0 0 10px 0; color: #666; font-size: 14px; text-transform: uppercase; }
+        .card-metrica p { margin: 0; font-size: 24px; font-weight: bold; color: #222; }
+
+        /* Tabla de Abonados Reales */
+        .tabla-clientes {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tabla-clientes th {
+            background-color: #222;
+            color: #fff;
+            text-align: left;
+            padding: 15px;
+        }
+        .tabla-clientes td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .tabla-clientes tr:hover { background-color: #f9f9f9; }
+        
+        /* Estados Visuales */
+        .badge {
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .badge.pendiente { background-color: #f0ad4e; color: #fff; }
+        .badge.realizada { background-color: #5cb85c; color: #fff; }
+        .badge.pago-ok { background-color: #d4edda; color: #155724; }
+        .badge.pago-error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body style="background-color: #f4f6f9;">
+
+    <div class="admin-container">
+        <!-- Encabezado del Sistema -->
+        <div class="header-tablero">
+            <h1>NOVA <span>Termodinámica Aplicada</span></h1>
+            <div><strong>Rol:</strong> Administrador Central</div>
+        </div>
+
+        <!-- Fila de Indicadores Macroeconómicos (MRR) -->
+        <div class="metricas-grid">
+            <div class="card-metrica">
+                <h3>Equipos Protegidos</h3>
+                <p>30 Equipos</p>
+            </div>
+            <div class="card-metrica">
+                <h3>MRR (Mensual Recurrente)</h3>
+                <p>$600.000,00</p>
+            </div>
+            <div class="card-metrica mora">
+                <h3>Mora en Alerta</h3>
+                <p>$240.000,00</p>
+            </div>
+        </div>
+
+        <!-- Listado Operativo de Abonados -->
+        <h2>Tablero General de Abonados Sincronizados</h2>
+        <table class="tabla-clientes">
+            <thead>
+                <tr>
+                    <th>Abonado / Empresa</th>
+                    <th>Zona</th>
+                    <th>Cant. Equipos</th>
+                    <th>Tecnología</th>
+                    <th>Estado Revisión</th>
+                    <th>Control de Pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Bodega Catena Zapata</strong></td>
+                    <td>Luján de Cuyo</td>
+                    <td>12</td>
+                    <td>Sistemas Mixtos</td>
+                    <td><span class="badge pendiente">Pendiente</span></td>
+                    <td><span class="badge pago-ok">🟢 Cobrado (MP)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Clínica de Cuyo</strong></td>
+                    <td>Capital</td>
+                    <td>8</td>
+                    <td>Sistemas Mixtos</td>
+                    <td><span class="badge pendiente">Pendiente</span></td>
+                    <td><span class="badge pago-ok">🟢 Cobrado (MP)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Estudio Contable Soler</strong></td>
+                    <td>Capital</td>
+                    <td>4</td>
+                    <td>Central por Ductos</td>
+                    <td><span class="badge realizada">Realizada</span></td>
+                    <td><span class="badge pago-ok">🟢 Cobrado (MP)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Heladería San Martín</strong></td>
+                    <td>Godoy Cruz</td>
+                    <td>3</td>
+                    <td>Refrigeración Comercial</td>
+                    <td><span class="badge pendiente">Pendiente</span></td>
+                    <td><span class="badge pago-error">🔴 Pago Rechazado</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Carlos Mendoza</strong></td>
+                    <td>Godoy Cruz</td>
+                    <td>2</td>
+                    <td>Split Inverter</td>
+                    <td><span class="badge pendiente">Pendiente</span></td>
+                    <td><span class="badge pago-ok">🟢 Cobrado (MP)</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
