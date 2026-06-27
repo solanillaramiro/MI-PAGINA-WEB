@@ -39,15 +39,23 @@
                     <label>Nombre Completo / Empresa</label>
                     <input type="text" name="nombre" required>
                 </div>
+
                 <div class="grupo-input">
-                    <label>Cantidad de Equipos</label>
-                    <select name="equipos">
-                        <option value="1">1 Equipo</option>
-                        <option value="2-5">2 a 5 Equipos</option>
-                        <option value="6+">Más de 6 Equipos</option>
+                    <label>¿Qué servicio necesitás?</label>
+                    <select name="especialidad" required>
+                        <option value="aire_acondicionado">❄️ Refrigeración y Climatización</option>
+                        <option value="electrico">⚡ Electricidad Industrial y Domiciliaria</option>
+                        <option value="electronico">🔬 Electrónica Aplicada</option>
+                        <option value="energia">☀️ Energías Renovables</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-enviar">Solicitar Alta de Cliente</button>
+
+                <div class="grupo-input">
+                    <label>Cantidad de Equipos / Activos</label>
+                    <input type="number" name="cantidad" placeholder="Ej: 3" required>
+                </div>
+
+                <button type="submit" class="btn-enviar">Solicitar Alta de Mantenimiento</button>
             </form>
         </section>
     </main>
