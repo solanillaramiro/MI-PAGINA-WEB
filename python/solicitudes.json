@@ -1,12 +1,119 @@
 [
-  {
-    "id": 1,
-    "fecha": "2026-06-28",
-    "estado": "pendiente",
-    "datos_contacto": {
-      "nombre": "Ramiro",
-      "especialidad": "aire_acondicionado",
-      "descripcion": "tengo 3 equipos"
+    {
+        "id": 1,
+        "fecha": "2026-06-28",
+        "estado": "atendido",
+        "datos_contacto": {
+            "nombre": "Ramiro",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "tengo 3 equipos"
+        }
+    },
+    {
+        "id": 2,
+        "fecha": "2026-06-28",
+        "estado": "atendido",
+        "datos_contacto": {
+            "nombre": "Electrónico",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "a ver si es cierto que funciona?"
+        }
+    },
+    {
+        "id": 3,
+        "fecha": "2026-06-28",
+        "estado": "atendido",
+        "datos_contacto": {
+            "nombre": "Jacinto",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "a ver si es cierto?"
+        }
+    },
+    {
+        "id": 4,
+        "fecha": "2026-06-28",
+        "estado": "atendido",
+        "datos_contacto": {
+            "nombre": "Eloisa",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "a ver ahora, espectativa"
+        }
+    },
+    {
+        "id": 5,
+        "fecha": "2026-06-28",
+        "estado": "atendido",
+        "datos_contacto": {
+            "nombre": "sebastian",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "esta tiene que andar..."
+        }
+    },
+    {
+        "id": 6,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Frodo",
+            "telefono": "2334753"
+        }
+    },
+    {
+        "id": 7,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Sam"
+        }
+    },
+    {
+        "id": 8,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Princesa",
+            "telefono": "1233466875",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "A ver otra cosa"
+        }
+    },
+    {
+        "id": 9,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Arwen",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "a ver a ver..."
+        }
+    },
+    {
+        "id": 10,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "princesa",
+            "telefono": "02615451550",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "alkajdflajsldfkj"
+        }
+    },
+    {
+        "id": 11,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "alfdjlajsdljs"
+        }
     }
-  }
 ]
