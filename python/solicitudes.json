@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "fecha": "2026-06-28",
+    "estado": "pendiente",
+    "datos_contacto": {
+      "nombre": "Ramiro",
+      "especialidad": "aire_acondicionado",
+      "descripcion": "tengo 3 equipos"
+    }
+  }
+]
