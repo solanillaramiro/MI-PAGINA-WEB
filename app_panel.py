@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder='.')
 
 # Definimos la ruta absoluta al archivo para evitar errores de ubicación
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_PATH = os.path.join(BASE_DIR, "python", "solicitudes.json")
+JSON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "python", "solicitudes.json")
 
 # Servir el archivo HTML del panel
 @app.route('/')
