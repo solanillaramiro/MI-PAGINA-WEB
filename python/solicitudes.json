@@ -2,51 +2,61 @@
     {
         "id": 1,
         "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
         "estado": "atendido",
-        "datos_contacto": {
-            "nombre": "Ramiro",
+        "datos": {
+            "nombre": "princesa",
+            "telefono": "02615451550",
             "especialidad": "aire_acondicionado",
-            "descripcion": "tengo 3 equipos"
+            "descripcion": "alkajdflajsldfkj"
         }
     },
     {
         "id": 2,
         "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
         "estado": "atendido",
-        "datos_contacto": {
+        "datos": {
             "nombre": "Electrónico",
-            "especialidad": "aire_acondicionado",
-            "descripcion": "a ver si es cierto que funciona?"
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "alfdjlajsdljs"
         }
     },
     {
         "id": 3,
         "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
         "estado": "atendido",
-        "datos_contacto": {
-            "nombre": "Jacinto",
-            "especialidad": "aire_acondicionado",
-            "descripcion": "a ver si es cierto?"
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "a ver si es cierto"
         }
     },
     {
         "id": 4,
         "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
         "estado": "atendido",
-        "datos_contacto": {
-            "nombre": "Eloisa",
+        "datos": {
+            "nombre": "Solanilla R",
+            "telefono": "02615451550",
             "especialidad": "aire_acondicionado",
-            "descripcion": "a ver ahora, espectativa"
+            "descripcion": "a ver si funciona.. abc"
         }
     },
     {
         "id": 5,
         "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
         "estado": "atendido",
-        "datos_contacto": {
-            "nombre": "sebastian",
+        "datos": {
+            "nombre": "princesa",
+            "telefono": "02615451550",
             "especialidad": "aire_acondicionado",
-            "descripcion": "esta tiene que andar..."
+            "descripcion": "alkajdflajsldfkj"
         }
     },
     {
@@ -55,8 +65,10 @@
         "tipo_origen": "contacto",
         "estado": "atendido",
         "datos": {
-            "nombre": "Frodo",
-            "telefono": "2334753"
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "alfdjlajsdljs"
         }
     },
     {
@@ -65,19 +77,22 @@
         "tipo_origen": "contacto",
         "estado": "atendido",
         "datos": {
-            "nombre": "Sam"
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "a ver si es cierto"
         }
     },
     {
         "id": 8,
         "fecha": "2026-06-28",
-        "tipo_origen": "contacto",
+        "tipo_origen": "mantenimiento",
         "estado": "atendido",
         "datos": {
-            "nombre": "Princesa",
-            "telefono": "1233466875",
+            "nombre": "Solanilla R",
+            "telefono": "02615451550",
             "especialidad": "aire_acondicionado",
-            "descripcion": "A ver otra cosa"
+            "descripcion": "a ver si funciona.. abc"
         }
     },
     {
@@ -86,10 +101,10 @@
         "tipo_origen": "contacto",
         "estado": "atendido",
         "datos": {
-            "nombre": "Arwen",
+            "nombre": "Victoria",
             "email": "solanillaramiro@gmail.com",
             "telefono": "02615451550",
-            "mensaje": "a ver a ver..."
+            "mensaje": "que tal?"
         }
     },
     {
@@ -114,6 +129,138 @@
             "email": "solanillaramiro@gmail.com",
             "telefono": "02615451550",
             "mensaje": "alfdjlajsdljs"
+        }
+    },
+    {
+        "id": 12,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "atendido",
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "a ver si es cierto"
+        }
+    },
+    {
+        "id": 13,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Solanilla R",
+            "telefono": "02615451550",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "a ver si funciona.. abc"
+        }
+    },
+    {
+        "id": 14,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Victoria",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "que tal?"
+        }
+    },
+    {
+        "id": 15,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "princesa",
+            "telefono": "02615451550",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "alkajdflajsldfkj"
+        }
+    },
+    {
+        "id": 16,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "alfdjlajsdljs"
+        }
+    },
+    {
+        "id": 17,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "a ver si es cierto"
+        }
+    },
+    {
+        "id": 18,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Solanilla R",
+            "telefono": "02615451550",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "a ver si funciona.. abc"
+        }
+    },
+    {
+        "id": 19,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Victoria",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "que tal?"
+        }
+    },
+    {
+        "id": 20,
+        "fecha": "2026-06-28",
+        "tipo_origen": "contacto",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Electrónico",
+            "email": "solanillaramiro@gmail.com",
+            "telefono": "02615451550",
+            "mensaje": "A ver desde el teléfono?"
+        }
+    },
+    {
+        "id": 21,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Electrónico",
+            "telefono": "02615451550",
+            "especialidad": "electrico",
+            "descripcion": "Tablero"
+        }
+    },
+    {
+        "id": 22,
+        "fecha": "2026-06-28",
+        "tipo_origen": "mantenimiento",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "sebastian",
+            "telefono": "02615451550",
+            "especialidad": "aire_acondicionado",
+            "descripcion": "ahora tiene que funcionar"
         }
     }
 ]
