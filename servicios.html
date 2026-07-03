@@ -77,16 +77,11 @@
 
         <section class="formulario-contacto animar">
             <form action="https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT" method="POST">
-                    
-                    <script>
-                    document.querySelector("form").addEventListener("submit", function() {
-                        setTimeout(function() {
-                        window.location.href = "https://nova-soluciones.vercel.app/gracias.html";
-                        }, 1000); // Esto redirige al usuario después de 1 segundo
-                    });
-                    </script>
+    
+                <input type="hidden" name="x-sheetmonkey-redirect" value="https://nova-soluciones.vercel.app/gracias.html">
+                <input type="hidden" name="origen" value="Web-Mantenimiento">
 
-                    <div class="grupo-input">
+                <div class="grupo-input">
                     <label>Nombre Completo / Empresa</label>
                     <input type="text" name="nombre" required>
                 </div>
@@ -105,10 +100,12 @@
                         <option value="energia">☀️ Energías Renovables</option>
                     </select>
                 </div>
+
                 <div class="grupo-input">
                     <label>Descripción de tus activos</label>
                     <textarea name="descripcion" rows="3" placeholder="Ej: 3 Aires Split, Tablero eléctrico, etc." required></textarea>
                 </div>
+
                 <button type="submit" class="btn-enviar">Solicitar Alta de Mantenimiento</button>
             </form>
         </section>
