@@ -242,14 +242,9 @@
         <!-- Contenedor del formulario -->
         <div class="contacto-contenedor" data-aos="fade-left">
             <form action="https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT" method="POST" class="formulario-contacto">
-                
-                <script>
-                document.querySelector("form").addEventListener("submit", function() {
-                    setTimeout(function() {
-                    window.location.href = "https://nova-soluciones.vercel.app/gracias.html";
-                    }, 1000); // Esto redirige al usuario después de 1 segundo
-                });
-                </script>
+    
+                <input type="hidden" name="x-sheetmonkey-redirect" value="https://nova-soluciones.vercel.app/gracias.html">
+                <input type="hidden" name="origen" value="Web-Contacto-Principal">
 
                 <div class="grupo-input">
                     <label for="nombre">Nombre Completo</label>
