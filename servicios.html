@@ -77,7 +77,15 @@
 
         <section class="formulario-contacto animar">
             <form action="https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT" method="POST">
-                <input type="hidden" name="_redirect" value="https://nova-soluciones.vercel.app/gracias.html">
+                    
+                    <script>
+                    document.querySelector("form").addEventListener("submit", function() {
+                        setTimeout(function() {
+                        window.location.href = "https://nova-soluciones.vercel.app/gracias.html";
+                        }, 1000); // Esto redirige al usuario después de 1 segundo
+                    });
+                    </script>
+
                     <div class="grupo-input">
                     <label>Nombre Completo / Empresa</label>
                     <input type="text" name="nombre" required>
