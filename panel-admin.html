@@ -10,7 +10,8 @@
         th { background-color: #ff6600; color: white; }
         h2 { color: #333; border-bottom: 2px solid #ff6600; display: inline-block; }
         .btn-atendido { background-color: #28a745; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
-        .fila-atendido { background-color: #e0e0e0 !important; color: #777; }
+        /* Esta clase hará que toda la fila cambie de color */
+        .fila-atendido { background-color: #e0e0e0; color: #777; }
     </style>
 </head>
 <body>
@@ -49,28 +50,27 @@
 
                 data.forEach(item => {
                     const esAtendido = item.estado !== 'pendiente';
-                    const clase = esAtendido ? 'class="fila-atendido"' : '';
                     const boton = esAtendido ? 'Atendido' : `<button class="btn-atendido" onclick="marcarAtendido(${item.id})">✅ Atender</button>`;
                     const d = item.datos || {};
 
                     let fila = document.createElement('tr');
+                    if (esAtendido) fila.className = 'fila-atendido';
+                    
                     fila.innerHTML = (item.tipo_origen === 'mantenimiento') 
-                        ? `<td ${clase}>${item.id}</td><td>${d.nombre || ''}</td><td>${d.telefono || ''}</td><td>${d.especialidad || ''}</td><td>${d.descripcion || ''}</td><td>${boton}</td>`
-                        : `<td ${clase}>${item.id}</td><td>${d.nombre || ''}</td><td>${d.telefono || ''}</td><td>${d.email || ''}</td><td>${d.mensaje || ''}</td><td>${boton}</td>`;
+                        ? `<td>${item.id}</td><td>${d.nombre || ''}</td><td>${d.telefono || ''}</td><td>${d.especialidad || ''}</td><td>${d.descripcion || ''}</td><td>${boton}</td>`
+                        : `<td>${item.id}</td><td>${d.nombre || ''}</td><td>${d.telefono || ''}</td><td>${d.email || ''}</td><td>${d.mensaje || ''}</td><td>${boton}</td>`;
                     
                     if (item.tipo_origen === 'mantenimiento') bodyMant.appendChild(fila);
                     else bodyCont.appendChild(fila);
                 });
             })
             .catch(err => console.error("Error crítico:", err));
-    </script>
 
-    <script>
-        // Esto refresca la página automáticamente cada 30 segundos
+        // Refresca la página automáticamente cada 30 segundos
         setInterval(function() {
             location.reload();
         }, 30000); 
-    </script>   
+    </script>
 
 </body>
 </html>
