@@ -69,7 +69,6 @@
             </ul>
         </section>
 
-        <!-- Panel mejorado con contraste -->
         <section class="panel-detalle animar">
             <h4 style="color: #ff6a00; margin-top: 0;">¿En qué consiste el mantenimiento?</h4>
             <p style="font-size: 0.9em; margin: 0;">Nuestro servicio integral incluye la visita técnica periódica: lavado profundo de equipos, control de presiones, revisión de sensores y ajuste de parámetros eléctricos. <strong>Tu tranquilidad es nuestra prioridad.</strong></p>
@@ -79,13 +78,17 @@
             <form action="https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT" method="POST">
     
                 <input type="hidden" name="origen" value="Alta-Mantenimiento">
-
                 <input type="hidden" name="x-sheetmonkey-redirect" value="https://nova-soluciones.vercel.app/gracias.html">
                 <input type="hidden" name="origen" value="Web-Mantenimiento">
 
                 <div class="grupo-input">
                     <label>Nombre Completo / Empresa</label>
                     <input type="text" name="nombre" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ej: contacto@empresa.com" required>
                 </div>
 
                 <div class="grupo-input">
