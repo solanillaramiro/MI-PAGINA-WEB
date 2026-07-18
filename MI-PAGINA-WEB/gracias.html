@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Consulta Recibida! | NOVA Termodinámica Aplicada</title>
+    <link rel="icon" href="imagenes/logo-nova.png" type="image/png">
+    <link rel="icon" type="image/png" href="imagenes/logo-nova.png">
+    <style>
+        :root {
+            --azul-oscuro: #001b3d;
+            --naranja: #ff6a00;
+            --gris-claro: #f4f7f9;
+            --texto-principal: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--azul-oscuro);
+            background-image: url('imagenes/Fondo.png');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: contain;
+            color: var(--texto-principal);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .contenedor-gracias {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-top: 5px solid var(--naranja);
+            max-width: 480px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-contenedor {
+            margin-bottom: 25px;
+        }
+
+        .logo-contenedor img {
+            max-width: 140px;
+            height: auto;
+        }
+
+        h1 { 
+            color: var(--azul-oscuro); 
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px; 
+            font-weight: 700;
+        }
+
+        p { 
+            color: #4a5568; 
+            line-height: 1.6; 
+            margin-bottom: 35px; 
+            font-size: 1.05rem;
+        }
+
+        .btn-volver {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 27, 61, 0.2);
+        }
+
+        .btn-volver:hover { 
+            background-color: var(--naranja);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 106, 0, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-size: 60%;
+            }
+            .contenedor-gracias {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-gracias">
+        <div class="logo-contenedor">
+            <img src="imagenes/logo-nova.png" alt="NOVA Termodinámica Aplicada">
+        </div>
+        
+        <h1>¡Consulta Recibida!</h1>
+        <p>Los datos han sido ingresados a nuestro sistema de diagnóstico analítico. Procesaremos los parámetros térmicos y eléctricos de tu solicitud y te contactaremos a la brevedad.</p>
+        
+        <a href="index.html" class="btn-volver">Volver al Inicio</a>
+    </div>
+
+</body>
+</html>
