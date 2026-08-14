@@ -29,7 +29,7 @@ body.dark-mode {
 body { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     margin: 0; 
-    padding-top: 90px; /* Espacio para que el header fijo no tape el contenido en PC */
+    padding-top: 100px; /* Espacio para el header fijo en PC */
     color: var(--texto-principal); 
     line-height: 1.6;
     background-color: var(--gris-claro);
@@ -49,15 +49,19 @@ header {
     width: 100%;
     z-index: 9999;
     background: var(--azul-oscuro); 
-    color: #ffffff; 
-    padding: 12px 30px; 
+    border-bottom: 4px solid var(--naranja);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Contenedor interno para centrar y limitar el ancho del menú en PC */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    border-bottom: 4px solid var(--naranja);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: background 0.3s;
 }
 
 .logo-contenedor {
@@ -67,21 +71,28 @@ header {
 }
 
 .logo-img {
-    height: 55px; 
+    height: 50px; 
     width: auto;
     object-fit: contain;
     display: block;
 }
 
 .logo-texto {
-    font-size: 1.6em; 
+    font-size: 1.5em; 
     font-weight: bold;
     letter-spacing: 0.5px;
     margin: 0;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    white-space: nowrap;
 }
 .logo-texto span { color: var(--naranja); }
+
+.header-derecha {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 nav {
     display: flex;
@@ -90,10 +101,10 @@ nav {
 
 nav a { 
     color: #ffffff; 
-    margin-left: 15px; 
+    margin-left: 10px; 
     text-decoration: none; 
     font-weight: 600; 
-    font-size: 1em;
+    font-size: 0.95em;
     transition: 0.3s;
     padding: 6px 12px;
     border-radius: 4px;
@@ -112,8 +123,8 @@ nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
     justify-content: center;
     width: 36px;
     height: 36px;
-    margin-left: 15px; 
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 .btn-modo-oscuro:hover { 
     border-color: var(--naranja); 
@@ -264,65 +275,56 @@ footer { background: #001126; color: #94a3b8; text-align: center; padding: 30px 
 
 /* --- DISEÑO RESPONSIVO (TELÉFONOS) --- */
 @media (max-width: 768px) {
-    /* Padding superior mayor en celular para que el header apilado no tape la página */
     body {
-        padding-top: 130px;
+        padding-top: 145px;
     }
 
-    header {
-        position: fixed !important;
+    .header-container {
         flex-direction: column; 
         align-items: center;
         text-align: center; 
-        padding: 12px 10px; 
-        gap: 10px; 
+        padding: 10px; 
+        gap: 8px; 
     }
 
     .logo-contenedor {
-        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        gap: 10px;
         width: 100%;
     }
 
     .logo-img { 
-        height: 40px !important; /* Mantiene el logo visible, compacto y fijo al scrollear */
+        height: 38px !important; 
     }
 
     .logo-texto { 
-        font-size: 1.3em; 
+        font-size: 1.25em; 
+    }
+
+    .header-derecha {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     nav { 
         display: flex; 
         flex-wrap: wrap; 
         justify-content: center; 
-        gap: 6px; 
-        width: 100%; 
+        gap: 4px; 
     }
 
     nav a { 
         margin: 0; 
-        padding: 5px 8px; 
-        font-size: 0.85em; 
-        background: rgba(255, 255, 255, 0.05); 
+        padding: 4px 8px; 
+        font-size: 0.8em; 
+        background: rgba(255, 255, 255, 0.08); 
         border-radius: 4px; 
     }
     
     .btn-modo-oscuro { 
-        position: absolute;
-        top: 10px; 
-        right: 12px; 
         width: 30px; 
         height: 30px; 
-        font-size: 0.85em; 
-        margin-left: 0;
+        font-size: 0.8em; 
     }
-    
-    .hero { padding: 50px 15px; }
-    .hero h2 { font-size: 2.1em; }
-    .tarjeta { width: 100%; }
-    .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 15px; }
-    .perfil-enlaces { justify-content: center; }
 }
