@@ -573,14 +573,50 @@ header {
     z-index: 9999;
 }
 
-/* 2. Aseguramos que en celulares también sea fijo y no se rompa */
+/* --- CORRECCIONES PARA MÓVIL --- */
 @media (max-width: 768px) {
-    body {
-        padding-top: 120px; /* En móvil el header suele ser más alto al apilarse */
-    }
-    
+    /* 1. Forzamos que todo el contenido del header quede centrado */
     header {
-        position: fixed !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8px 10px;
+    }
+
+    /* 2. Aseguramos que el contenedor del logo y el texto estén centrados */
+    .logo-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
+    }
+
+    /* 3. Hacemos aparecer un logo compacto en el header fijo al scrollear */
+    .logo-img {
+        height: 35px !important; /* Logo pequeño y elegante para la barra fija */
+        display: block !important;
+    }
+
+    /* 4. Ajustamos la barra de navegación para que los botones entren centrados */
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+
+    /* 5. Aumentamos el padding del body para que el contenido no quede tapado */
+    body {
+        padding-top: 110px; 
     }
 }
