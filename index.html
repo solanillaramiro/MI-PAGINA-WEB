@@ -6,25 +6,29 @@
     <title>NOVA Termodinámica Aplicada | Ingeniería y Servicios Técnicos</title>
     
     <link rel="icon" type="image/png" href="imagenes/logo-nova.png">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
 </head>
+
+<link rel="stylesheet" href="styles.css">
+
 <body>
 
     <header>
         <div class="logo-contenedor">
-            <!-- Reemplaza 'imagenes/logo.png' por la ruta real de tu archivo de logo -->
-            <img src="imagenes/logo.png" alt="Logo NOVA" class="logo-img">
-            <h1 class="logo-texto">NOVA <span>Termodinámica</span></h1>
+            <img src="imagenes/logo-nova.png" alt="Logo NOVA Termodinámica Aplicada" class="logo-img">
+            <h1 class="logo-texto">NOVA <span>Termodinámica Aplicada</span></h1>
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#mantenimiento">Mantenimiento</a>
+            <a href="#servicios">Especialidades</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#aliados">Garantía</a>
+            <a href="#contacto">Contacto Rápido</a>
+            <a href="servicios.html" style="color: #ff6a00; font-weight: bold;">Solicitar Mantenimiento</a>
         </nav>
-        <button id="btnModoOscuro" class="btn-modo-oscuro">🌙</button>
+        <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color">🌙</button>
     </header>
 
     <section id="inicio" class="hero">
@@ -89,7 +93,7 @@
                 <h3>Ramiro Solanilla</h3>
                 <div class="perfil-titulo">Técnico Electrónico Universitario | Especialista en Termodinámica</div>
                 <p class="perfil-bio">
-                    Apasionado por la optimización energética y la rigurosidad técnica. Mi enfoque combina la precisión de la electrónica universitaria con la aplicación práctica de las leyes térmicas para ofrecer soluciones de climatización, estabilidad eléctrica y energías renovables de máxima eficiencia. Mi compromiso es garantizar la seguridad, el rendimiento óptimo y un respaldo certificado bajo normas de ingeniería en cada intervención, tanto en entornos residenciales como industriales.
+                    Apasionado por la optimización energética y la rigurosidad técnica. Mi enfoque combina la precisión de la electrónica universitaria con la aplicación práctica de las leyes térmicas para ofrecer soluciones de climatización, estabilidad eléctrica y energías renovables de máxima eficiencia. Mi compromiso es garantizar la seguridad, el rendimiento óptimo y un respaldo certificado bajo normas de ingeniería en cada intervention, tanto en entornos residenciales como industriales.
                 </p>
                 <div class="perfil-enlaces">
                     <a href="https://wa.me/5492615451550?text=Hola%20Ramiro,%20necesito%20una%20consulta%20técnica" class="btn-perfil btn-whatsapp-perfil" target="_blank">💬 WhatsApp Técnico</a>
@@ -99,6 +103,7 @@
         </div>
     </section>
 
+    <!-- Sección de Instrumental y Respaldo Técnico Unificada -->
     <section id="aliados" class="sponsors">
         <h3 data-aos="fade-up">Instrumental y Diagnóstico de Precisión</h3>
         <p data-aos="fade-up" data-aos-delay="100">Garantía de calidad técnica: intervenciones realizadas con equipamiento de medición avanzado:</p>
@@ -110,6 +115,7 @@
             <div class="marca-item" data-aos="zoom-in" data-aos-delay="500">ELITECH<span>.DIGITAL</span></div>
         </div>
 
+        <!-- Bloque de Compromiso y Garantía adaptado al fondo oscuro -->
         <div style="max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 50px;">
             <h4 data-aos="fade-up" style="color: #f1b80e; font-size: 1.6em; margin-top: 0; margin-bottom: 10px;">Garantía y Seguridad en Mendoza</h4>
             <p data-aos="fade-up" data-aos-delay="100" style="color: #94a3b8; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95em;">
@@ -117,6 +123,7 @@
             </p>
 
             <div class="testimonios-grid" style="margin-top: 0;">
+                
                 <div class="tarjeta-testimonio" data-aos="fade-up" data-aos-delay="150" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08);">
                     <div>
                         <h4 style="margin: 0 0 15px 0; color: #ffffff; font-size: 1.2em; display: flex; align-items: center; gap: 8px;">🎓 Formación Universitaria</h4>
@@ -143,6 +150,7 @@
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -224,17 +232,21 @@
     </section>
 
     <section id="contacto" class="seccion">
+        <!-- Título agrandado con la clase titulo-seccion -->
         <h2 data-aos="fade-up" class="titulo-seccion">Contactanos</h2>
         
         <p style="text-align: center; color: var(--texto-mutado);" class="subtitulo-contacto" data-aos="fade-up" data-aos-delay="100">
             Dejanos tu consulta técnica y te responderemos a la brevedad.
         </p>
         
+        <!-- Contenedor del formulario -->
         <div class="contacto-contenedor" data-aos="fade-left">
             <form action="https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT" method="POST" class="formulario-contacto">
     
-                <input type="hidden" name="origen" value="Web-Contacto-Principal">
+                <input type="hidden" name="origen" value="Contacto-Rapido">
+
                 <input type="hidden" name="x-sheetmonkey-redirect" value="https://nova-soluciones.vercel.app/gracias.html">
+                <input type="hidden" name="origen" value="Web-Contacto-Principal">
 
                 <div class="grupo-input">
                     <label for="nombre">Nombre Completo</label>
@@ -260,6 +272,7 @@
             </form>
         </div>
 
+        <!-- El botón naranja movido al final del cuadro -->
         <div style="text-align: center; margin-top: 35px;" data-aos="fade-up">
             <p style="margin-bottom: 15px; color: var(--texto-mutado);">¿Necesitás cobertura recurrente?</p>
             <a href="servicios.html" class="btn-enviar" style="text-decoration: none; display: inline-block; width: auto; padding: 14px 32px; background-color: #ff6a00; border-color: #ff6a00;">
@@ -288,7 +301,7 @@
         // Inicialización de las animaciones AOS
         AOS.init({
             duration: 1000, 
-            once: true,    
+            once: true,     
         });
 
         // Script del Modo Oscuro
@@ -354,4 +367,3 @@
         });
     </script>
 </body>
-</html>
