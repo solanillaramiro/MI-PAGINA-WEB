@@ -29,7 +29,7 @@ body.dark-mode {
 body { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     margin: 0; 
-    padding-top: 100px; /* Espacio para el header fijo en PC */
+    padding-top: 75px; /* Altura exacta para evitar espacios blancos */
     color: var(--texto-principal); 
     line-height: 1.6;
     background-color: var(--gris-claro);
@@ -38,76 +38,61 @@ body {
     background-position: right 30% bottom 10%;
     background-size: 650px;
     background-attachment: fixed;
-    transition: background-color 0.3s, color 0.3s;
     overflow-x: hidden; 
 }
 
 header { 
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
     background: var(--azul-oscuro); 
-    border-bottom: 4px solid var(--naranja);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Contenedor interno para centrar y limitar el ancho del menú en PC */
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 40px;
     box-sizing: border-box;
+    border-bottom: 4px solid var(--naranja);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .logo-contenedor {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo-img {
-    height: 50px; 
+    height: 45px; 
     width: auto;
     object-fit: contain;
     display: block;
 }
 
 .logo-texto {
-    font-size: 1.5em; 
+    font-size: 1.4em; 
     font-weight: bold;
-    letter-spacing: 0.5px;
     margin: 0;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     white-space: nowrap;
 }
 .logo-texto span { color: var(--naranja); }
 
-.header-derecha {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 nav {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 nav a { 
     color: #ffffff; 
-    margin-left: 10px; 
     text-decoration: none; 
     font-weight: 600; 
     font-size: 0.95em;
-    transition: 0.3s;
     padding: 6px 12px;
     border-radius: 4px;
+    transition: 0.3s;
 }
 nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
 
@@ -117,14 +102,13 @@ nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
     color: #ffffff;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1em;
+    width: 36px;
+    height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    margin-left: 15px;
     transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 .btn-modo-oscuro:hover { 
     border-color: var(--naranja); 
