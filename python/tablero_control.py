@@ -5,7 +5,7 @@ import os
 from bs4 import BeautifulSoup
 
 EMAIL_USER = "nova.termodinamica.aplicada@gmail.com"
-EMAIL_PASS = "***REMOVED-APP-PASSWORD***"
+EMAIL_PASS = os.environ.get("NOVA_EMAIL_PASS")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Ahora siempre apunta a la carpeta /python/solicitudes.json
 ARCHIVO_SOLICITUDES = os.path.join(BASE_DIR, "solicitudes.json")
@@ -89,4 +89,6 @@ def leer_correos():
     except Exception as e: print(f"Error: {e}")
 
 if __name__ == "__main__":
+    if not EMAIL_PASS:
+        raise SystemExit("Falta la variable de entorno NOVA_EMAIL_PASS con la contraseña de aplicación de Gmail.")
     leer_correos()

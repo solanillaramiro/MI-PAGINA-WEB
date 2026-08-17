@@ -1,7 +1,9 @@
 import json
+import os
 import sys
 
-ARCHIVO_SOLICITUDES = "python/solicitudes.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ARCHIVO_SOLICITUDES = os.path.join(BASE_DIR, "solicitudes.json")
 
 def actualizar_estado(id_solicitud):
     with open(ARCHIVO_SOLICITUDES, "r", encoding="utf-8") as f:
