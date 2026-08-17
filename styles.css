@@ -16,6 +16,8 @@
 
         html {
             scroll-padding-top: var(--header-height); /* Evita que el header fijo tape los anclajes (#servicios, #contacto, etc.) */
+            overflow-x: hidden; /* Sin esto, en Chrome mobile el viewport usado para el header fijo (width:100%) se
+                                    ensancha hasta el contenido que se anima fuera de pantalla (AOS), cortando el menú */
         }
 
         /* Variables para Modo Oscuro */
@@ -515,23 +517,21 @@
         @media (max-width: 768px) {
             /* Header compacto: al quedar fijo (position: fixed) en todo momento,
                su altura le resta pantalla útil de forma permanente, así que en
-               celular se achica el logo y el menú pasa a una sola fila con scroll. */
+               celular se achica el logo y el menú se acomoda en filas cortas
+               (en vez de una sola fila con scroll horizontal, que quedaba con
+               botones cortados a mitad en el borde de la pantalla). */
             header { flex-direction: column; text-align: center; padding: 10px 15px; gap: 8px; }
-            .logo-contenedor { flex-direction: row; justify-content: center; gap: 10px; }
+            .logo-contenedor { flex-direction: row; justify-content: center; gap: 10px; padding-right: 42px; box-sizing: border-box; } /* deja lugar al botón de modo oscuro, que va superpuesto arriba a la derecha */
             .logo-img { height: 42px; margin: 0; }
             .logo-texto { font-size: 1.05em; }
             nav {
                 display: flex;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 8px;
                 width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
             }
-            nav::-webkit-scrollbar { display: none; }
-            nav a { flex: 0 0 auto; white-space: nowrap; margin: 0; padding: 6px 12px; font-size: 0.9em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+            nav a { margin: 0; padding: 6px 12px; font-size: 0.85em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
 
             .btn-modo-oscuro {
                 position: absolute;
