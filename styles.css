@@ -11,6 +11,11 @@
             --borde-tarjeta: #e2e8f0;
             --fondo-tarjeta: #ffffff;
             --fondo-input: #ffffff; /* Color base para las cajas del formulario */
+            --header-height: 140px; /* Se recalcula en JS según la altura real del header */
+        }
+
+        html {
+            scroll-padding-top: var(--header-height); /* Evita que el header fijo tape los anclajes (#servicios, #contacto, etc.) */
         }
 
         /* Variables para Modo Oscuro */
@@ -26,10 +31,11 @@
             --fondo-input: #1e293b; /* Las cajas se vuelven oscuras en modo noche */
         }
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            color: var(--texto-principal); 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: var(--header-height); /* Deja lugar para el header fijo, siempre visible arriba */
+            color: var(--texto-principal);
             line-height: 1.6;
             background-color: var(--gris-claro);
             background-image: url('imagenes/Fondo.png');
@@ -39,21 +45,25 @@
             background-size: 650px;
             background-attachment: fixed;
             transition: background-color 0.3s, color 0.3s;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        header { 
-            background: var(--azul-oscuro); 
-            color: #ffffff; 
-            padding: 15px 40px; 
+        header {
+            background: var(--azul-oscuro);
+            color: #ffffff;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             border-bottom: 4px solid #ff6a00;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
             transition: background 0.3s;
         }
 
@@ -503,20 +513,33 @@
         .lightbox-cerrar:hover { color: #ff6a00; transform: scale(1.1); }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 35px 15px 20px 15px; gap: 15px; }
-            .logo-contenedor { flex-direction: column; gap: 10px; }
-            .logo-img { height: 110px; margin: 0 auto; }
-            .logo-texto { font-size: 1.5em; }
-            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
-            nav a { margin: 0; padding: 6px 12px; font-size: 0.95em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
-            
-            .btn-modo-oscuro { 
+            /* Header compacto: al quedar fijo (position: fixed) en todo momento,
+               su altura le resta pantalla útil de forma permanente, así que en
+               celular se achica el logo y el menú pasa a una sola fila con scroll. */
+            header { flex-direction: column; text-align: center; padding: 10px 15px; gap: 8px; }
+            .logo-contenedor { flex-direction: row; justify-content: center; gap: 10px; }
+            .logo-img { height: 42px; margin: 0; }
+            .logo-texto { font-size: 1.05em; }
+            nav {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 8px;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            nav::-webkit-scrollbar { display: none; }
+            nav a { flex: 0 0 auto; white-space: nowrap; margin: 0; padding: 6px 12px; font-size: 0.9em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+
+            .btn-modo-oscuro {
                 position: absolute;
-                top: 10px; 
-                right: 15px; 
-                width: 32px; 
-                height: 32px; 
-                font-size: 0.95em; 
+                top: 10px;
+                right: 15px;
+                width: 32px;
+                height: 32px;
+                font-size: 0.95em;
                 margin-left: 0;
             }
             

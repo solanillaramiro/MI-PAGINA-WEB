@@ -296,6 +296,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+        // Ajusta el espacio superior según la altura real del header fijo (cambia entre PC y celular)
+        function ajustarAlturaHeader() {
+            const header = document.querySelector('header');
+            if (header) {
+                document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+            }
+        }
+        ajustarAlturaHeader();
+        window.addEventListener('load', ajustarAlturaHeader);
+        window.addEventListener('resize', ajustarAlturaHeader);
+
         // Inicialización de las animaciones AOS
         AOS.init({
             duration: 1000, 
