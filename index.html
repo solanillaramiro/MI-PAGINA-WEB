@@ -307,11 +307,17 @@
         window.addEventListener('load', ajustarAlturaHeader);
         window.addEventListener('resize', ajustarAlturaHeader);
 
-        // Inicialización de las animaciones AOS
-        AOS.init({
-            duration: 1000, 
-            once: true,     
-        });
+        // Inicialización de las animaciones AOS (con resguardo: si el CDN externo
+        // falla o tarda en una red móvil, no debe tapar el resto del contenido
+        // ni cortar el resto del script -dark mode, galería, FAQ- que sigue abajo)
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        } else {
+            document.querySelectorAll('[data-aos]').forEach(el => el.removeAttribute('data-aos'));
+        }
 
         // Script del Modo Oscuro
         const boton = document.getElementById('btn-color');
