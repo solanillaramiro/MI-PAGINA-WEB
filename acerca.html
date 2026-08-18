@@ -99,18 +99,7 @@
             <a href="index.html#servicios">Especialidades</a>
             <a href="index.html#contacto">Contacto</a>
         </nav>
-        <div class="header-acciones">
-            <a href="servicios.html" class="btn-mantenimiento">
-                <span class="btn-mantenimiento-largo">Solicitar Mantenimiento</span>
-                <span class="btn-mantenimiento-corto">Mantenimiento</span>
-            </a>
-            <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color"><svg width="18" height="18"><use href="#icono-moon"></use></svg></button>
-            <button id="btn-menu" class="btn-menu-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-                </svg>
-            </button>
-        </div>
+        <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color"><svg width="18" height="18"><use href="#icono-moon"></use></svg></button>
     </header>
 
     <section class="seccion acerca-perfil" data-aos="fade-up">
@@ -170,23 +159,6 @@
         ajustarAlturaHeader();
         window.addEventListener('load', ajustarAlturaHeader);
         window.addEventListener('resize', ajustarAlturaHeader);
-
-        // Menú hamburguesa (mobile): abre/cierra el <nav> desplegable. Se cierra solo
-        // al elegir un link o si la ventana se agranda a tamaño desktop.
-        const botonMenu = document.getElementById('btn-menu');
-        const navPrincipal = document.getElementById('nav-principal');
-        if (botonMenu && navPrincipal) {
-            const cerrarMenu = () => {
-                navPrincipal.classList.remove('abierto');
-                botonMenu.setAttribute('aria-expanded', 'false');
-            };
-            botonMenu.addEventListener('click', () => {
-                const abierto = navPrincipal.classList.toggle('abierto');
-                botonMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-            });
-            navPrincipal.querySelectorAll('a').forEach(link => link.addEventListener('click', cerrarMenu));
-            window.addEventListener('resize', () => { if (window.innerWidth > 768) cerrarMenu(); });
-        }
 
         // Inicialización de las animaciones AOS (con resguardo: si el CDN externo
         // falla o tarda en una red móvil, no debe tapar el resto del contenido)
