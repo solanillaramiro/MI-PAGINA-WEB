@@ -1,0 +1,10 @@
+# Datos operativos con información real de clientes (nombre, email, teléfono, mensajes):
+# no deben quedar en el historial público de GitHub.
+python/solicitudes.json
+python/procesados.txt
+python/tablero.log
+
+# Caché de Python
+python/__pycache__/
+__pycache__/
+*.pyc

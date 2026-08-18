@@ -2,6 +2,7 @@ import imaplib
 import email
 import json
 import os
+from datetime import datetime
 from bs4 import BeautifulSoup
 
 EMAIL_USER = "nova.termodinamica.aplicada@gmail.com"
@@ -9,6 +10,13 @@ EMAIL_PASS = os.environ.get("NOVA_EMAIL_PASS")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Ahora siempre apunta a la carpeta /python/solicitudes.json
 ARCHIVO_SOLICITUDES = os.path.join(BASE_DIR, "solicitudes.json")
+ARCHIVO_LOG = os.path.join(BASE_DIR, "tablero.log")
+
+def log(mensaje):
+    linea = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {mensaje}"
+    print(linea)
+    with open(ARCHIVO_LOG, "a", encoding="utf-8") as f:
+        f.write(linea + "\n")
 
 def procesar_y_guardar(cuerpo_html, uid):
     soup = BeautifulSoup(cuerpo_html, 'html.parser')
@@ -30,7 +38,7 @@ def procesar_y_guardar(cuerpo_html, uid):
     nueva_solicitud = {
         "uid": uid,
         "id": len(solicitudes) + 1,
-        "fecha": "2026-06-28",
+        "fecha": datetime.now().strftime("%Y-%m-%d"),
         "tipo_origen": tipo,
         "estado": "pendiente",
         "datos": datos
@@ -38,7 +46,7 @@ def procesar_y_guardar(cuerpo_html, uid):
     solicitudes.append(nueva_solicitud)
     with open(ARCHIVO_SOLICITUDES, "w", encoding="utf-8") as f:
         json.dump(solicitudes, f, indent=4, ensure_ascii=False)
-    print(f"¡Solicitud procesada: {datos.get('nombre', 'Sin nombre')}!")
+    log(f"Solicitud procesada: {datos.get('nombre', 'Sin nombre')}")
 
 def leer_correos():
     # Archivo auxiliar para llevar cuenta de los UIDs ya procesados
@@ -86,7 +94,7 @@ def leer_correos():
             procesados.append(uid)
             
         mail.logout()
-    except Exception as e: print(f"Error: {e}")
+    except Exception as e: log(f"Error: {e}")
 
 if __name__ == "__main__":
     if not EMAIL_PASS:
