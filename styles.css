@@ -522,8 +522,8 @@
                botones cortados a mitad en el borde de la pantalla). */
             header { flex-direction: column; text-align: center; padding: 10px 15px; gap: 8px; }
             .logo-contenedor { flex-direction: row; justify-content: center; gap: 10px; padding-right: 42px; box-sizing: border-box; } /* deja lugar al botón de modo oscuro, que va superpuesto arriba a la derecha */
-            .logo-img { height: 42px; margin: 0; }
-            .logo-texto { font-size: 1.05em; }
+            .logo-img { height: 52px; margin: 0; }
+            .logo-texto { font-size: 1.25em; }
             nav {
                 display: flex;
                 flex-wrap: wrap;
@@ -548,6 +548,22 @@
             .hero h3 { font-size: 1.2em; }
             .hero p { font-size: 1.05em; }
             body { background-position: center bottom; background-size: 100%; }
+
+            /* En celular el fondo decorativo (Fondo.png) queda centrado, justo
+               detrás de los títulos de sección, y se leían mal encima de los
+               círculos rojos/naranjas. Se les da una placa semitransparente
+               para que el texto se destaque sin perder el fondo fijo detrás. */
+            .seccion h2, .seccion-faq h2 {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.85);
+                padding: 10px 22px;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            }
+            body.dark-mode .seccion h2, body.dark-mode .seccion-faq h2 {
+                background: rgba(11, 19, 41, 0.85);
+            }
+
             .tarjeta { width: 100%; }
             .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 20px; }
             .perfil-bio { text-align: center; }
