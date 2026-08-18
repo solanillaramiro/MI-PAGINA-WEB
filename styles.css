@@ -563,6 +563,23 @@
             body.dark-mode .seccion h2, body.dark-mode .seccion-faq h2 {
                 background: rgba(11, 19, 41, 0.85);
             }
+            /* Mismo problema con textos "mutados" (gris, más finos) que quedan
+               justo sobre el fondo decorativo: "Dejanos tu consulta..." y
+               "¿Necesitás cobertura recurrente?" */
+            .subtitulo-contacto {
+                display: block;
+                width: fit-content;
+                max-width: 90%;
+                margin: 0 auto;
+                font-weight: 700;
+                background: rgba(255, 255, 255, 0.85);
+                padding: 8px 18px;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            }
+            body.dark-mode .subtitulo-contacto {
+                background: rgba(11, 19, 41, 0.85);
+            }
 
             .tarjeta { width: 100%; }
             .perfil-contenedor { flex-direction: column; text-align: center; padding: 25px 20px; }
