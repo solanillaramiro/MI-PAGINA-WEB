@@ -147,6 +147,24 @@
         ajustarAlturaHeader();
         window.addEventListener('load', ajustarAlturaHeader);
         window.addEventListener('resize', ajustarAlturaHeader);
+
+        // Copia en paralelo a Sheet Monkey (planilla de Google Sheets) cada vez que
+        // se envía el formulario. No reemplaza el envío normal a formsubmit.co (que
+        // sigue mandando el correo y sigue redirigiendo a gracias.html): esto solo
+        // agrega una copia de los mismos datos a la planilla. keepalive:true hace
+        // que el pedido termine de enviarse aunque la página ya esté navegando.
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', () => {
+                try {
+                    fetch('https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        keepalive: true,
+                        body: new FormData(form)
+                    });
+                } catch (e) { /* no debe bloquear el envío principal */ }
+            });
+        });
     </script>
 </body>
 </html>
