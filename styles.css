@@ -245,9 +245,21 @@
         .sponsors { background: #001b3d; color: #ffffff; text-align: center; padding: 50px 20px; overflow: hidden; }
         .sponsors h3 { margin-bottom: 10px; color: #f1b80e; font-size: 1.5em; }
         .sponsors p { color: #94a3b8; font-size: 0.95em; margin-bottom: 25px; }
-        .sponsors-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; opacity: 0.85; }
-        .marca-item { font-size: 1.4em; font-weight: 800; letter-spacing: 2px; color: rgba(255,255,255,0.4); border: 2px dashed rgba(255,255,255,0.15); padding: 10px 25px; border-radius: 4px; }
-        .marca-item span { color: #ff6a00; }
+        .sponsors-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: stretch; opacity: 0.85; }
+        .marca-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 240px;
+            border: 2px dashed rgba(255,255,255,0.15);
+            padding: 18px 22px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .marca-item-nombre { font-size: 1em; font-weight: 700; letter-spacing: 0.3px; line-height: 1.35; color: rgba(255,255,255,0.9); }
+        .marca-item-marca { font-size: 0.8em; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 
         footer { background: #001126; color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.95em; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 10; }
         .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: #ffffff; }
