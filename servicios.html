@@ -64,13 +64,23 @@
             <img src="imagenes/logo-nova.png" alt="Logo NOVA" class="logo-img">
             <h1 class="logo-texto">NOVA <span>Termodinámica Aplicada</span></h1>
         </div>
-        <nav>
+        <nav id="nav-principal">
             <a href="index.html">Inicio</a>
             <a href="acerca.html">Acerca de</a>
             <a href="index.html#servicios">Especialidades</a>
             <a href="index.html#contacto">Contacto</a>
-            <a href="servicios.html" class="activo">Mantenimiento</a>
         </nav>
+        <div class="header-acciones">
+            <a href="servicios.html" class="btn-mantenimiento">
+                <span class="btn-mantenimiento-largo">Solicitar Mantenimiento</span>
+                <span class="btn-mantenimiento-corto">Mantenimiento</span>
+            </a>
+            <button id="btn-menu" class="btn-menu-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
     </header>
 
     <main style="padding-top: 40px; max-width: 800px; margin: 0 auto; text-align: center;">
@@ -150,6 +160,23 @@
         ajustarAlturaHeader();
         window.addEventListener('load', ajustarAlturaHeader);
         window.addEventListener('resize', ajustarAlturaHeader);
+
+        // Menú hamburguesa (mobile): abre/cierra el <nav> desplegable. Se cierra solo
+        // al elegir un link o si la ventana se agranda a tamaño desktop.
+        const botonMenu = document.getElementById('btn-menu');
+        const navPrincipal = document.getElementById('nav-principal');
+        if (botonMenu && navPrincipal) {
+            const cerrarMenu = () => {
+                navPrincipal.classList.remove('abierto');
+                botonMenu.setAttribute('aria-expanded', 'false');
+            };
+            botonMenu.addEventListener('click', () => {
+                const abierto = navPrincipal.classList.toggle('abierto');
+                botonMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+            });
+            navPrincipal.querySelectorAll('a').forEach(link => link.addEventListener('click', cerrarMenu));
+            window.addEventListener('resize', () => { if (window.innerWidth > 768) cerrarMenu(); });
+        }
 
         // Copia en paralelo a Sheet Monkey (planilla de Google Sheets) cada vez que
         // se envía el formulario. No reemplaza el envío normal a formsubmit.co (que
