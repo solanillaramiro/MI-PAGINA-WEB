@@ -153,14 +153,20 @@
         // sigue mandando el correo y sigue redirigiendo a gracias.html): esto solo
         // agrega una copia de los mismos datos a la planilla. keepalive:true hace
         // que el pedido termine de enviarse aunque la página ya esté navegando.
+        // x-sheetmonkey-insert-worksheet apunta el envío a la pestaña "mantenimiento"
+        // (si no se indica, Sheet Monkey escribe en la primera pestaña de la planilla).
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', () => {
                 try {
+                    const datos = new FormData(form);
+                    datos.delete('_next');
+                    datos.delete('_captcha');
+                    datos.append('x-sheetmonkey-insert-worksheet', 'mantenimiento');
                     fetch('https://api.sheetmonkey.io/form/8MqC3Yp4x15hT8q4CPdYFT', {
                         method: 'POST',
                         mode: 'no-cors',
                         keepalive: true,
-                        body: new FormData(form)
+                        body: datos
                     });
                 } catch (e) { /* no debe bloquear el envío principal */ }
             });
