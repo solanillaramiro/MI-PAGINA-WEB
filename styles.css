@@ -96,6 +96,7 @@
             width: auto;
             object-fit: contain;
             display: block;
+            cursor: pointer;
         }
 
         .logo-texto {
@@ -506,16 +507,16 @@
                botones cortados a mitad en el borde de la pantalla). */
             header { flex-direction: column; text-align: center; padding: 10px 15px; gap: 8px; }
             .logo-contenedor { flex-direction: row; justify-content: center; gap: 10px; padding-right: 42px; box-sizing: border-box; } /* deja lugar al botón de modo oscuro, que va superpuesto arriba a la derecha */
-            .logo-img { height: 60px; margin: 0; }
-            .logo-texto { font-size: 1.25em; }
+            .logo-img { height: 74px; margin: 0; }
+            .logo-texto { font-size: 1.4em; }
             nav {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 justify-content: center;
-                gap: 8px;
+                gap: 4px;
                 width: 100%;
             }
-            nav a { margin: 0; padding: 6px 12px; font-size: 0.85em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+            nav a { margin: 0; padding: 5px 6px; font-size: 0.74em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; white-space: nowrap; }
 
             .btn-modo-oscuro {
                 position: absolute;
