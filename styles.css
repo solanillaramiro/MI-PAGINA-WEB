@@ -125,6 +125,7 @@
             border-radius: 4px;
         }
         nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
+        nav a.activo { color: #ff6a00; font-weight: 700; }
 
         .btn-modo-oscuro {
             background: transparent;
@@ -188,6 +189,23 @@
         .hero h2 { font-size: 3em; margin-bottom: 10px; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero h3 { color: #f1b80e; font-weight: 400; margin-top: 0; letter-spacing: 1px; position: relative; z-index: 2; font-size: 1.4em; }
         .hero p { max-width: 700px; margin: 20px auto; font-size: 1.25em; color: #cbd5e1; position: relative; z-index: 2; }
+
+        /* Firma discreta (nombre + título) debajo de la bajada del hero: el foco
+           visual pasa a estar en los servicios, la bio completa vive en acerca.html */
+        .hero-firma {
+            margin: 30px auto 0 auto;
+            padding-top: 18px;
+            max-width: 420px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-firma-nombre { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 600; font-size: 1.05em; color: #ffffff; }
+        .hero-firma-titulo { font-size: 0.85em; color: #f1b80e; letter-spacing: 0.5px; }
 
         .badge-garantia {
             background: var(--fondo-tarjeta);
@@ -513,10 +531,10 @@
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: center;
-                gap: 4px;
+                gap: 2px;
                 width: 100%;
             }
-            nav a { margin: 0; padding: 5px 6px; font-size: 0.74em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; white-space: nowrap; }
+            nav a { margin: 0; padding: 5px 4px; font-size: 0.62em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; white-space: nowrap; }
 
             .btn-modo-oscuro {
                 position: absolute;

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Ramiro Solanilla | NOVA Termodinámica Aplicada</title>
+
+    <meta name="description" content="Conocé a Ramiro Solanilla, Técnico Electrónico Universitario (UTN FRM) y fundador de NOVA Termodinámica Aplicada, y la historia detrás del proyecto.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Acerca de Ramiro Solanilla | NOVA Termodinámica Aplicada">
+    <meta property="og:description" content="Técnico Electrónico Universitario (UTN FRM) y la historia detrás de NOVA Termodinámica Aplicada.">
+    <meta property="og:image" content="https://nova-soluciones.vercel.app/imagenes/logo-nova.png">
+    <meta property="og:url" content="https://nova-soluciones.vercel.app/acerca.html">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" type="image/png" href="imagenes/logo-nova.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .acerca-perfil { padding-top: 60px; padding-bottom: 20px; }
+        .acerca-perfil-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .acerca-foto-placeholder {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #001b3d 0%, #0a2d56 100%);
+            color: #f1b80e;
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+            font-size: 2.4em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #ff6a00;
+            flex-shrink: 0;
+        }
+        .acerca-perfil-info h2 { margin: 0 0 6px 0; color: var(--texto-principal); font-size: 2em; }
+        .acerca-perfil-info h3 { margin: 0; color: #ff6a00; font-weight: 500; font-size: 1.1em; }
+        @media (min-width: 640px) {
+            .acerca-perfil-grid { text-align: left; justify-content: flex-start; }
+        }
+
+        .acerca-historia { max-width: 800px; }
+        .acerca-historia-titulo { display: inline-flex; align-items: center; gap: 10px; }
+        .acerca-historia p { color: var(--texto-mutado); text-align: justify; line-height: 1.7; }
+    </style>
+</head>
+
+<body>
+
+    <svg style="display:none;" aria-hidden="true">
+        <symbol id="icono-sparkles" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2 14 9 21 11 14 13 12 20 10 13 3 11 10 9 Z"/>
+        </symbol>
+        <symbol id="icono-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </symbol>
+        <symbol id="icono-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </symbol>
+        <symbol id="icono-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </symbol>
+        <symbol id="icono-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </symbol>
+        <symbol id="icono-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="logo-contenedor">
+            <img src="imagenes/logo-nova.png" alt="Logo NOVA Termodinámica Aplicada" class="logo-img">
+            <h1 class="logo-texto">NOVA <span>Termodinámica Aplicada</span></h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="acerca.html" class="activo">Acerca de</a>
+            <a href="index.html#servicios">Especialidades</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="servicios.html">Mantenimiento</a>
+        </nav>
+        <button id="btn-color" class="btn-modo-oscuro" title="Cambiar modo de color"><svg width="18" height="18"><use href="#icono-moon"></use></svg></button>
+    </header>
+
+    <section class="seccion acerca-perfil" data-aos="fade-up">
+        <div class="acerca-perfil-grid">
+            <!-- Placeholder de foto: reemplazar por <img src="imagenes/ramiro.jpg" alt="Ramiro Solanilla" class="acerca-foto-img"> cuando esté la foto -->
+            <div class="acerca-foto-placeholder" aria-hidden="true">RS</div>
+            <div class="acerca-perfil-info">
+                <h2>Ramiro Solanilla</h2>
+                <h3>Técnico Electrónico Universitario | UTN FRM</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion acerca-historia" data-aos="fade-up" data-aos-delay="100">
+        <h2><span class="acerca-historia-titulo"><svg width="24" height="24" style="color: #ff6a00;"><use href="#icono-sparkles"></use></svg> NOVA: El Futuro de la Termodinámica Aplicada</span></h2>
+        <p>
+            En la inmensidad del cosmos, una <em>nova</em> nace de la interacción termodinámica perfecta entre estrellas: una transferencia de energía y calor tan masiva que genera un destello de luz capaz de iluminar galaxias enteras, dando origen a nuevos elementos en el universo. Inspirados por ese principio creacionista donde el orden, la energía y la transformación gobiernan el espacio, concebimos nuestra identidad. Domar el flujo térmico, optimizar la energía y asegurar la estabilidad no es solo técnica; es replicar el equilibrio que sostiene al universo.
+        </p>
+    </section>
+
+    <div style="text-align: center; padding: 0 20px 70px;" data-aos="fade-up">
+        <a href="index.html" class="btn-enviar" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: auto; padding: 14px 32px;">
+            ← Volver al Inicio
+        </a>
+    </div>
+
+    <a href="https://wa.me/5492615451550?text=Hola%20Ramiro%2C%20visit%C3%A9%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20el%20siguiente%20proyecto"
+       class="whatsapp-flotante" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.15c-.25.7-1.24 1.28-1.99 1.44-.53.11-1.22.2-3.55-.76-2.98-1.23-4.9-4.24-5.05-4.44-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.06.92 2.21.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.3-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.48.13.66-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.08.13.08.72-.17 1.42z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <div class="info-contacto">
+            <span><svg width="16" height="16"><use href="#icono-map-pin"></use></svg> Cobertura en Mendoza, Argentina</span>
+            <span><svg width="16" height="16"><use href="#icono-phone"></use></svg> +54 261 545-1550</span>
+            <span><svg width="16" height="16"><use href="#icono-mail"></use></svg> nova.termodinamica.aplicada@gmail.com</span>
+        </div>
+        <p>&copy; 2026 NOVA Termodinámica Aplicada. Todos los derechos reservados. | Servicios Profesionales de Ingeniería Técnico.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Ajusta el espacio superior según la altura real del header fijo (cambia entre PC y celular)
+        function ajustarAlturaHeader() {
+            const header = document.querySelector('header');
+            if (header) {
+                document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+            }
+        }
+        ajustarAlturaHeader();
+        window.addEventListener('load', ajustarAlturaHeader);
+        window.addEventListener('resize', ajustarAlturaHeader);
+
+        // Inicialización de las animaciones AOS (con resguardo: si el CDN externo
+        // falla o tarda en una red móvil, no debe tapar el resto del contenido)
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        } else {
+            document.querySelectorAll('[data-aos]').forEach(el => el.removeAttribute('data-aos'));
+        }
+
+        // Script del Modo Oscuro
+        const boton = document.getElementById('btn-color');
+        boton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icono = document.body.classList.contains('dark-mode') ? 'icono-sun' : 'icono-moon';
+            boton.innerHTML = `<svg width="18" height="18"><use href="#${icono}"></use></svg>`;
+        });
+    </script>
+</body>
+</html>
