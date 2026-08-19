@@ -347,6 +347,26 @@
             document.querySelectorAll('[data-aos]').forEach(el => el.removeAttribute('data-aos'));
         }
 
+        // Resalta en el menú la sección visible en pantalla. Antes el resaltado
+        // dependía solo de :hover/:active, que en celulares es inconsistente
+        // (a veces "pega" el naranja al tocar, a veces no); con esto el link
+        // correcto queda marcado según el scroll, de forma confiable siempre.
+        const seccionesNav = document.querySelectorAll('#inicio, #servicios, #contacto');
+        const enlacesNav = document.querySelectorAll('#nav-principal a[href^="#"]');
+        if (seccionesNav.length && enlacesNav.length && 'IntersectionObserver' in window) {
+            const alturaHeader = document.querySelector('header').offsetHeight;
+            const observadorNav = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        enlacesNav.forEach(enlace => {
+                            enlace.classList.toggle('activo', enlace.getAttribute('href') === `#${entrada.target.id}`);
+                        });
+                    }
+                });
+            }, { rootMargin: `-${alturaHeader + 10}px 0px -60% 0px` });
+            seccionesNav.forEach(seccion => observadorNav.observe(seccion));
+        }
+
         // Script del Modo Oscuro
         const boton = document.getElementById('btn-color');
         boton.addEventListener('click', () => {

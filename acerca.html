@@ -58,7 +58,18 @@
 
         .acerca-historia { max-width: 800px; }
         .acerca-historia-titulo { display: inline-flex; align-items: center; gap: 10px; }
-        .acerca-historia p { color: var(--texto-mutado); text-align: justify; line-height: 1.7; }
+        .acerca-historia p {
+            color: var(--texto-mutado);
+            text-align: justify;
+            line-height: 1.7;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 24px 28px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+        body.dark-mode .acerca-historia p {
+            background: rgba(11, 19, 41, 0.85);
+        }
     </style>
 </head>
 
