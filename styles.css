@@ -207,19 +207,6 @@
         .hero-firma-nombre { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 600; font-size: 1.05em; color: #ffffff; }
         .hero-firma-titulo { font-size: 0.85em; color: #f1b80e; letter-spacing: 0.5px; }
 
-        .badge-garantia {
-            background: var(--fondo-tarjeta);
-            border-left: 5px solid #ff6a00;
-            padding: 30px;
-            max-width: 1000px;
-            margin: -40px auto 40px auto;
-            border-radius: 4px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 10;
-            transition: background-color 0.3s;
-        }
-
         .seccion { padding: 60px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 2; }
         .seccion h2 { text-align: center; color: var(--texto-principal); margin-bottom: 40px; position: relative; }
         .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: #ff6a00; margin: 10px auto 0 auto; }
@@ -240,6 +227,12 @@
         .tarjeta:hover { transform: translateY(-5px); border-top-color: #ff6a00; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
         .tarjeta h4 { color: var(--texto-principal); font-size: 1.3em; margin-top: 0; display: flex; align-items: center; gap: 10px; }
         .icono-marca { color: #ff6a00; flex-shrink: 0; }
+
+        .tarjeta-servicio { padding: 0; overflow: hidden; }
+        .tarjeta-servicio-img { width: 100%; height: 200px; object-fit: cover; display: block; cursor: pointer; }
+        .tarjeta-servicio-contenido { padding: 30px; }
+        .tarjeta-servicio-contenido h4 { margin-top: 0; }
+        .tarjeta-servicio-contenido p { margin-bottom: 0; }
         svg { vertical-align: middle; }
 
         .sponsors { background: #001b3d; color: #ffffff; text-align: center; padding: 50px 20px; overflow: hidden; }
@@ -268,26 +261,6 @@
         .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
         .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.9em; transition: color 0.2s; }
         .footer-links a:hover { color: #ff6a00; }
-
-        .seccion-galeria { padding: 60px 20px; text-align: center; background-color: var(--gris-claro); transition: background-color 0.3s; }
-        .seccion-galeria h2 { color: var(--texto-principal); font-size: 1.8rem; margin-bottom: 8px; font-weight: bold; }
-        .subtitulo-galeria { color: var(--texto-mutado); font-size: 1rem; margin-bottom: 40px; }
-
-        .contenedor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-        
-        .tarjeta-foto { 
-            background: var(--fondo-tarjeta); 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-            cursor: pointer; 
-        }
-        .tarjeta-foto:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
-        .tarjeta-foto img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .info-foto { padding: 20px; text-align: left; }
-        .info-foto h3 { color: var(--texto-principal); font-size: 1.2rem; margin-bottom: 6px; font-weight: bold; }
-        .info-foto p { color: var(--texto-mutado); font-size: 0.95rem; line-height: 1.4; }
 
         /* Estilos de la Sección FAQ (Acordeón) */
         .seccion-faq {
