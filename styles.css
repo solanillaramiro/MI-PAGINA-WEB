@@ -124,8 +124,14 @@
             padding: 8px 12px;
             border-radius: 4px;
         }
-        nav a:hover { color: var(--azul-oscuro); background-color: #ffffff; }
-        nav a.activo { color: #ff6a00; font-weight: 700; }
+        nav a:hover,
+        nav a:focus,
+        nav a:active,
+        nav a.activo {
+            color: #ff6a00;
+            background-color: rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+        }
 
         .btn-modo-oscuro {
             background: transparent;
@@ -204,12 +210,31 @@
             position: relative;
             z-index: 2;
         }
-        .hero-firma-nombre { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 600; font-size: 1.05em; color: #ffffff; }
+        .hero-firma-nombre { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-weight: 700; font-size: 1.35em; color: #ff6a00; }
         .hero-firma-titulo { font-size: 0.85em; color: #f1b80e; letter-spacing: 0.5px; }
 
         .seccion { padding: 60px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 2; }
         .seccion h2 { text-align: center; color: var(--texto-principal); margin-bottom: 40px; position: relative; }
         .seccion h2::after { content: ''; display: block; width: 60px; height: 3px; background: #ff6a00; margin: 10px auto 0 auto; }
+
+        /* Placa semitransparente para textos que caen sobre el fondo decorativo
+           (Fondo.png), evitando que los círculos de color tapen la legibilidad. */
+        .parrafo-legible {
+            display: block;
+            width: fit-content;
+            max-width: 750px;
+            margin: -20px auto 40px auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 16px 26px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            color: var(--texto-mutado);
+            line-height: 1.6;
+            text-align: center;
+        }
+        body.dark-mode .parrafo-legible {
+            background: rgba(11, 19, 41, 0.85);
+        }
 
         .servicios-grid { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
         .tarjeta { 
@@ -252,7 +277,7 @@
             text-align: center;
         }
         .marca-item-nombre { font-size: 1em; font-weight: 700; letter-spacing: 0.3px; line-height: 1.35; color: rgba(255,255,255,0.9); }
-        .marca-item-marca { font-size: 0.8em; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+        .marca-item-marca { font-size: 1.25em; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #ff6a00; }
 
         footer { background: #001126; color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.95em; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 10; }
         .info-contacto { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; color: #ffffff; }
@@ -520,10 +545,10 @@
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: center;
-                gap: 4px;
+                gap: 3px;
                 width: 100%;
             }
-            nav a { margin: 0; padding: 6px 6px; font-size: 0.72em; background: rgba(255, 255, 255, 0.05); border-radius: 4px; white-space: nowrap; }
+            nav a { margin: 0; padding: 8px 6px; font-size: clamp(0.72em, 3.1vw, 0.95em); background: rgba(255, 255, 255, 0.05); border-radius: 4px; white-space: nowrap; }
 
             .btn-modo-oscuro {
                 position: absolute;
